@@ -1,0 +1,40 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # (중간 생략) Obsidian 파일을 hugo_site/content/posts로 옮기고 변환하는 과정 진행
+      # 1. 파일 이동 및 내용 변환 
+      - name: Transform Obsidian to Hugo
+        run: |
+          # 변환 로직을 담은 스크립트 실행 또는 직접 커맨드 입력
+          # 예: obsidian/ 폴더 내 모든 .md 파일을 content/posts/로 복사
+          mkdir -p hugo_site/content/posts
+          cp -r hugo_pub/* hugo_site/content/posts/
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build Hugo
+        working-directory: ./hugo_site
+        run: hugo --gc --minify
+
+      # 핵심: Cloudflare Pages로 직접 업로드
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # 빌드 결과물이 있는 폴더 지정
+          command: pages deploy hugo_site/public --project-name=obsidian-pub
