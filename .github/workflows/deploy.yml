@@ -37,4 +37,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # 빌드 결과물이 있는 폴더 지정
-          command: pages deploy hugo_site/public --project-name=obsidian-pub
+          command: pages deploy hugo_site/public --project-name=obsidian-pub --skip-caching
