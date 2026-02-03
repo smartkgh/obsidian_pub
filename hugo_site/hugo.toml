@@ -1,4 +1,4 @@
-baseURL = 'https://my-hugo-bbm.pages.dev/'
+baseURL = 'https://obsidian-pub.pages.dev/'
 languageCode = 'en-us'
 title = 'Hugo Site!'
 #theme = 'ananke'
