@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tech on Hugo Site!</title>
+    <link>http://localhost:1313/categories/tech/</link>
+    <description>Recent content in Tech on Hugo Site!</description>
+    <generator>Hugo -- 0.155.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>note 제목</title>
+      <link>http://localhost:1313/posts/new/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/new/</guid>
+      <description>&lt;h2 id=&#34;배포-항목&#34;&gt;배포 항목&lt;/h2&gt;
+&lt;h3 id=&#34;ironsource-동영상-광고-업데이트---&#34;&gt;ironSource 동영상 광고 업데이트  - &lt;a href=&#34;https://jira.skplanet.com/browse/SYRUPPROD-2076&#34;&gt;https://jira.skplanet.com/browse/SYRUPPROD-2076&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SDK 9.x.x 업데이트  - jS 규격 변경,  LevelPlay로 변환,  inventory 로 미디에이션 적용
+&lt;ul&gt;
+&lt;li&gt;app I/F 해당 구좌에 placementName 적용 예정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;몰로코 광고 설정 제거&lt;/li&gt;
+&lt;li&gt;(AOS) Proximity SDK 얻데이트 (내부 라이브러리 충돌)&lt;/li&gt;
+&lt;li&gt;(AOS)  OS 15 타겟 지원 관련 기존 opt out된  제거&lt;/li&gt;
+&lt;li&gt;(iOS) 디지털바인 iOS 26 업데이트 체크 - &lt;a href=&#34;https://jira.skplanet.com/browse/SYRUPPROD-2015&#34;&gt;https://jira.skplanet.com/browse/SYRUPPROD-2015&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;지금-할일-고도화--&#34;&gt;지금 할일 고도화 - &lt;a href=&#34;https://jira.skplanet.com/browse/SYRUPPROD-1558&#34;&gt;https://jira.skplanet.com/browse/SYRUPPROD-1558&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;지금할일 탭  스티커 (UX ) 노출 로직 변경 (기존 로직 변경 필요)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

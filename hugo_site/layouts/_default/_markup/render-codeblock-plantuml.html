@@ -1,0 +1,15 @@
+{{- $uml := .Inner -}}
+{{- /* @startuml 과 @enduml이 없다면 붙여줌 */ -}}
+{{- if not (findRE `(?s)^\s*@start` $uml) -}}
+    {{- $uml = printf "@startuml\n%s\n@enduml" $uml -}}
+{{- end -}}
+
+{{- /* PlantUML 서버가 읽을 수 있도록 URL 인코딩 */ -}}
+{{- $safeUml := $uml | htmlEscape -}}
+
+<div class="plantuml" style="text-align: center; margin: 20px 0; background: white; padding: 10px; border-radius: 8px;">
+    <img src="https://www.plantuml.com/plantuml/png?uml={{ $safeUml }}" 
+         alt="PlantUML Diagram" 
+         style="max-width: 100%; height: auto;"
+         onerror="this.src='https://www.plantuml.com/plantuml/svg?uml={{ $safeUml }}'; this.onerror=null;">
+</div>

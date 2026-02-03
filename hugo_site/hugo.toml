@@ -1,0 +1,28 @@
+baseURL = 'https://my-hugo-bbm.pages.dev/'
+languageCode = 'en-us'
+title = 'Hugo Site!'
+#theme = 'ananke'
+theme = 'PaperMod'
+followSymlinks = true
+
+
+[[menu.main]]
+    identifier = "categories"
+    name = "Categories"      # 메뉴에 표시될 이름
+    url = "/categories/"     # 카테고리 전체 목록 페이지 주소
+    weight = 10
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+#series = "series"
+
+#[params]
+#ShowReadingTime = true
+#  
+#[params.sidebar]
+#enable = true
+#showReCentPosts = true
+#showTaxonomy = true
+#ShowTaxonomyMaxNum = 10  # 최대 10개 표시

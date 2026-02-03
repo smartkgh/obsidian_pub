@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>기술 on Hugo Site!</title>
+    <link>http://localhost:1313/categories/%EA%B8%B0%EC%88%A0/</link>
+    <description>Recent content in 기술 on Hugo Site!</description>
+    <generator>Hugo -- 0.155.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%EA%B8%B0%EC%88%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apidog</title>
+      <link>http://localhost:1313/posts/apidog/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/apidog/</guid>
+      <description>&lt;h4 id=&#34;push-alp--push-real-처러-서비스를-등록하고-싶을때는--add-service를-등록-한다&#34;&gt;push alp,  push real 처러 서비스를 등록하고 싶을때는  add Service를 등록 한다.&lt;/h4&gt;
+&lt;p&gt;![[Pasted image 20251002153037.png]]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>eraser.io</title>
+      <link>http://localhost:1313/posts/app.eraser.io/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/app.eraser.io/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;자신만의 텍스트 랜더링 포맷으로 flowchart 및 각종 diagram 생성&lt;/li&gt;
+&lt;li&gt;ai 활용하여 텍스트를 diagram으로 표현&lt;/li&gt;
+&lt;li&gt;생성된 diagram 코드를   mermaid 및  plantuml 형식으로 gemini 등을 동해 표현 가능&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>eraser.io</title>
+      <link>http://localhost:1313/posts/ironsource-unity3d-%EB%8F%99%EC%98%81%EC%83%81-%EA%B4%91%EA%B3%A0-%EB%8C%80%EC%9D%91%EC%82%AC%ED%95%AD/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ironsource-unity3d-%EB%8F%99%EC%98%81%EC%83%81-%EA%B4%91%EA%B3%A0-%EB%8C%80%EC%9D%91%EC%82%AC%ED%95%AD/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;버전 업데이트&lt;/li&gt;
+&lt;li&gt;몰로코 광고 환경 설정 제거
+&lt;ul&gt;
+&lt;li&gt;LevelPlay.setConsent(false); , LevelPlay.setMetaData(&amp;ldquo;do_not_sell&amp;rdquo;,&amp;ldquo;true&amp;rdquo;);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;OS target 대응한 것 적용&lt;/li&gt;
+&lt;li&gt;Proximity SDK  충돌 문제 해결&lt;/li&gt;
+&lt;li&gt;Adquality SDK 제거&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;as-is&#34;&gt;AS IS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;저금통 두드리기 당첨 후 2배 더 받기 (기존 admob 과 ironSource 보상형 동영상 비율 혼함 =&amp;gt; 모웹에서 비율 혼합)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;requestRewardAd : {&amp;#34;inventoryId&amp;#34;:&amp;#34;piggame4_1&amp;#34;,&amp;#34;tabeventAdKey&amp;#34;:&amp;#34;3b044f28f2ef816ddd86466cf19ed27e89991f7eeiS&amp;#34;,&amp;#34;successCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;vclei1rc62&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.resolvePromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;,&amp;#34;failCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;vclei1rc62&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.rejectPromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;}
+
+requestRewardAd : 
+window.wallet.requestRewardAdV2(JSON.stringify({&amp;#34;inventoryId&amp;#34;:&amp;#34;fullscreen_piggybank&amp;#34;,&amp;#34;tabeventAdKey&amp;#34;:&amp;#34;3b044f28f2ef816ddd86466cf19ed27e89991f7eeiS&amp;#34;,&amp;#34;successCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;vclei1rc62&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.resolvePromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;,&amp;#34;failCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;vclei1rc62&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.rejectPromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;}));
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;requestIronSourceAdWindow : {&amp;#34;partnerServiceId&amp;#34;:&amp;#34;IRONSOURCE&amp;#34;,&amp;#34;placementName&amp;#34;:&amp;#34;Piggybank&amp;#34;,&amp;#34;tabeventAdKey&amp;#34;:&amp;#34;00b455dcb238110c6d9f8cbdf14c1280f49022d6E6R&amp;#34;,&amp;#34;successCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;whbd8l6ymnr&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.resolvePromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;,&amp;#34;failCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;whbd8l6ymnr&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.rejectPromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;}
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;광고 빠르게 보기 (Admob 광고 )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;requestRewardAd : {&amp;#34;inventoryId&amp;#34;:&amp;#34;piggame3_1&amp;#34;,&amp;#34;tabeventAdKey&amp;#34;:&amp;#34;BST_e0d560ae95ac13594e6ff30828f5f206a2010d27Qcz&amp;#34;,&amp;#34;successCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;snx6agrjfc&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.resolvePromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;,&amp;#34;failCallbackJS&amp;#34;:&amp;#34;(function() {var params = Array.prototype.slice.call(arguments, 0); params.unshift(&amp;#39;snx6agrjfc&amp;#39;); (function(e){for(var o,n,i=arguments.length,t=Array(i&amp;gt;1?i-1:0),r=1;r&amp;lt;i;r++)t[r-1]=arguments[r];null===(n=window)||void 0===n||null===(o=n.promiseManager)||void 0===o||o.rejectPromise(e,(null==t?void 0:t.length)&amp;gt;0?t[0]:t)}).apply(null, params);})&amp;#34;}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;확인사항&#34;&gt;확인사항&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;9.2.0 버전 반영시  unity 어댑터 광고 크래시 이슈 아래 버전으로 패치 해야함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;implementation &amp;lsquo;com.unity3d.ads-mediation:unityads-adapter:5.3.0&amp;rsquo; -&amp;gt; 5.4.0&lt;br&gt;
+implementation &amp;lsquo;com.unity3d.ads:unity-ads:4.16.4&amp;rsquo; -&amp;gt; 4.16.5&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
