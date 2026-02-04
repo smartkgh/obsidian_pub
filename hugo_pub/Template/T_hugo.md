@@ -1,6 +1,6 @@
 ---
 title: "{{title}}"
-date: "{{date:YYYY년 MM월 DD일}}"
+date: "{{date:YYYY-MM-DD}}"
 categories:
 draft: false
 ---
