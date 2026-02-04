@@ -18,7 +18,7 @@ jobs:
           # 변환 로직을 담은 스크립트 실행 또는 직접 커맨드 입력
           # 예: obsidian/ 폴더 내 모든 .md 파일을 content/posts/로 복사
           mkdir -p hugo_site/content/posts
-          cp -r hugo_pub/* hugo_site/content/posts/
+          cp -r hugo_pub/public/* hugo_site/content/posts/
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
