@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test1.md",
+                "file": "public/h1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test1"
+              "title": "h1"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "test1.md",
+                "file": "wel!.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "test1 의 백링크"
+              "title": "wel! 의 백링크"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "test1.md",
+                "file": "wel!.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "test1 의 나가는 링크"
+              "title": "wel! 의 나가는 링크"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test1.md",
+                "file": "wel!.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "test1 의 개요"
+              "title": "wel! 의 개요"
             }
           }
         ]
@@ -185,7 +185,11 @@
   },
   "active": "38084e0c17581711",
   "lastOpenFiles": [
+    "Template/T_hugo.md",
+    "public/h1.md",
+    "test1.md",
     "wel!.md",
-    "test1.md"
+    "Template",
+    "public"
   ]
 }
