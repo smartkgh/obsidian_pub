@@ -1,0 +1,7 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "hugo_pub",
+  "userIgnoreFilters": [
+    "hugo_site/*"
+  ]
+}
