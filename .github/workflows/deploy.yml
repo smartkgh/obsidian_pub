@@ -26,6 +26,8 @@ jobs:
           # mkdir -p hugo_site/content/posts
           # cp -r hugo_pub/public/* hugo_site/content/posts/
 
+          cp -r hugo_pub/images/* hugo_site/static/images/
+
           python hugo_pub/scripts/obsidian_to_hugo.py
 
       - name: Setup Hugo

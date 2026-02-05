@@ -14,3 +14,4 @@ Table
 | ---------- | ------ | ---------- | --- |
 | git plugin | action | pages      |     |
 |            |        |            |     |
+![[Pasted image 20260205171925.png]]
