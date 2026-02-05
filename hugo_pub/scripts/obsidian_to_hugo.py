@@ -44,8 +44,10 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     # 이미지는 hugo_site/static/images/ 폴더에 위치해야 합니다.
     #body = re.sub(r'!\\\[([^\\]+)\\\]', r'![\\1](/images/\\1)', body)
 
-    body = re.sub(r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))([\|].*)?\]\]', r'![\1](/images/\1)', body
-)
+    #body = re.sub(r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))([\|].*)?\]\]', r'![\1](/images/\1)', body)
+
+    body = re.sub(r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]', r'![](/images/\1)', body)
+
 
     return new_fm + body
 
