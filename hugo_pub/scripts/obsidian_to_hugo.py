@@ -4,6 +4,10 @@ import re
 import datetime
 from pathlib import Path
 
+def sanitize_filename(filename):
+    return re.sub(r'\s+', '_', filename)  # 공백 → 언더스코어
+
+
 def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     """Obsidian 마크다운 콘텐츠를 Hugo 형식으로 변환합니다."""
 
@@ -37,7 +41,12 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
 
     # --- Obsidian 링크 변환 ---
 
-    body = re.sub(r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]', r'![](/images/\1)', body)
+    #body = re.sub(r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]', r'![](/images/\1)', body)
+
+    body = re.sub(
+    r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]', 
+    lambda m: f'![](/images/{sanitize_filename(m.group(1))})', body
+    )
 
     # [[wikilink]] -> [wikilink]({{< ref "wikilink.md" >}})
     body = re.sub(r'\[\[([^\]|#]+)(?:\|[^\\\]]+)?(?:#[^\\]+)?\]\]', r'[\1]({{< ref "\1.md" >}})', body)
