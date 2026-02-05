@@ -49,17 +49,17 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
 def main():
     """스크립트의 메인 실행 함수"""
     # 스크립트 파일의 위치를 기준으로 경로 설정
-    # /Users/1002207/obsidian_pub/hugo_pub/scripts -> /Users/1002207/obsidian_pub
-    # project_root = Path(__file__).parent.parent.parent
+    # ~/obsidian_pub/hugo_pub/scripts -> /Users/1002207/obsidian_pub
+    project_root = Path(__file__).parent.parent.parent
     
-    # source_dir = project_root / "hugo_pub" / "public"
-    # dest_dir = project_root / "hugo_site" / "content" / "posts"
-
-
-    project_root = Path(__file__).parent.parent.parent.parent
-    
-    source_dir = project_root / "obsidian_pub" / "hugo_pub" / "public"
+    source_dir = project_root / "hugo_pub" / "public"
     dest_dir = project_root / "hugo_site" / "content" / "posts"
+
+    ## Local Test용
+    #project_root = Path(__file__).parent.parent.parent.parent
+    #
+    #source_dir = project_root / "obsidian_pub" / "hugo_pub" / "public"
+    #dest_dir = project_root / "hugo_site" / "content" / "posts"
 
 
     # 대상 디렉토리가 없으면 생성

@@ -11,14 +11,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: python-version: '3.12'
+
       # (중간 생략) Obsidian 파일을 hugo_site/content/posts로 옮기고 변환하는 과정 진행
       # 1. 파일 이동 및 내용 변환 
       - name: Transform Obsidian to Hugo
         run: |
           # 변환 로직을 담은 스크립트 실행 또는 직접 커맨드 입력
           # 예: obsidian/ 폴더 내 모든 .md 파일을 content/posts/로 복사
-          mkdir -p hugo_site/content/posts
-          cp -r hugo_pub/public/* hugo_site/content/posts/
+          # mkdir -p hugo_site/content/posts
+          # cp -r hugo_pub/public/* hugo_site/content/posts/
+
+          python hugo_pub/scripts/obsidian_to_hugo.py
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
