@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Template/T_hugo.md",
+                "file": "public/h1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "T_hugo"
+              "title": "h1"
             }
           }
         ]
@@ -174,6 +174,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:빠른 전환기 열기": false,
       "graph:그래프 뷰 열기": false,
       "canvas:새 캔버스 만들기": false,
@@ -185,8 +186,10 @@
   },
   "active": "38084e0c17581711",
   "lastOpenFiles": [
-    "public/h1.md",
+    "무제4.md",
+    "public/h2.md",
     "Template/T_hugo.md",
+    "public/h1.md",
     "test1.md",
     "wel!.md",
     "Template",
