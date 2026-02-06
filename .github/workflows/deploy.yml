@@ -27,9 +27,19 @@ jobs:
           # cp -r hugo_pub/public/* hugo_site/content/posts/
 
           #이미지 이동
-          mkdir -p hugo_site/static/images
-          cp -r hugo_pub/images/* hugo_site/static/images/
+          #mkdir -p hugo_site/static/images
+          #cp -r hugo_pub/images/* hugo_site/static/images/
 
+          mkdir -p hugo_site/static/images
+          find hugo_pub/images/ -type f \( -iname "*.jpg" -o -iname "*.png" \) -print0 |
+          while IFS= read -r -d '' f; do
+            base=$(basename "$f")
+            new_name=${base// /_}
+            cp "$f" "hugo_site/static/images/$new_name"
+          done
+
+
+      
           python hugo_pub/scripts/obsidian_to_hugo.py
 
       - name: Setup Hugo
