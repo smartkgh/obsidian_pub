@@ -3,6 +3,7 @@ title: text conversion
 date: 2026-02-06
 categories:
   - Tech
+  - Load
 draft: false
 tags:
   - ai

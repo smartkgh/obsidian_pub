@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "public/text conversion.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",

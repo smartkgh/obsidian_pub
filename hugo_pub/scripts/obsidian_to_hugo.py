@@ -73,8 +73,22 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     data['title'] = data.get('title', file_path.stem)
     data['date'] = data.get('date', datetime.datetime.fromtimestamp(file_path.stat().st_mtime))
     data['draft'] = data.get('draft', False)
-    data['categories'] = data.get('categories',"")
-    data['tags'] = data.get('tags',"")
+    # data['categories'] = data.get('categories',"")
+    # data['tags'] = data.get('tags',"")
+
+    for key in ['categories', 'tags']:
+        if key in data:
+            # 데이터가 문자열('Tech')이면 리스트(['Tech'])로 강제 변환
+            if isinstance(data[key], str):
+                # 쉼표가 섞여 있을 수도 있으니 분리 처리
+                data[key] = [v.strip() for v in data[key].split(',') if v.strip()]
+            
+            # 만약 리스트도 아니고 문자열도 아닌 이상한 값(None 등)이면 빈 리스트로 초기화
+            elif not isinstance(data[key], list):
+                data[key] = []
+        else:
+            # 키가 아예 없으면 빈 리스트 생성 (Hugo 에러 방지)
+            data[key] = []
 
     # 4. YAML을 다시 문자열로 변환 (Hugo 스타일로 저장)
     # allow_unicode=True는 한글 깨짐 방지
