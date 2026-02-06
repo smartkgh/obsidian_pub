@@ -1,8 +1,11 @@
 ---
 title: text conversion
-date: 2026-02-05
+date: 2026-02-06
 categories:
+  - Tech
 draft: false
+tags:
+  - ai
 ---
 
 local file link [[h2]]  
