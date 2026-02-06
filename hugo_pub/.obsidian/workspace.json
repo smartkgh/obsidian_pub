@@ -29,7 +29,7 @@
               "state": {
                 "file": "public/text conversion.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "text conversion"

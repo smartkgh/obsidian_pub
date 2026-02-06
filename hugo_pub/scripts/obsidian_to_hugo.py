@@ -11,31 +11,47 @@ def sanitize_filename(filename):
 def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     """Obsidian 마크다운 콘텐츠를 Hugo 형식으로 변환합니다."""
 
-    # --- Frontmatter 처리 ---
-    frontmatter = {
-        "title": f'"{file_path.stem}" ',
-        "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
-        "draft": "false",
-    }
-    
-    # 기존 frontmatter 추출 및 업데이트
+  frontmatter = {
+    "title": f'"{file_path.stem}"',
+    "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
+    "draft": "false",
+    "categories": [], # 리스트로 초기화
+    "tags": []       # 리스트로 초기화
+ }
+
+    # 기존 frontmatter 추출
     fm_match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if fm_match:
         existing_fm_str = fm_match.group(1)
-        # 간단한 key: value 파싱
         for line in existing_fm_str.split('\n'):
             if ':' in line:
                 key, *value = line.split(':', 1)
                 key = key.strip()
                 val = value[0].strip()
-                if key and val:
+                
+                # 리스트 형태 파싱 (예: ["A", "B"] 또는 [A, B])
+                if key in ["categories", "tags"]:
+                    # 대괄호와 따옴표 제거 후 쉼표로 분리
+                    val_clean = val.strip("[]").replace('"', '').replace("'", "")
+                    frontmatter[key] = [v.strip() for v in val_clean.split(',') if v.strip()]
+                else:
                     frontmatter[key] = val
-        # 기존 frontmatter를 내용에서 제거
+        
         content = content[fm_match.end():]
 
-    # 새로운 frontmatter 생성
-    new_fm_lines = [f"{key}: {value}" for key, value in frontmatter.items()]
+    # 새로운 frontmatter 생성 (Hugo 호환 형식)
+    new_fm_lines = []
+    for key, value in frontmatter.items():
+        if isinstance(value, list):
+            # 리스트인 경우 ["A", "B"] 형식으로 저장
+            list_str = ", ".join([f'"{v}"' for v in value])
+            new_fm_lines.append(f"{key}: [{list_str}]")
+        else:
+            new_fm_lines.append(f"{key}: {value}")
+
     new_fm = "---\n" + "\n".join(new_fm_lines) + "\n---\n"
+
+    print(f"frontmatter: {new_fm}")
     
     body = content
 
