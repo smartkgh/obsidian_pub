@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "public/text conversion.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -197,6 +197,8 @@
   "active": "38084e0c17581711",
   "lastOpenFiles": [
     "public/text conversion 2.md",
+    "Template/T_hugo.md",
+    "public/text conversion.md",
     "images/20191009_142623.jpg",
     "images/Pasted image 20260205171925.png",
     "images",
@@ -204,11 +206,9 @@
     "scripts/obsidian_to_hugo.py",
     "scripts",
     "public/h1.md",
-    "public/text conversion.md",
     "무제4.md",
     "무제2.md",
     "public/h2.md",
-    "Template/T_hugo.md",
     "test1.md",
     "wel!.md",
     "Template",
