@@ -11,13 +11,13 @@ def sanitize_filename(filename):
 def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     """Obsidian 마크다운 콘텐츠를 Hugo 형식으로 변환합니다."""
 
-  frontmatter = {
+    frontmatter = {
     "title": f'"{file_path.stem}"',
     "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
     "draft": "false",
     "categories": [], # 리스트로 초기화
     "tags": []       # 리스트로 초기화
- }
+    }
 
     # 기존 frontmatter 추출
     fm_match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
