@@ -73,13 +73,13 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     data['title'] = data.get('title', file_path.stem)
     data['date'] = data.get('date', datetime.datetime.fromtimestamp(file_path.stat().st_mtime))
     data['draft'] = data.get('draft', False)
-    data['categories'] = data.get('categories')
-    data['tags'] = data.get('tags')
+    data['categories'] = data.get('categories',"")
+    data['tags'] = data.get('tags',"")
 
     # 4. YAML을 다시 문자열로 변환 (Hugo 스타일로 저장)
     # allow_unicode=True는 한글 깨짐 방지
-    new_fm = yaml.dump(data, allow_unicode=True, default_flow_style=False)
-    final_content = "---\n" + new_fm + "---\n" 
+    new_fm_content = yaml.dump(data, allow_unicode=True, default_flow_style=False)
+    new_fm = "---\n" + new_fm_content + "---\n" 
 
     print(f"frontmatter: {new_fm}")
 
