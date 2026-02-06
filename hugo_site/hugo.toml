@@ -12,10 +12,10 @@ followSymlinks = true
     url = "/categories/"     # 카테고리 전체 목록 페이지 주소
     weight = 10
 
-    identifier: "tags"
-    name: "tags"
-    url: "/tags/"
-    weight: 20
+    identifier= "tags"
+    name ="tags"
+    url= "/tags/"
+    weight= 20
 
 
 [taxonomies]
