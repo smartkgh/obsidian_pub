@@ -3,5 +3,6 @@
   "newFileFolderPath": "hugo_pub",
   "userIgnoreFilters": [
     "hugo_site/*"
-  ]
+  ],
+  "attachmentFolderPath": "hugo_pub/images"
 }
