@@ -17,6 +17,10 @@ jobs:
         with: 
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+
       # (중간 생략) Obsidian 파일을 hugo_site/content/posts로 옮기고 변환하는 과정 진행
       # 1. 파일 이동 및 내용 변환 
       - name: Transform Obsidian to Hugo
@@ -39,7 +43,7 @@ jobs:
           done
 
 
-      
+
           python hugo_pub/scripts/obsidian_to_hugo.py
 
       - name: Setup Hugo

@@ -1,6 +1,7 @@
 
 import os
 import re
+import yaml
 import datetime
 from pathlib import Path
 
@@ -11,49 +12,80 @@ def sanitize_filename(filename):
 def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     """Obsidian 마크다운 콘텐츠를 Hugo 형식으로 변환합니다."""
 
-    frontmatter = {
-    "title": f'"{file_path.stem}"',
-    "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
-    "draft": "false",
-    "categories": [], # 리스트로 초기화
-    "tags": []       # 리스트로 초기화
-    }
+    # frontmatter = {
+    # "title": f'"{file_path.stem}"',
+    # "date": datetime.datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
+    # "draft": "false",
+    # "categories": [], # 리스트로 초기화
+    # "tags": []       # 리스트로 초기화
+    # }
 
-    # 기존 frontmatter 추출
+    # # 기존 frontmatter 추출
+    # fm_match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+    # if fm_match:
+    #     existing_fm_str = fm_match.group(1)
+    #     for line in existing_fm_str.split('\n'):
+    #         if ':' in line:
+    #             key, *value = line.split(':', 1)
+    #             key = key.strip()
+    #             val = value[0].strip()
+                
+    #             # 리스트 형태 파싱 (예: ["A", "B"] 또는 [A, B])
+    #             if key in ["categories", "tags"]:
+    #                 # 대괄호와 따옴표 제거 후 쉼표로 분리
+    #                 val_clean = val.strip("[]").replace('"', '').replace("'", "")
+    #                 frontmatter[key] = [v.strip() for v in val_clean.split(',') if v.strip()]
+    #             else:
+    #                 frontmatter[key] = val
+        
+    #     content = content[fm_match.end():]
+
+    # # 새로운 frontmatter 생성 (Hugo 호환 형식)
+    # new_fm_lines = []
+    # for key, value in frontmatter.items():
+    #     if isinstance(value, list):
+    #         # 리스트인 경우 ["A", "B"] 형식으로 저장
+    #         list_str = ", ".join([f'"{v}"' for v in value])
+    #         new_fm_lines.append(f"{key}: [{list_str}]")
+    #     else:
+    #         new_fm_lines.append(f"{key}: {value}")
+
+    # new_fm = "---\n" + "\n".join(new_fm_lines) + "\n---\n"
+
+
+    # 1. 기존 content에서 Frontmatter 추출 및 분리
     fm_match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+
     if fm_match:
         existing_fm_str = fm_match.group(1)
-        for line in existing_fm_str.split('\n'):
-            if ':' in line:
-                key, *value = line.split(':', 1)
-                key = key.strip()
-                val = value[0].strip()
-                
-                # 리스트 형태 파싱 (예: ["A", "B"] 또는 [A, B])
-                if key in ["categories", "tags"]:
-                    # 대괄호와 따옴표 제거 후 쉼표로 분리
-                    val_clean = val.strip("[]").replace('"', '').replace("'", "")
-                    frontmatter[key] = [v.strip() for v in val_clean.split(',') if v.strip()]
-                else:
-                    frontmatter[key] = val
+        content_body = content[fm_match.end():] # 본문만 따로 저장
         
-        content = content[fm_match.end():]
+        # 2. YAML 파서로 안전하게 읽기 (여러 줄 리스트도 자동 처리됨)
+        try:
+            data = yaml.load(existing_fm_str, Loader=yaml.FullLoader)
+        except Exception:
+            data = {}
+    else:
+        data = {}
+        content_body = content
 
-    # 새로운 frontmatter 생성 (Hugo 호환 형식)
-    new_fm_lines = []
-    for key, value in frontmatter.items():
-        if isinstance(value, list):
-            # 리스트인 경우 ["A", "B"] 형식으로 저장
-            list_str = ", ".join([f'"{v}"' for v in value])
-            new_fm_lines.append(f"{key}: [{list_str}]")
-        else:
-            new_fm_lines.append(f"{key}: {value}")
+    # 3. 데이터 업데이트
+    data['title'] = data.get('title', file_path.stem)
+    data['date'] = data.get('date', datetime.datetime.fromtimestamp(file_path.stat().st_mtime))
+    data['draft'] = data.get('draft', False)
+    data['categories'] = data.get('categories')
+    data['tags'] = data.get('tags')
 
-    new_fm = "---\n" + "\n".join(new_fm_lines) + "\n---\n"
+    # 4. YAML을 다시 문자열로 변환 (Hugo 스타일로 저장)
+    # allow_unicode=True는 한글 깨짐 방지
+    new_fm = yaml.dump(data, allow_unicode=True, default_flow_style=False)
+    final_content = "---\n" + new_fm + "---\n" 
 
     print(f"frontmatter: {new_fm}")
+
+
     
-    body = content
+    body = content_body
 
     # --- Obsidian 링크 변환 ---
 
