@@ -6,7 +6,9 @@ import datetime
 import urllib.parse
 from pathlib import Path
 
-
+# 1. 파일명 정화 함수 (오류 해결 지점)
+def sanitize_filename(filename):
+    return re.sub(r'[\\/*?:"<>|]', '_', filename)
 
 def replace_func(match):
     code = match.group(1).strip()
