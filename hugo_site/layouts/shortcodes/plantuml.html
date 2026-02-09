@@ -1,0 +1,4 @@
+<div class="plantuml">
+  {{- $url := printf "https://www.plantuml.com/plantuml/svg/~h%s" (.Inner | htmlEscape) -}}
+  <img src="{{ $url }}" alt="PlantUML Diagram" style="background-color: white; padding: 10px; border-radius: 4px;">
+</div>

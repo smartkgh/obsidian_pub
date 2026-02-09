@@ -112,6 +112,12 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
 
     # [[wikilink]] -> [wikilink]({{< ref "wikilink.md" >}})
     body = re.sub(r'\[\[([^\]|#]+)(?:\|[^\\\]]+)?(?:#[^\\]+)?\]\]', r'[\1]({{< ref "\1.md" >}})', body)
+
+
+    pattern = r"```plantuml\s*([\s\S]*?)\s*```"
+    replacement = r"{{< plantuml >}}\n\1\n{{< /plantuml >}}"
+
+    body = re.sub(pattern, replacement, body)
     
     # --- Obsidian 이미지/첨부파일 변환 ---
     # ![[image.png]] -> ![image.png](/images/image.png)
