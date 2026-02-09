@@ -1,5 +1,4 @@
 <div class="plantuml">
-    {{- $raw := .Inner | safeHTML -}}
-    {{- $url := printf "https://www.plantuml.com/plantuml/svg/%s" $raw -}}
-    <img src="{{ $url }}" alt="PlantUML Diagram" style="background: white;">
+    {{- $url := printf "https://www.plantuml.com/plantuml/svg/~h%s" .Inner -}}
+    <img src="{{ $url }}" alt="PlantUML Diagram" style="background: white; padding: 10px;">
 </div>

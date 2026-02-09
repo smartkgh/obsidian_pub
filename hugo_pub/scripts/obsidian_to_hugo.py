@@ -24,9 +24,10 @@ def convert_plantuml(body):
         
         # 1. PlantUML 코드를 URL에 안전한 형태로 인코딩 (한글, 특수문자 처리)
         encoded_code = urllib.parse.quote(code)
-        
+        hex_code = code.encode('utf-8').hex()
+
         # 2. Hugo Shortcode 형식으로 반환
-        return f"{{{{< plantuml >}}}}{encoded_code}{{{{< /plantuml >}}}}"
+        return f"{{{{< plantuml >}}}}{hex_code}{{{{< /plantuml >}}}}"
 
     # 정규표현식 패턴
     pattern = r"```plantuml\s*([\s\S]*?)\s*```"
