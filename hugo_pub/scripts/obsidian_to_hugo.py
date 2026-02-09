@@ -3,10 +3,34 @@ import os
 import re
 import yaml
 import datetime
+import urllib.parse
 from pathlib import Path
 
-def sanitize_filename(filename):
-    return re.sub(r'\s+', '_', filename)  # 공백 → 언더스코어
+
+
+def replace_func(match):
+    code = match.group(1).strip()
+    # PlantUML 코드를 URL 세이프하게 인코딩
+    encoded_code = urllib.parse.quote(code)
+    return f"{{{{< plantuml >}}}}{encoded_code}{{{{< /plantuml >}}}}"
+
+def convert_plantuml(body):
+    # 매치된 객체(match)를 받아서 처리하는 내부 함수
+    def replace_with_encoded_plantuml(match):
+        # match.group(1)은 ```plantuml 뒷부분부터 ``` 앞부분까지의 내용입니다.
+        code = match.group(1).strip()
+        
+        # 1. PlantUML 코드를 URL에 안전한 형태로 인코딩 (한글, 특수문자 처리)
+        encoded_code = urllib.parse.quote(code)
+        
+        # 2. Hugo Shortcode 형식으로 반환
+        return f"{{{{< plantuml >}}}}{encoded_code}{{{{< /plantuml >}}}}"
+
+    # 정규표현식 패턴
+    pattern = r"```plantuml\s*([\s\S]*?)\s*```"
+    
+    # re.sub에 함수(replace_with_encoded_plantuml)를 전달하여 변환 실행
+    return re.sub(pattern, replace_with_encoded_plantuml, body)
 
 
 def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
@@ -117,7 +141,7 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     pattern = r"```plantuml\s*([\s\S]*?)\s*```"
     replacement = r"{{< plantuml >}}\n\1\n{{< /plantuml >}}"
 
-    body = re.sub(pattern, replacement, body)
+    body = convert_plantuml(body)
 
     print(f"body: {body}")
     
