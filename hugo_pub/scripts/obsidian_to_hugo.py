@@ -118,6 +118,8 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     replacement = r"{{< plantuml >}}\n\1\n{{< /plantuml >}}"
 
     body = re.sub(pattern, replacement, body)
+
+    print(f"body: {body}")
     
     # --- Obsidian 이미지/첨부파일 변환 ---
     # ![[image.png]] -> ![image.png](/images/image.png)
