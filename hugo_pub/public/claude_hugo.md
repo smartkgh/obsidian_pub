@@ -5,7 +5,6 @@ draft: false
 description: "Claude Cowork와 Claude Code의 핵심 사용법을 정리한 가이드입니다."
 tags: ["claude", "AI", "anthropic", "cowork", "claude-code", "자동화", "개발도구"]
 categories: ["도구", "AI"]
-author: "안녕"
 weight: 1
 toc: true
 ---
