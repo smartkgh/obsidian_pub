@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "public/anyblock.md",
+                "file": "public/claude_hugo.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "anyblock"
+              "title": "claude_hugo"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "public/anyblock.md",
+                "file": "public/claude_hugo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "anyblock 의 백링크"
+              "title": "claude_hugo 의 백링크"
             }
           },
           {
@@ -210,8 +210,10 @@
   },
   "active": "3156a53c8bb560d8",
   "lastOpenFiles": [
-    "public/text conversion 2.md",
+    "public/claude.md",
     "public/anyblock.md",
+    "public/claude_hugo.md",
+    "public/text conversion 2.md",
     "public/text conversion.md",
     "public/h1.md",
     "public/h2.md",
