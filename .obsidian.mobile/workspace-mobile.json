@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hugo_pub/public/text conversion 2.md",
+                "file": "hugo_pub/public/text conversion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "text conversion 2"
+              "title": "text conversion"
+            }
+          },
+          {
+            "id": "9c8f2499ad40a7be",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "hugo_pub/이미지캡쳐.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "이미지캡쳐"
             }
           },
           {
@@ -35,7 +49,8 @@
               "title": "무제4"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,31 +196,38 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "33b7be3e886375e8",
+  "active": "9c8f2499ad40a7be",
   "lastOpenFiles": [
-    "hugo_pub/images/20191009_142623.jpg",
+    "hugo_pub/public/claude.md",
+    "hugo_pub/이미지캡쳐.md",
+    "hugo_pub/scripts/obsidian_to_hugo.py.bak",
+    "hugo_pub/scripts/__pycache__/obsidian_to_hugo.cpython-310.pyc",
+    "/hugo_site/layouts/shortcodes/callout.html",
+    "hugo_site/layouts/shortcodes/callout.html",
+    "/hugo_site/layouts/shortcodes",
+    "/hugo_site/layouts",
+    "/hugo_site/content/posts/claude_hugo.html",
+    "hugo_site/content/posts/claude_hugo.html",
+    "/hugo_site/content/posts",
+    "/hugo_site/content",
+    "/hugo_pub/public/claude.md",
     "hugo_pub/public/text conversion.md",
+    "/hugo_pub/public/anyblock.md",
+    "hugo_pub/public/anyblock.md",
+    "/hugo_pub/public/text conversion.md",
+    "/hugo_pub/public/h2.md",
+    "/hugo_pub/Template/T_hugo.md",
     "hugo_pub/public/text conversion 2.md",
-    "/hugo_pub/scripts/obsidian_to_hugo.py",
-    "/hugo_pub/scripts",
-    "/hugo_pub",
+    "hugo_pub/images/20191009_142623.jpg",
     "hugo_pub/public/h2.md",
     "hugo_site/content/post/text conversion.md",
     "hugo_site/content/post/h2.md",
     "hugo_site/content/post/h1.md",
-    "hugo_pub/scripts/obsidian_to_hugo.py",
     "hugo_pub/images/Pasted image 20260205171925.png",
     "/hugo_site/content/post/text conversion.md",
     "/hugo_site/content/post/h2.md",
     "/hugo_site/content/post/h1.md",
-    "/hugo_pub/public/text conversion.md",
-    "/hugo_pub/public",
     "/hugo_pub/images/Pasted image 20260205171925.png",
-    "hugo_pub/scripts",
-    "hugo_pub/images",
-    "/hugo_site/content/post",
-    "hugo_site/content/post",
-    "/hugo_site/content",
     "/hugo_pub/무제2.md",
     "hugo_pub/무제2.md",
     "hugo_pub/무제4.md",
@@ -219,15 +241,7 @@
     "hugo_site/themes/ananke/layouts/_partials/svg/new-window.svg",
     "hugo_site/themes/ananke/images/tn.png",
     "hugo_site/themes/ananke/images/screenshot.png",
-    "hugo_site/themes/ananke/docs/troubleshooting.md",
-    "hugo_site/themes/ananke/docs/installation/installation.md",
-    "hugo_site/themes/ananke/docs/installation/gohugo-module.md",
-    "hugo_site/themes/ananke/docs/installation/git-submodule.md",
-    "hugo_site/themes/ananke/docs/installation/_index.md",
-    "hugo_site/themes/ananke/docs/getting-started.md",
-    "hugo_site/themes/ananke/docs/customisation/styles.md",
     "hugo_site/themes/ananke/assets/ananke/socials/zhihu.svg",
-    "hugo_site/themes/ananke/assets/ananke/socials/youtube.svg",
-    "hugo_site/themes/ananke/assets/ananke/socials/yoast.svg"
+    "hugo_site/themes/ananke/assets/ananke/socials/youtube.svg"
   ]
 }
