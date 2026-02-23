@@ -36,124 +36,6 @@ def convert_plantuml(body):
     return re.sub(pattern, replace_with_encoded_plantuml, body)
 
 
-# ============================================================
-# [추가] Obsidian 전용 포맷 → Hugo 포맷 변환 함수들
-# ============================================================
-
-def convert_callouts(body: str) -> str:
-    """
-    Obsidian Callout 블록을 Hugo shortcode로 변환합니다.
-
-    Obsidian 형식:
-        > [!info] 제목
-        > 내용 줄 1
-        > 내용 줄 2
-
-    Hugo 변환 결과:
-        {{< callout type="info" title="제목" >}}
-        내용 줄 1
-        내용 줄 2
-        {{< /callout >}}
-
-    지원 타입: info, warning, tip, note, example, danger, success, question
-    """
-    # 첫 줄: > [!type] optional_title
-    # 이후 줄: > 내용 (연속된 blockquote 줄 전체)
-    pattern = re.compile(
-        r'^[ \t]*>\s*\[!(\w+)\][ \t]*([^\n]*)\n'  # 헤더 줄
-        r'((?:[ \t]*>[ \t]?[^\n]*\n?)*)',           # 내용 줄들
-        re.MULTILINE
-    )
-
-    def replace_callout(match):
-        callout_type  = match.group(1).lower()
-        title         = match.group(2).strip()
-        raw_content   = match.group(3)
-
-        # 각 내용 줄에서 맨 앞 '>' 및 선택적 공백 제거
-        content_lines = re.sub(r'^[ \t]*>[ \t]?', '', raw_content, flags=re.MULTILINE)
-        content_body  = content_lines.rstrip('\n')
-
-        if title:
-            header = f'{{{{< callout type="{callout_type}" title="{title}" >}}}}'
-        else:
-            header = f'{{{{< callout type="{callout_type}" >}}}}'
-
-        return f'{header}\n{content_body}\n{{{{< /callout >}}}}\n'
-
-    return pattern.sub(replace_callout, body)
-
-
-def convert_highlights(body: str) -> str:
-    """
-    Obsidian 하이라이트 마크업을 HTML <mark> 태그로 변환합니다.
-
-    Obsidian:  ==강조 텍스트==
-    Hugo 결과: <mark>강조 텍스트</mark>
-    """
-    return re.sub(r'==([^=\n]+)==', r'<mark>\1</mark>', body)
-
-
-def convert_internal_anchor_links(body: str) -> str:
-    """
-    Obsidian 내부 앵커 링크를 Hugo 표준 앵커 링크로 변환합니다.
-
-    Obsidian:  [[#섹션 이름]]  또는  [[#섹션 이름|표시 텍스트]]
-    Hugo 결과: [섹션 이름](#섹션-이름)  또는  [표시 텍스트](#섹션-이름)
-
-    Hugo/Goldmark anchor slug 규칙:
-      - 소문자 변환
-      - 공백 → 하이픈(-)
-      - 영숫자·한글·하이픈 외 문자 제거
-    """
-    def to_anchor_slug(text: str) -> str:
-        text = text.lower()
-        text = re.sub(r'[^\w\s가-힣-]', '', text)   # 특수문자 제거
-        text = re.sub(r'\s+', '-', text.strip())      # 공백 → 하이픈
-        return text
-
-    def replace_anchor(match):
-        section  = match.group(1).strip()
-        label    = (match.group(2) or section).strip()
-        slug     = to_anchor_slug(section)
-        return f'[{label}](#{slug})'
-
-    # [[#섹션명]] 또는 [[#섹션명|표시텍스트]]
-    pattern = r'\[\[#([^\]|]+)(?:\|([^\]]+))?\]\]'
-    return re.sub(pattern, replace_anchor, body)
-
-
-def extract_inline_tags(body: str, existing_tags: list) -> tuple[str, list]:
-    """
-    Obsidian 인라인 태그(#태그)를 본문에서 추출하여 frontmatter tags에 병합합니다.
-
-    동작:
-      1. 본문에서 #태그 패턴 탐지 (영문·한글·숫자·_·- 허용)
-      2. 새 태그를 existing_tags에 추가 (중복 제거)
-      3. 본문에서 해당 태그 문자열 제거
-      4. 태그만 있는 빈 줄은 정리
-
-    Returns:
-        (변환된 본문, 병합된 태그 리스트)
-    """
-    found_tags = re.findall(r'(?<!\S)#([a-zA-Z가-힣][a-zA-Z가-힣0-9_-]*)', body)
-
-    # 기존 태그와 병합 (소문자·중복 제거)
-    merged = list(existing_tags)
-    for tag in found_tags:
-        if tag not in merged:
-            merged.append(tag)
-
-    # 본문에서 인라인 태그 제거
-    cleaned_body = re.sub(r'(?<!\S)#([a-zA-Z가-힣][a-zA-Z가-힣0-9_-]*)', '', body)
-
-    # 태그 제거 후 공백만 남은 줄 정리
-    cleaned_body = re.sub(r'^\s*\n', '\n', cleaned_body, flags=re.MULTILINE)
-    cleaned_body = re.sub(r'\n{3,}', '\n\n', cleaned_body)
-
-    return cleaned_body, merged
-
-
 def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     """Obsidian 마크다운 콘텐츠를 Hugo 형식으로 변환합니다."""
 
@@ -227,7 +109,7 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
             if isinstance(data[key], str):
                 # 쉼표가 섞여 있을 수도 있으니 분리 처리
                 data[key] = [v.strip() for v in data[key].split(',') if v.strip()]
-
+            
             # 만약 리스트도 아니고 문자열도 아닌 이상한 값(None 등)이면 빈 리스트로 초기화
             elif not isinstance(data[key], list):
                 data[key] = []
@@ -235,18 +117,15 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
             # 키가 아예 없으면 빈 리스트 생성 (Hugo 에러 방지)
             data[key] = []
 
-    # [추가] 본문에서 Obsidian 인라인 태그 추출 → frontmatter tags에 병합
-    content_body, data['tags'] = extract_inline_tags(content_body, data.get('tags', []))
-
     # 4. YAML을 다시 문자열로 변환 (Hugo 스타일로 저장)
     # allow_unicode=True는 한글 깨짐 방지
     new_fm_content = yaml.dump(data, allow_unicode=True, default_flow_style=False)
-    new_fm = "---\n" + new_fm_content + "---\n"
+    new_fm = "---\n" + new_fm_content + "---\n" 
 
     print(f"frontmatter: {new_fm}")
 
 
-
+    
     body = content_body
 
     # --- Obsidian 링크 변환 ---
@@ -254,21 +133,13 @@ def convert_obsidian_to_hugo(content: str, file_path: Path) -> str:
     #body = re.sub(r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]', r'![](/images/\1)', body)
 
     body = re.sub(
-        r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]',
-        lambda m: f'![](/images/{sanitize_filename(m.group(1))})', body
+    r'!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|webp|svg))(?:\|\s*[^\]]*)*?\]\]', 
+    lambda m: f'![](/images/{sanitize_filename(m.group(1))})', body
     )
-
-    # [추가] [[#섹션명]] 내부 앵커 링크 변환 (wikilink 변환보다 먼저 처리)
-    body = convert_internal_anchor_links(body)
 
     # [[wikilink]] -> [wikilink]({{< ref "wikilink.md" >}})
     body = re.sub(r'\[\[([^\]|#]+)(?:\|[^\\\]]+)?(?:#[^\\]+)?\]\]', r'[\1]({{< ref "\1.md" >}})', body)
 
-    # [추가] Obsidian Callout 블록 변환 (wikilink 변환 이후 처리)
-    body = convert_callouts(body)
-
-    # [추가] ==하이라이트== → <mark>하이라이트</mark>
-    body = convert_highlights(body)
 
     pattern = r"```plantuml\s*([\s\S]*?)\s*```"
     replacement = r"{{< plantuml >}}\n\1\n{{< /plantuml >}}"

@@ -11,10 +11,14 @@
             "id": "461bb7480190ae22",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "public/claude.md",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "claude"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "public/claude.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "백링크"
+              "title": "claude 의 백링크"
             }
           },
           {
@@ -190,6 +195,9 @@
   },
   "active": "461bb7480190ae22",
   "lastOpenFiles": [
+    "scripts/__pycache__/obsidian_to_hugo.cpython-310.pyc",
+    "scripts/__pycache__",
+    "scripts/obsidian_to_hugo.py.bak",
     "hugo_site/content/posts/claude_hugo.html",
     "hugo_site/content/posts",
     "hugo_site/content",
@@ -212,7 +220,6 @@
     "무제4.md",
     "무제2.md",
     "wel!.md",
-    "Template",
-    "public"
+    "Template"
   ]
 }
