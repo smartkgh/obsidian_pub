@@ -1,0 +1,114 @@
+{{/*
+  callout shortcode
+  ─────────────────────────────────────────────────────────────────────────────
+  Obsidian > [!type] 블록을 Hugo 페이지에서 렌더링합니다.
+
+  파라미터:
+    type  (string) : callout 종류 — info | warning | tip | note |
+                     example | danger | success | question
+                     (기본값: "note")
+    title (string) : 헤더에 표시할 제목 (선택)
+
+  사용 예:
+    {{< callout type="info" title="알림" >}}
+    내용이 여기에 들어갑니다.
+    {{< /callout >}}
+  ─────────────────────────────────────────────────────────────────────────────
+*/}}
+
+{{ $type  := .Get "type"  | default "note" }}
+{{ $title := .Get "title" | default "" }}
+
+{{/* 타입별 아이콘 매핑 */}}
+{{ $icons := dict
+    "info"     "ℹ️"
+    "warning"  "⚠️"
+    "tip"      "💡"
+    "note"     "📝"
+    "example"  "📌"
+    "danger"   "🚨"
+    "success"  "✅"
+    "question" "❓"
+}}
+{{ $icon := index $icons $type | default "📝" }}
+
+<div class="callout callout-{{ $type }}">
+  <div class="callout-header">
+    <span class="callout-icon">{{ $icon }}</span>
+    {{ if $title }}
+    <span class="callout-title">{{ $title }}</span>
+    {{ else }}
+    <span class="callout-title">{{ $type | title }}</span>
+    {{ end }}
+  </div>
+  <div class="callout-body">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
+
+{{/* ─── 인라인 CSS (한 번만 렌더링되도록 scratch 활용) ─── */}}
+{{ if not (.Page.Scratch.Get "callout_css_loaded") }}
+{{ .Page.Scratch.Set "callout_css_loaded" true }}
+<style>
+.callout {
+  border-left: 4px solid #888;
+  border-radius: 4px;
+  margin: 1.25rem 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fafafa;
+}
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .55rem 1rem;
+  font-weight: 600;
+  font-size: .95em;
+}
+.callout-body {
+  padding: .6rem 1rem .8rem 1rem;
+  font-size: .95em;
+  line-height: 1.7;
+}
+.callout-body p:last-child { margin-bottom: 0; }
+
+/* ── 타입별 색상 ── */
+.callout-info     { border-color: #3b82f6; }
+.callout-info     .callout-header { background: #eff6ff; color: #1d4ed8; }
+
+.callout-warning  { border-color: #f59e0b; }
+.callout-warning  .callout-header { background: #fffbeb; color: #92400e; }
+
+.callout-tip      { border-color: #10b981; }
+.callout-tip      .callout-header { background: #ecfdf5; color: #065f46; }
+
+.callout-note     { border-color: #6b7280; }
+.callout-note     .callout-header { background: #f3f4f6; color: #374151; }
+
+.callout-example  { border-color: #8b5cf6; }
+.callout-example  .callout-header { background: #f5f3ff; color: #5b21b6; }
+
+.callout-danger   { border-color: #ef4444; }
+.callout-danger   .callout-header { background: #fef2f2; color: #991b1b; }
+
+.callout-success  { border-color: #22c55e; }
+.callout-success  .callout-header { background: #f0fdf4; color: #15803d; }
+
+.callout-question { border-color: #06b6d4; }
+.callout-question .callout-header { background: #ecfeff; color: #155e75; }
+
+/* ── 다크모드 대응 ── */
+@media (prefers-color-scheme: dark) {
+  .callout               { background: #1e1e1e; }
+  .callout-info          .callout-header { background: #1e3a5f; color: #93c5fd; }
+  .callout-warning       .callout-header { background: #451a03; color: #fcd34d; }
+  .callout-tip           .callout-header { background: #022c22; color: #6ee7b7; }
+  .callout-note          .callout-header { background: #1f2937; color: #d1d5db; }
+  .callout-example       .callout-header { background: #2e1065; color: #c4b5fd; }
+  .callout-danger        .callout-header { background: #450a0a; color: #fca5a5; }
+  .callout-success       .callout-header { background: #052e16; color: #86efac; }
+  .callout-question      .callout-header { background: #164e63; color: #67e8f9; }
+}
+</style>
+{{ end }}
