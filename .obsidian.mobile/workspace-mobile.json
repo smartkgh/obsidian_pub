@@ -207,10 +207,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "eeca4d8e19197615",
+  "active": "9c8f2499ad40a7be",
   "lastOpenFiles": [
-    "hugo_pub/public/claude.md",
+    "hugo_pub/Claude Cowork.md",
     "hugo_pub/이미지캡쳐.md",
+    "hugo_pub/public/claude.md",
     "hugo_pub/scripts/obsidian_to_hugo.py.bak",
     "hugo_pub/scripts/__pycache__/obsidian_to_hugo.cpython-310.pyc",
     "/hugo_site/layouts/shortcodes/callout.html",
