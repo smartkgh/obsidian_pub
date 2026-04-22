@@ -1,5 +1,9 @@
 {
   "pinned": [
-    "obsidian-git:commit-smart"
+    "obsidian-git:commit-smart",
+    "obsidian-git:pull",
+    "obsidian-git:commit-staged",
+    "obsidian-git:push2",
+    "obsidian-git:push"
   ]
 }
