@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "Mcp"
             }
-          },
-          {
-            "id": "aed7d43ee70e9775",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "무제.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "무제"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "무제.md",
+                "file": "AI/Mcp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "무제 의 백링크"
+              "title": "Mcp 의 백링크"
             }
           },
           {
@@ -205,13 +190,16 @@
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "bases:새 베이스 생성하기": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "qt-note-creator:QT 노트 생성": false
     }
   },
-  "active": "aed7d43ee70e9775",
+  "active": "d098c913e1c15c00",
   "lastOpenFiles": [
-    "Travel/지리산.md",
     "무제.md",
+    "QT/2026-05-13-QT.md",
+    "QT",
+    "Travel/지리산.md",
     "Travel/지리산2.md",
     "Travel",
     "AI/Playwright.md",
@@ -242,10 +230,8 @@
     "scripts/__pycache__",
     "scripts/obsidian_to_hugo.py.bak",
     "hugo_site/content/posts/claude_hugo.html",
-    "hugo_site/content/posts",
     "public/text conversion.md",
     "public/claude_hugo.md",
-    "public/anyblock.md",
     "images/20191009_142623.jpg",
     "images/Pasted image 20260205171925.png",
     "Pasted image 20260205171435.png"

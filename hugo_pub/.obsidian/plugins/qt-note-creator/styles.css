@@ -1,0 +1,65 @@
+/* ──────────────────────────────────────────────
+   QT Note Creator — styles.css
+   ────────────────────────────────────────────── */
+
+/* Modal container */
+.qt-modal {
+  padding: 8px 4px;
+}
+
+.qt-modal-header h2 {
+  margin: 0 0 16px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--text-normal);
+  letter-spacing: -0.01em;
+}
+
+/* Form area */
+.qt-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.qt-modal-form .setting-item {
+  border-top: none;
+  padding: 6px 0;
+}
+
+/* Buttons row */
+.qt-modal-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.qt-btn-cancel,
+.qt-btn-create {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s ease;
+}
+
+.qt-btn-cancel {
+  background: var(--background-modifier-border);
+  color: var(--text-muted);
+}
+
+.qt-btn-cancel:hover {
+  opacity: 0.75;
+}
+
+.qt-btn-create {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.qt-btn-create:hover {
+  opacity: 0.85;
+}
