@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "5a1c25445f460644",
+    "id": "9f9c359d74d10e66",
     "type": "split",
     "children": [
       {
-        "id": "17cf93869a15ccb6",
+        "id": "d8e98687e7adbdf4",
         "type": "tabs",
         "children": [
           {
-            "id": "65a3c13a8d0db463",
+            "id": "6eb61eee4c2476a7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Mcp.md",
+                "file": "hugo_pub/AI/Hermes/Hermes 멀티에이전트 추가 방법.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mcp"
+              "title": "Hermes 멀티에이전트 추가 방법"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "adde3824a8f34b31",
+    "id": "5fae1f318b75464b",
     "type": "split",
     "children": [
       {
-        "id": "409308431c7db84b",
+        "id": "634bae9a36456d06",
         "type": "tabs",
         "children": [
           {
-            "id": "d098c913e1c15c00",
+            "id": "f1105cc1dfe965dd",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "81583b61ef527bd0",
+            "id": "3ec488fb5b767484",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "6e15bff8924daf97",
+            "id": "5910ac44b1dd286b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,23 +78,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256.5
+    "width": 300
   },
   "right": {
-    "id": "360cf5fba590adf9",
+    "id": "7d6ea46f88eb67b4",
     "type": "split",
     "children": [
       {
-        "id": "c4df59d9ac236c21",
+        "id": "329ccb474326c6f9",
         "type": "tabs",
         "children": [
           {
-            "id": "f04b68d5ba0bed13",
+            "id": "a79b363537528b25",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/Mcp.md",
+                "file": "hugo_pub/Travel/지리산.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Mcp 의 백링크"
+              "title": "지리산 의 백링크"
             }
           },
           {
-            "id": "1cbdcfecade9324d",
+            "id": "0d2b2d6834dbb852",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "wel!.md",
+                "file": "hugo_pub/Travel/지리산.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "wel! 의 나가는 링크"
+              "title": "지리산 의 나가는 링크"
             }
           },
           {
-            "id": "c0ab8bb966a3a95f",
+            "id": "245cf0b38364f44b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +137,7 @@
             }
           },
           {
-            "id": "f41f2c2128038cbf",
+            "id": "cf8f386c2e498255",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -151,35 +151,26 @@
             }
           },
           {
-            "id": "7a77da571fdcddc9",
+            "id": "119f8a4abf5e65b6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "wel!.md",
+                "file": "hugo_pub/Travel/지리산.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "wel! 의 개요"
-            }
-          },
-          {
-            "id": "248ab80ce09c9ce9",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "advanced-tables-toolbar"
+              "title": "지리산 의 개요"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,51 +180,12 @@
       "daily-notes:오늘의 일일 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
-      "bases:새 베이스 생성하기": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "qt-note-creator:QT 노트 생성": false
+      "bases:새 베이스 생성하기": false
     }
   },
-  "active": "d098c913e1c15c00",
+  "active": "6eb61eee4c2476a7",
   "lastOpenFiles": [
-    "무제.md",
-    "QT/2026-05-13-QT.md",
-    "QT",
-    "Travel/지리산.md",
-    "Travel/지리산2.md",
-    "Travel",
-    "AI/Playwright.md",
-    "AI/Mcp.md",
-    "AI/General",
-    "AI",
-    "claude/이경란_소년들은자라서어디로가나.md",
-    "public/h1.md",
-    "claude",
-    "public/claude.md",
-    "books/서평_08_혼모노_성해나.md",
-    "books/best_eval.md",
-    "books/서평_01_소년이온다_한강.md",
-    "Claude Cowork.md",
-    "books/서평_03_82년생김지영_조남주.md",
-    "books/서평_04_아몬드_손원평.md",
-    "books/서평_09_살인자의기억법_김영하.md",
-    "books/서평_06_피프티피플_정세랑.md",
-    "books/서평_05_쇼코의미소_최은영.md",
-    "books/서평_02_채식주의자_한강.md",
-    "books/서평_07_계속해보겠습니다_황정은.md",
-    "books/서평_10_나목_박완서.md",
-    "books",
-    "test1.md",
-    "wel!.md",
-    "이미지캡쳐.md",
-    "scripts/__pycache__/obsidian_to_hugo.cpython-310.pyc",
-    "scripts/__pycache__",
-    "scripts/obsidian_to_hugo.py.bak",
-    "hugo_site/content/posts/claude_hugo.html",
-    "public/text conversion.md",
-    "public/claude_hugo.md",
-    "images/20191009_142623.jpg",
-    "images/Pasted image 20260205171925.png",
-    "Pasted image 20260205171435.png"
+    "hugo_pub/AI/Hermes/Hermes 멀티에이전트 추가 방법.md",
+    "hugo_pub/AI/Hermes"
   ]
 }
