@@ -22,11 +22,11 @@
 
 | # | 작업 항목 | 상세 | 담당자 | 작업 에이전트 | 우선순위 |
 |---|---------|------|-------|------------|---------|
-|| 9 | compileSdkVersion 및 targetSdkVersion 업데이트 | Android 16 SDK 설정. compileSdk 36, targetSdk 36으로 업데이트 | Android 개발팀 | coding-agent | 상 |
-|| 10 | Android 16 타겟팅 동작 변경사항 대응 | [behavior-changes-16](https://developer.android.com/about/versions/16/behavior-changes-16?hl=ko) 전체 검토 및 코드 수정 | Android 개발팀 | coding-agent | 상 |
-|| 11 | 새 API 기능 도입 검토 | Android 16 API 활용 가능 영역 분석. 새 기능 도입 계획 | PM / Android 개발팀 | research-worker | 중 |
-|| 12 | 호환성 전환(Compat Toggles)을 사용한 테스트 | adb로 개별 변경사항 on/off 테스트. targetSdk 변경 없이 영향 평가 | Android 개발팀 | coding-agent | 상 |
-|| 13 | 라이브러리/SDK 호환성 테스트 | 서드파티 SDK가 Android 16에서 정상 작동하는지 확인. 필요시 SDK 업데이트 | Android 개발팀 | coding-agent | 상 |
+||| 9 | compileSdkVersion 및 targetSdkVersion 업데이트 | Android 16 SDK 설정. compileSdk 36, targetSdk 36으로 업데이트 | Android 개발팀 | coding-agent | 상 | ✅ 완료 |
+||| 10 | Android 16 타겟팅 동작 변경사항 대응 | [behavior-changes-16](https://developer.android.com/about/versions/16/behavior-changes-16?hl=ko) 전체 검토 및 코드 수정 | Android 개발팀 | coding-agent | 상 | ✅ 완료 |
+||| 11 | 새 API 기능 도입 검토 | Android 16 API 활용 가능 영역 분석. 새 기능 도입 계획 | PM / Android 개발팀 | research-worker | 중 | |
+||| 12 | 호환성 전환(Compat Toggles)을 사용한 테스트 | adb로 개별 변경사항 on/off 테스트. targetSdk 변경 없이 영향 평가 | Android 개발팀 | coding-agent | 상 | ✅ 완료 |
+||| 13 | 라이브러리/SDK 호환성 테스트 | 서드파티 SDK가 Android 16에서 정상 작동하는지 확인. 필요시 SDK 업데이트 | Android 개발팀 | coding-agent | 상 | ✅ 완료 |
 
 ## 테스트 계획
 

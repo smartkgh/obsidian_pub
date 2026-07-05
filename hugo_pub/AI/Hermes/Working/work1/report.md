@@ -268,6 +268,120 @@ gantt
 - **푸시 결과**: 성공
 
 ### 7.4 다음 단계
-- 각 하위 태스크가 dispatcher에 의해 자동으로 실행됨
-- 각 agent 완료 후 result.md 업데이트 예정
-- 모든 Phase 완료 후 추가 푸시 및 report.md 최종 업데이트 예정
+|- 각 하위 태스크가 dispatcher에 의해 자동으로 실행됨
+|- 각 agent 완료 후 result.md 업데이트 예정
+|- 모든 Phase 완료 후 추가 푸시 및 report.md 최종 업데이트 예정
+
+---
+
+## 8. 테스트 계획 실행 결과 (t_bc9c0436)
+
+> **수행 Agent**: coding-agent | **수행일**: 2026-07-05
+
+### 8.1 테스트 항목별 결과
+
+| 테스트 | 항목 | 상태 | 산출물 |
+|-------|------|------|--------|
+| T1 | Android 16 에뮬레이터/실기기 테스트 | test-script.md 작성 완료 | 에뮬레이터 생성/앱 설치/기능 테스트 명령어 포함 |
+| T2 | 모든 앱 동작 변경사항 검증 | test-script.md 작성 완료 | Phase 1 변경사항별 ADB 검증 명령어 |
+| T3 | 비 SDK 인터페이스 테스트 | test-script.md 작성 완료 | StrictMode 설정 코드 + logcat 모니터링 |
+| T4 | 타겟팅 변경사항 검증 | test-script.md 작성 완료 | Compat Toggles CHANGE_ID별 enable/disable |
+| T5 | 라이브러리/SDK 호환성 테스트 | test-script.md 작성 완료 | 15개 주요 SDK 호환성 체크리스트 |
+
+### 8.2 주요 산출물
+
+- **test-script.md**: 완전한 Android 16 테스트 실행 스크립트 (13.8KB)
+  - 경로: `kanban/boards/os16/workspaces/t_9b3cf067/test-script.md`
+  - T1-T5 각각에 대한 상세 ADB 명령어, 설정 코드, 체크리스트 포함
+  - 라이브러리 호환성 테이블 (Firebase, Crashlytics, AdMob, Play Billing, Compose 등 15종)
+
+### 8.3 실행 제약사항
+
+- 현재 머신에 Android SDK/ADB/안드로이드 프로젝트가 구성되어 있지 않아 실제 에뮬레이터/디바이스 테스트는 미실행
+- 모든 ADB 명령어는 test-script.md에 준비되어 있으며, 안드로이드 개발 환경이 구성된 머신에서 즉시 실행 가능
+- 라이브러리/SDK 호환성 정보는 Android 16 공식 문서 기준으로 정리
+
+---
+
+## 9. Phase 2: 타겟팅 업데이트 결과 (t_63e41af0)
+
+> **수행 Agent**: coding-agent | **수행일**: 2026-07-05
+
+### 9.1 Task 9: compileSdkVersion 및 targetSdkVersion 업데이트
+
+Android 16 SDK 설정을 위한 요구사항 및 변경 방법을 정리했습니다.
+
+| 항목 | 요구사항 |
+|------|---------|
+| **Android Studio** | Meerkat \| 2024.3.1+ (하위 버전과 SDK 호환 불가) |
+| **AGP** | 8.9.0-rc01+ (AGP 업그레이드 어시스턴트 실행 권장) |
+| **compileSdk** | 36 |
+| **targetSdk** | 36 |
+
+**build.gradle 변경 예시:**
+```kotlin
+android {
+    compileSdk = 36
+    defaultConfig {
+        targetSdk = 36
+    }
+}
+```
+
+### 9.2 Task 10: Android 16 타겟팅 동작 변경사항 11종 분석
+
+| # | 변경사항 | 영향 영역 | 필수 대응 |
+|---|---------|----------|---------|
+| 1 | **Edge-to-Edge 강제 적용** | UI/전체 화면 | `windowOptOutEdgeToEdgeEnforcement` 제거 |
+| 2 | **뒤로 탐색 예측 의무화** | 탐색/키 이벤트 | `OnBackInvokedCallback` 마이그레이션 |
+| 3 | **elegant font API 지원 중단** | 텍스트 렌더링 | 복합 스크립트 레이아웃 조정 |
+| 4 | **scheduleAtFixedRate 최적화** | 작업 예약 | 1회로 제한된 누락 실행 영향 분석 |
+| 5 | **적응형 레이아웃 (대형 화면)** | 레이아웃/방향 | 고정 방향/크기 제한 제거 또는 `PROPERTY_COMPAT_ALLOW_RESTRICTED_RESIZABILITY` |
+| 6 | **건강/피트니스 권한 세분화** | 권한 | `BODY_SENSORS` → `READ_HEART_RATE` 등 |
+| 7 | **블루투스 연결 손실 인텐트** | 블루투스 | `ACTION_KEY_MISSING` / `ACTION_ENCRYPTION_CHANGE` 처리 |
+| 8 | **Intent Matching 강화** | 보안/인텐트 | `intentMatchingFlags="enforceIntentFilter"` |
+| 9 | **GPU syscall 필터링** | Mali GPU(Pixel 6~9) | SELinux 로그 모니터링 |
+| 10 | **로컬 네트워크 권한 (예고, 26Q2)** | 네트워크 | `RESTRICT_LOCAL_NETWORK` 선택 테스트 |
+| 11 | **앱 소유 사진 보호** | 미디어 | 사진 선택 도구 연동 |
+
+### 9.3 Task 12: 호환성 전환(Compat Toggles) 목록
+
+Android 16의 호환성 프레임워크 CHANGE_ID를 모두 정리했습니다.
+
+**SDK 36 타겟팅 시 기본 활성화되는 CHANGE_ID (2개):**
+| 이름 | CHANGE_ID | 설명 |
+|------|-----------|------|
+| STPE_SKIP_MULTIPLE_MISSED_PERIODIC_TASKS | 288912692 | scheduleAtFixedRate 누락 실행 1회 제한 |
+| UNIVERSAL_RESIZABLE_BY_DEFAULT | 357141415 | 600dp+ 대형 화면 방향/크기 제한 무시 |
+
+**주요 테스트용 CHANGE_ID 그룹 (30+개):**
+- **방향/크기 재정의** (7개): 265464455, 310816437, 266124927, 265451093, 265452344, 236283604, 332679525
+- **최소 가로세로비** (6개): 174042980, 180326787, 180326845, 203647190, 218959984, 325586858
+- **크기 조절** (2개): 174042936(FORCE_RESIZE_APP), 181146395(FORCE_NON_RESIZE_APP)
+- **카메라 호환성** (3개): 314961188, 191514214, 189229956
+- **HEVC** (2개): 174228127(enable), 174227820(disable)
+- **화면 축소** (12개): 168419799(DOWNSCALED 게이트키퍼), 273564678(INVERSE), DOWNSCALE_30~90
+- **메모리 디버깅** (4개): 145634846(GWP-ASAN), 145772972(MTE ASYNC), 177438394(MTE SYNC), 178038272(HEAP_ZERO_INIT)
+
+### 9.4 Task 13: 라이브러리/SDK 호환성 점검
+
+주요 서드파티 SDK에 대한 Android 16 호환성 점검 항목을 정리했습니다.
+
+| SDK 카테고리 | 점검 항목 |
+|-----------|---------|
+| **Firebase / Crashlytics** | compileSdk 36 빌드, 비 SDK 인터페이스 로그 확인 |
+| **광고 SDK (AdMob 등)** | targetSdk 36에서 광고 게재/수익화 정상 동작 |
+| **결제 SDK (Play Billing)** | 최신 버전으로 업데이트 필요 가능성 |
+| **네트워킹 (OkHttp/Retrofit/Cronet)** | 16KB 페이지 크기 호환성 |
+| **이미지 (Glide/Coil/Picasso)** | 네이티브 메모리 정렬 확인 |
+| **Compose** | BOM 버전 확인, Compose 1.7+ 권장 |
+| **WorkManager** | JobScheduler 할당량 최적화(Phase 1) 영향 확인 |
+| **DI (Hilt/Dagger/Koin)** | 컴파일 SDK 변경 이슈 없음 |
+| **블루투스 SDK** | 새 인텐트 기반 결합 손실 처리 |
+
+### 9.5 산출물
+
+| 파일 | 경로 | 설명 |
+|------|------|------|
+| `result.md` | `kanban/boards/os16/workspaces/t_9b3cf067/result.md` | Phase 2 상세 분석 보고서 (17KB) |
+| `result.md` | 본 저장소 `work1/result.md` (Section 6) | 작업 요약 기록 |
