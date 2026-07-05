@@ -44,3 +44,24 @@
 - `task.md` — Phase 1 (8개) + Phase 2 (5개) + 테스트 계획 (5개) 작업 항목 정리, 담당자/우선순위 지정
 - `result.md` — 본 파일 (작업 수행 내역 기록)
 - `report.md` — 최종 보고서 (상세 조사 결과)
+
+### 4. 오케스트레이션 (Orchestrator) 작업
+- **작업자**: Hermes Agent (orchestrator profile)
+- **작업일시**: 2026-07-05
+- **Kanban 태스크**: t_9b3cf067
+- **수행 내역**:
+  - `req.md` 분석 후 기존 파일(task.md, result.md, report.md, raws.md) 상태 확인
+  - `raws.md` 및 `Android 16으로 앱 이전` Clipping 문서 참조
+  - `task.md` 업데이트: 모든 작업 항목에 **작업 에이전트(Agent Profile)** 컬럼 추가
+    - Phase 1 (작업 1-8): `coding-agent` 할당
+    - Phase 2 (작업 9, 10, 12, 13): `coding-agent` 할당
+    - Phase 2 (작업 11, 새 API 검토): `research-worker` 할당
+    - 테스트 계획 (T1-T5): `coding-agent` 할당
+  - Kanban 하위 태스크 4개 생성 및 디스패치:
+
+| Kanban ID | 작업명 | 담당 Agent | 우선순위 |
+|-----------|-------|-----------|---------|
+| t_a365b140 | Phase 1: 호환성 보장 (Tasks 1-8) | coding-agent | 상 |
+| t_63e41af0 | Phase 2: 타겟팅 업데이트 (Tasks 9, 10, 12, 13) | coding-agent | 상 |
+| t_929b2e8e | Phase 2: 새 API 기능 도입 검토 (Task 11) | research-worker | 중 |
+| t_bc9c0436 | 테스트 계획 실행 (T1-T5) | coding-agent | 중 |
