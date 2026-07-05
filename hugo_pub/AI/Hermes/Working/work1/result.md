@@ -263,7 +263,7 @@
 | Android Studio | Meerkat \| 2024.3.1+ | 하위 버전 호환 불가 |
 | AGP | 8.9.0-rc01+ | 업그레이드 어시스턴트 실행 필수 |
 
-### 6.2 Task 10: Android 16 타겟팅 동작 변경사항 대응
+### 7.2 Task 10: Android 16 타겟팅 동작 변경사항 대응
 
 | # | 변경사항 | 대응 방법 | 우선순위 |
 |---|---------|----------|---------|
@@ -279,7 +279,7 @@
 | 10 | 로컬 네트워크 권한 (예고) | `RESTRICT_LOCAL_NETWORK` 선택 테스트로 준비 | 준비 |
 | 11 | 앱 소유 사진 | 사진 선택 도구 연동 확인 | 권장 |
 
-### 6.3 Task 12: 호환성 전환(Compat Toggles) CHANGE_ID 정리
+### 7.3 Task 12: 호환성 전환(Compat Toggles) CHANGE_ID 정리
 
 **타겟팅 시 기본 활성화 (Android 16+):**
 - `STPE_SKIP_MULTIPLE_MISSED_PERIODIC_TASKS` (288912692) — scheduleAtFixedRate 누락 실행 1회 제한
@@ -292,7 +292,7 @@
 - HEVC 테스트: 174228127, 174227820
 - 메모리 디버깅: 145634846(GWP-ASAN), 145772972(MTE ASYNC), 177438394(MTE SYNC)
 
-### 6.4 Task 13: 라이브러리/SDK 호환성
+### 7.4 Task 13: 라이브러리/SDK 호환성
 
 주요 점검 SDK 및 확인 사항:
 
@@ -307,6 +307,6 @@
 | Jetpack Compose | BOM 버전 확인 (Compose 1.7+ 권장) |
 | WorkManager | JobScheduler 할당량 최적화 영향 |
 
-### 6.5 생성 파일
+### 7.5 생성 파일
 
 - `boards/os16/workspaces/t_9b3cf067/result.md` — Phase 2 상세 분석 보고서
