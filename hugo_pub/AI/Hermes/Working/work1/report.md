@@ -385,3 +385,68 @@ Android 16의 호환성 프레임워크 CHANGE_ID를 모두 정리했습니다.
 |------|------|------|
 | `result.md` | `kanban/boards/os16/workspaces/t_9b3cf067/result.md` | Phase 2 상세 분석 보고서 (17KB) |
 | `result.md` | 본 저장소 `work1/result.md` (Section 6) | 작업 요약 기록 |
+
+---
+
+## 10. Phase 2: 새 API 기능 도입 검토 (Task 11) — 연구 결과
+
+> **수행 Agent**: research-worker | **수행일**: 2026-07-05
+> **API Diff 기준**: API 35 → API 36 (전체 차이율 약 4.64%)
+> **데이터 출처**: [API Diff Report](https://developer.android.com/sdk/api_diff/36/changes), [Android 16 Features](https://developer.android.com/about/versions/16/features)
+
+### 10.1 API 36 전체 통계
+
+| 유형 | 추가 | 변경 | 삭제 | 합계 |
+|------|------|------|------|------|
+| 패키지 | 18 | 73 | 0 | 91 |
+| 클래스/인터페이스 | 137 | 280 | 0 | 417 |
+| 생성자 | 21 | 3 | 0 | 24 |
+| 메서드 | 407 | 65 | 5 | 477 |
+| 필드 | 519 | 56 | 0 | 575 |
+| **합계** | **1,102** | **477** | **5** | **1,584** |
+
+### 10.2 신규 패키지 18개
+
+| 패키지 | 카테고리 | 설명 | 앱 적용성 |
+|--------|---------|------|---------|
+| `android.app.appfunctions` | 사용자 환경 | 앱 기능 프레임워크 (어시스턴트/외부 앱 호출) | 중 |
+| `android.app.jank` | 사용자 환경 | Jank(끊김) 모니터링 | **상** |
+| `android.app.wallpaper` | 사용자 환경 | 라이브 배경화면 콘텐츠 API | 하 |
+| `android.media.quality` | 미디어 | 표준화된 사진/음질 프레임워크 | 중 |
+| `android.media.tv.ad` | 미디어 | TV 광고 API | 하 |
+| `android.os.flagging` | 시스템 | 기능 플래그 관리 (시스템용) | 하 |
+| `android.os.vibrator` | 시스템 | 진동 제어 향상 (햅틱 곡선) | 중 |
+| `android.ranging` (6개) | 연결 | Ranging 거리 측정 통합 API | 중 |
+| `android.security.advancedprotection` | 보안 | 고급 보호 API | **상** |
+| `android.telephony.satellite` | 연결 | 위성 통신 API | 중 |
+| `android.service.settings.preferences` | 기타 | 시스템 설정 환경설정 API | 중 |
+| `android.widget.photopicker` | 기타 | 임베디드 사진 선택기 | **상** |
+
+### 10.3 도입 권장 순위
+
+| 순위 | 기능 | API | 우선순위 | 난이도 | 기대 효과 |
+|------|------|-----|---------|--------|----------|
+| 1 | 진행 중심 알림 | `Notification.ProgressStyle` | **상** | 낮음 | 사용자 재참여↑, 진행 투명성↑ |
+| 2 | 접근성 API 확장 | Text Outline, 3-state CheckBox 등 | **상** | 낮음 | 포용성↑, 법적 준수 |
+| 3 | 사진 선택기 임베드 | `android.widget.photopicker` | **상** | 중간 | 권한 복잡성↓, 사용자 신뢰↑ |
+| 4 | ADPF 헤드룸 API | `getCpuHeadroom()` / `getGpuHeadroom()` | **중** | 중간 | 배터리/발열 ↓ |
+| 5 | Advanced Protection | `android.security.advancedprotection` | **중** | 중간 | 금융/민감 앱 보안↑ |
+| 6 | Rich Haptics | `android.os.vibrator` | **중** | 중간 | UX 차별화 |
+| 7 | App Functions | `android.app.appfunctions` | **중** | 중간 | 앱 간 연동↑ |
+| 8 | ARR / Jank 모니터링 | `hasArrSupport()` / `android.app.jank` | **중** | 낮음 | 성능 최적화 |
+| 9 | JobScheduler 인트로스펙션 | `getPendingJobReasonsHistory()` | **중** | 낮음 | 디버깅 효율↑ |
+| 10 | Ranging 통합 | `android.ranging` | **하** | 높음 | IoT/위치 서비스 |
+
+### 10.4 주요 발견사항
+
+- **진행 중심 알림**(`Notification.ProgressStyle`)은 가장 즉시 도입 가능한 기능으로, 배달/차량공유/운동/작업관리 앱에서 사용자 재참여율을 크게 향상시킬 수 있음
+- **사진 선택기 임베드**(`PhotoPicker`)는 `READ_MEDIA_IMAGES` 권한을 우회하여 사용자 신뢰도를 높이고 Google Play 정책 준수에도 유리
+- **18개 신규 패키지 중 가장 큰 변화는 Ranging**(6개 패키지)으로 UWB/BLE/Wi-Fi 기반 정밀 거리 측정을 표준화
+- **Health Connect**(27% 변경율)는 ACTIVITY_INTENSITY(WHO 기준) 및 FHIR 의료 기록 지원으로 건강/의료 앱 영향도 높음
+- **AppSearch**(15% 변경율)는 Boolean/Double 속성 및 임베딩 검색 지원으로 온디바이스 검색 인덱스 강화
+
+### 10.5 생성 파일
+
+| 파일 | 경로 | 설명 |
+|------|------|------|
+| `android16_new_api_report.md` | `kanban/boards/os16/workspaces/t_9b3cf067/` | 새 API 기능 도입 검토 상세 보고서 (15KB) |

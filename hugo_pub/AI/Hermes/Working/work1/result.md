@@ -248,7 +248,46 @@
 
 |---
 
-## 7. Phase 2: 타겟팅 업데이트 (t_63e41af0) — 작업 결과
+## 8. Phase 2: 새 API 기능 도입 검토 (t_929b2e8e) — 작업 결과
+
+- **작업자**: Hermes Agent (research-worker profile)
+- **작업일시**: 2026-07-05
+- **Kanban 태스크**: t_929b2e8e
+- **데이터 출처**: Android Developers 공식 API Diff Report (API 35→36), Android 16 Features 문서
+
+### 8.1 수행 내역
+
+1. Android 16 API Diff Report (https://developer.android.com/sdk/api_diff/36/changes) 분석
+   - 전체 API 차이율 약 4.64%, 총 1,584개 변경사항 확인
+   - 18개 신규 패키지, 137개 신규 클래스/인터페이스, 407개 신규 메서드, 519개 신규 필드
+2. Android 16 Features 페이지 상세 분석
+   - 진행 중심 알림, 리치 햅틱, ADPF 헤드룸 API, Ranging 통합 등 주요 기능 파악
+3. 앱 적용 가능 영역 식별 및 도입 우선순위 수립
+4. 도입 로드맵 제안 (4단계: 즉시→단기→중기→장기)
+
+### 8.2 주요 발견사항
+
+| 구분 | 내용 |
+|------|------|
+| **가장 큰 변화** | Ranging 통합 API (6개 신규 패키지), Health Connect (27% 변경율) |
+| **가장 권장 기능** | Notification.ProgressStyle, PhotoPicker 임베드, 접근성 API 확장 |
+| **가장 주목할 패키지** | android.app.jank (모든 앱 UI 성능 모니터링) |
+
+### 8.3 우선 도입 권장 순위
+
+| 순위 | 기능 | 우선순위 | 난이도 | 예상 효과 |
+|------|------|---------|--------|----------|
+| 1 | 진행 중심 알림 (Notification.ProgressStyle) | 상 | 낮음 | 사용자 재참여↑ |
+| 2 | 접근성 API 확장 | 상 | 낮음 | 포용성↑, 법적 준수 |
+| 3 | 사진 선택기 임베드 (PhotoPicker) | 상 | 중간 | 권한 복잡성↓ |
+| 4 | ADPF 헤드룸 API | 중 | 중간 | 배터리/발열↓ |
+| 5 | Advanced Protection | 중 | 중간 | 금융/민감 앱 보안↑ |
+
+### 8.4 생성 파일
+
+| 파일 | 경로 | 설명 |
+|------|------|------|
+| android16_new_api_report.md | boards/os16/workspaces/t_9b3cf067/ | 새 API 기능 도입 검토 상세 보고서 (15KB)
 
 - **작업자**: Hermes Agent (coding-agent profile)
 - **작업일시**: 2026-07-05
