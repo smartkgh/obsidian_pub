@@ -14,6 +14,7 @@
 
 ### 1. 자료 수집
 - `raws.md`에 있는 Android 16 Migration Guide (공식 문서) 수집
+- ㅇㅇㅇ
 - `Android 16으로 앱 이전` Clipping 문서 수집 및 분석
 - Android Developers 공식 문서 "모든 앱의 동작 변경사항" 상세 조회
 - 각 변경사항별 세부 내용, 영향도, 대응 방안 파악

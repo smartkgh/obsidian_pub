@@ -108,13 +108,13 @@ telegram:
 
 들여쓰기 계층:
 
-|키|칸 수|
-|---|---|
-|`extra:`|2|
-|`rich_messages:`, `dm_topics:`|4|
-|`- chat_id:`|6|
-|`topics:`|8|
-|`- name:`|10|
+| 키                              | 칸 수 | ㄹㅇㄹ |
+| ------------------------------ | --- | --- |
+| `extra:`                       | 2   |     |
+| `rich_messages:`, `dm_topics:` | 4   |     |
+| `- chat_id:`                   | 6   |     |
+| `topics:`                      | 8   |     |
+| `- name:`                      | 10  |     |
 
 ### 3-3. 적용
 
@@ -137,6 +137,8 @@ hermes gateway restart
 - `obra/superpowers` 묶음이 코딩 에이전트 강화용으로 가장 많이 추천됨.
 
 ### 4-2. 설치 명령
+
+
 
 ```bash
 hermes skills install skills-sh/obra/superpowers/test-driven-development
