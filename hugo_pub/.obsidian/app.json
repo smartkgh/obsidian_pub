@@ -1,5 +1,5 @@
 {
   "readableLineLength": false,
-  "attachmentFolderPath": "images",
+  "attachmentFolderPath": "./attachments",
   "safeMode": false
 }

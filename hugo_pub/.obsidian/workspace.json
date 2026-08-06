@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Mcp.md",
+                "file": "public/text conversion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mcp"
+              "title": "text conversion"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/Mcp.md",
+                "file": "public/text conversion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Mcp 의 백링크"
+              "title": "text conversion 의 백링크"
             }
           },
           {
@@ -194,8 +194,28 @@
       "qt-note-creator:QT 노트 생성": false
     }
   },
-  "active": "d098c913e1c15c00",
+  "active": "65a3c13a8d0db463",
   "lastOpenFiles": [
+    "public/claude.md",
+    "study/Obsidian-Quartz-Surge 파이프라인 구축.md",
+    "surge_public/text conversion 2.md",
+    "study",
+    "무제 폴더",
+    "surge_public/attachments/Pasted image 20260805164755.png",
+    "surge_public/attachments",
+    "images/Pasted image 20260205171925.png",
+    "surge_public/index.md",
+    "images/20191009_142623.jpg",
+    "surge_public/text conversion.md",
+    "public/text conversion.md",
+    "public/text conversion 2.md",
+    "public/h2.md",
+    "public/h1.md",
+    "public/anyblock.md",
+    "AI/창문형에어컨_추천.md",
+    "AI/Hermes/Working/work1/report.md",
+    "AI/Hermes/Working/work1/raws.md",
+    "AI/Mcp.md",
     "무제.md",
     "QT/2026-05-13-QT.md",
     "QT",
@@ -203,37 +223,18 @@
     "Travel/지리산2.md",
     "Travel",
     "AI/Playwright.md",
-    "AI/Mcp.md",
     "AI/General",
     "AI",
     "claude/이경란_소년들은자라서어디로가나.md",
-    "public/h1.md",
     "claude",
-    "public/claude.md",
     "books/서평_08_혼모노_성해나.md",
     "books/best_eval.md",
     "books/서평_01_소년이온다_한강.md",
     "Claude Cowork.md",
     "books/서평_03_82년생김지영_조남주.md",
     "books/서평_04_아몬드_손원평.md",
-    "books/서평_09_살인자의기억법_김영하.md",
-    "books/서평_06_피프티피플_정세랑.md",
-    "books/서평_05_쇼코의미소_최은영.md",
-    "books/서평_02_채식주의자_한강.md",
-    "books/서평_07_계속해보겠습니다_황정은.md",
-    "books/서평_10_나목_박완서.md",
     "books",
-    "test1.md",
-    "wel!.md",
-    "이미지캡쳐.md",
     "scripts/__pycache__/obsidian_to_hugo.cpython-310.pyc",
-    "scripts/__pycache__",
-    "scripts/obsidian_to_hugo.py.bak",
-    "hugo_site/content/posts/claude_hugo.html",
-    "public/text conversion.md",
-    "public/claude_hugo.md",
-    "images/20191009_142623.jpg",
-    "images/Pasted image 20260205171925.png",
     "Pasted image 20260205171435.png"
   ]
 }
