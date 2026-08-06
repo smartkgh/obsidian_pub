@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Load on Hugo Site!</title>
+    <link>http://localhost:1313/categories/load/</link>
+    <description>Recent content in Load on Hugo Site!</description>
+    <generator>Hugo -- 0.155.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/load/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>text conversion</title>
+      <link>http://localhost:1313/posts/text-conversion/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/text-conversion/</guid>
+      <description>&lt;p&gt;local file link &lt;a href=&#34;http://localhost:1313/posts/h2/&#34;&gt;h2&lt;/a&gt;&lt;br&gt;
+external url link -  &lt;a href=&#34;https://www.perplexity.ai&#34;&gt;Perplexity&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Table&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;obsidian&lt;/th&gt;
+          &lt;th&gt;githut&lt;/th&gt;
+          &lt;th&gt;cloudflare&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;git plugin&lt;/td&gt;
+          &lt;td&gt;action&lt;/td&gt;
+          &lt;td&gt;pages&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;![](/images/Pasted image 20260205171925.png)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    frontmatter &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;file_path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stem&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;date&amp;#34;&lt;/span&gt;: datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;datetime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fromtimestamp(file_path&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;stat()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;st_mtime)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;isoformat(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;draft&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 기존 frontmatter 추출 및 업데이트&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fm_match &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; re&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;search(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;^---\s*\n(.*?)\n---\s*\n&amp;#39;&lt;/span&gt;, content, re&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;DOTALL)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; fm_match:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        existing_fm_str &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; fm_match&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;group(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# 간단한 key: value 파싱&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; line &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; existing_fm_str&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; line:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                key, &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;value &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; line&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; key&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                val &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; value[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;strip()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; key &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; val:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    frontmatter[key] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; val
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;# 기존 frontmatter를 내용에서 제거&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        content &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; content[fm_match&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;end():]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;plantuml&#34;&gt;&lt;img src=&#34;https://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a0a217468656d6520706c61696e0a0a6163746f7220557365720a0a7061727469636970616e742022ec9e85eba0a520ed8fbc2220617320466f726d0a0a7061727469636970616e7420226170702e6a7322206173204170700a0a7061727469636970616e7420226c6f63616c53746f72616765222061732053746f726167650a0a7061727469636970616e742022444f4d2220617320444f4d0a0a55736572202d3e20466f726d203a20eb8ba8ec96b420ec9e85eba0a520ebb08f20eca09cecb69c0a0a616374697661746520466f726d0a0a466f726d202d3e20417070203a207375626d697420ec9db4ebb2a4ed8ab80a0a6163746976617465204170700a0a417070202d3e20417070203a20ec9e85eba0a520eab280eca69d0a0a616c7420ec9e85eba0a520ec9ca0ed9aa80a0a417070202d3e2053746f72616765203a204a534f4e2e737472696e6769667928776f726473290a0a61637469766174652053746f726167650a0a53746f72616765202d2d3e20417070203a20eca080ec9ea520ec9984eba38c0a0a646561637469766174652053746f726167650a0a417070202d3e20417070203a20776f7264732e70757368286e6577576f7264290a0a417070202d3e20444f4d203a2072656e646572436172642863757272656e74496e646578290a0a616374697661746520444f4d0a0a444f4d202d2d3e2055736572203a20ecb9b4eb939c20ed919cec8b9c0a0a6465616374697661746520444f4d0a0a417070202d3e20466f726d203a20ec9e85eba0a520ed9584eb939c20ecb488eab8b0ed99940a0a656c736520ec9e85eba0a520ebacb4ed9aa80a0a417070202d3e20444f4d203a20eab2bdeab3a020eba994ec8b9ceca78020ed919cec8b9c0a0a444f4d202d2d3e2055736572203a20ec98a4eba59820ed919cec8b9c0a0a656e640a0a64656163746976617465204170700a0a6465616374697661746520466f726d0a0a40656e64756d6c&#34; alt=&#34;PlantUML Diagram&#34; style=&#34;background: white; padding: 10px;&#34;&gt;
+&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
