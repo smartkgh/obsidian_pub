@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"0477b81b3fddbe73","type":"file","file":"AI/Hermes/Working/work1/raws.md","x":-520,"y":-180,"width":206,"height":178},
+		{"id":"07a692c80380ecdc","type":"file","file":"AI/Hermes/Working/work1/req.md","x":-180,"y":-400,"width":500,"height":440},
+		{"id":"d80fcc2fdfc80e7e","type":"file","file":"AI/Hermes/Working/work1/result.md","x":-40,"y":71,"width":360,"height":400},
+		{"id":"30133128ca04ca7b","type":"file","file":"AI/Hermes/Working/work1/task.md","x":-580,"y":60,"width":400,"height":411}
+	],
+	"edges":[]
+}
