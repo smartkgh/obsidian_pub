@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>text conversion | Hugo Site!</title>
+<meta name="keywords" content="ai">
+<meta name="description" content="local file link h2
+external url link -  Perplexity
+Table
+
+  
+      
+          obsidian
+          githut
+          cloudflare
+          
+      
+  
+  
+      
+          git plugin
+          action
+          pages
+          
+      
+      
+          
+          
+          
+          
+      
+      
+          ![](/images/Pasted image 20260205171925.png)
+          
+          
+          
+      
+  
+
+    frontmatter = {
+        &#34;title&#34;: f&#39;&#34;{file_path.stem}&#34; &#39;,
+        &#34;date&#34;: datetime.datetime.fromtimestamp(file_path.stat().st_mtime).isoformat(),
+        &#34;draft&#34;: &#34;false&#34;,
+    }
+
+    # 기존 frontmatter 추출 및 업데이트
+    fm_match = re.search(r&#39;^---\s*\n(.*?)\n---\s*\n&#39;, content, re.DOTALL)
+    if fm_match:
+        existing_fm_str = fm_match.group(1)
+        # 간단한 key: value 파싱
+        for line in existing_fm_str.split(&#39;\n&#39;):
+            if &#39;:&#39; in line:
+                key, *value = line.split(&#39;:&#39;, 1)
+                key = key.strip()
+                val = value[0].strip()
+                if key and val:
+                    frontmatter[key] = val
+        # 기존 frontmatter를 내용에서 제거
+        content = content[fm_match.end():]
+
+">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/text-conversion/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/text-conversion/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script src="https://cdn.jsdelivr.net/npm/plantuml-encoder@1.1.4/dist/plantuml-encoder.min.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Hugo Site! (Alt + H)">Hugo Site!</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      text conversion
+    </h1>
+    <div class="post-meta"><span title='2026-02-06 00:00:00 +0000 UTC'>February 6, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>local file link <a href="http://localhost:1313/posts/h2/">h2</a><br>
+external url link -  <a href="https://www.perplexity.ai">Perplexity</a></p>
+<p><!-- raw HTML omitted -->Table<!-- raw HTML omitted --></p>
+<table>
+  <thead>
+      <tr>
+          <th>obsidian</th>
+          <th>githut</th>
+          <th>cloudflare</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>git plugin</td>
+          <td>action</td>
+          <td>pages</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>![](/images/Pasted image 20260205171925.png)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    frontmatter <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;title&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;&#34;</span><span style="color:#e6db74">{</span>file_path<span style="color:#f92672">.</span>stem<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; &#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;date&#34;</span>: datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>fromtimestamp(file_path<span style="color:#f92672">.</span>stat()<span style="color:#f92672">.</span>st_mtime)<span style="color:#f92672">.</span>isoformat(),
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;draft&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 기존 frontmatter 추출 및 업데이트</span>
+</span></span><span style="display:flex;"><span>    fm_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^---\s*\n(.*?)\n---\s*\n&#39;</span>, content, re<span style="color:#f92672">.</span>DOTALL)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> fm_match:
+</span></span><span style="display:flex;"><span>        existing_fm_str <span style="color:#f92672">=</span> fm_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 간단한 key: value 파싱</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> existing_fm_str<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">in</span> line:
+</span></span><span style="display:flex;"><span>                key, <span style="color:#f92672">*</span>value <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;:&#39;</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>                key <span style="color:#f92672">=</span> key<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                val <span style="color:#f92672">=</span> value[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> key <span style="color:#f92672">and</span> val:
+</span></span><span style="display:flex;"><span>                    frontmatter[key] <span style="color:#f92672">=</span> val
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 기존 frontmatter를 내용에서 제거</span>
+</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> content[fm_match<span style="color:#f92672">.</span>end():]
+</span></span></code></pre></div><div class="plantuml"><img src="https://www.plantuml.com/plantuml/svg/~h407374617274756d6c0a0a217468656d6520706c61696e0a0a6163746f7220557365720a0a7061727469636970616e742022ec9e85eba0a520ed8fbc2220617320466f726d0a0a7061727469636970616e7420226170702e6a7322206173204170700a0a7061727469636970616e7420226c6f63616c53746f72616765222061732053746f726167650a0a7061727469636970616e742022444f4d2220617320444f4d0a0a55736572202d3e20466f726d203a20eb8ba8ec96b420ec9e85eba0a520ebb08f20eca09cecb69c0a0a616374697661746520466f726d0a0a466f726d202d3e20417070203a207375626d697420ec9db4ebb2a4ed8ab80a0a6163746976617465204170700a0a417070202d3e20417070203a20ec9e85eba0a520eab280eca69d0a0a616c7420ec9e85eba0a520ec9ca0ed9aa80a0a417070202d3e2053746f72616765203a204a534f4e2e737472696e6769667928776f726473290a0a61637469766174652053746f726167650a0a53746f72616765202d2d3e20417070203a20eca080ec9ea520ec9984eba38c0a0a646561637469766174652053746f726167650a0a417070202d3e20417070203a20776f7264732e70757368286e6577576f7264290a0a417070202d3e20444f4d203a2072656e646572436172642863757272656e74496e646578290a0a616374697661746520444f4d0a0a444f4d202d2d3e2055736572203a20ecb9b4eb939c20ed919cec8b9c0a0a6465616374697661746520444f4d0a0a417070202d3e20466f726d203a20ec9e85eba0a520ed9584eb939c20ecb488eab8b0ed99940a0a656c736520ec9e85eba0a520ebacb4ed9aa80a0a417070202d3e20444f4d203a20eab2bdeab3a020eba994ec8b9ceca78020ed919cec8b9c0a0a444f4d202d2d3e2055736572203a20ec98a4eba59820ed919cec8b9c0a0a656e640a0a64656163746976617465204170700a0a6465616374697661746520466f726d0a0a40656e64756d6c" alt="PlantUML Diagram" style="background: white; padding: 10px;">
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Hugo Site!</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

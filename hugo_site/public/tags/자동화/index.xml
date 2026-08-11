@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>자동화 on Hugo Site!</title>
+    <link>http://localhost:1313/tags/%EC%9E%90%EB%8F%99%ED%99%94/</link>
+    <description>Recent content in 자동화 on Hugo Site!</description>
+    <generator>Hugo -- 0.155.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Feb 2026 09:20:25 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%EC%9E%90%EB%8F%99%ED%99%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>claude</title>
+      <link>http://localhost:1313/posts/claude/</link>
+      <pubDate>Mon, 23 Feb 2026 09:20:25 +0000</pubDate>
+      <guid>http://localhost:1313/posts/claude/</guid>
+      <description>&lt;h1 id=&#34;claude-사용-가이드&#34;&gt;Claude 사용 가이드&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Claude Cowork와 Claude Code의 핵심 사용법을 정리한 노트입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;목차&#34;&gt;목차&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-cowork%EB%9E%80&#34;&gt;Claude Cowork란?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-cowork-%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5&#34;&gt;Claude Cowork 주요 기능&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-cowork-%EC%82%AC%EC%9A%A9%EB%B2%95&#34;&gt;Claude Cowork 사용법&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-code%EB%9E%80&#34;&gt;Claude Code란?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-code-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%A4%EC%A0%95&#34;&gt;Claude Code 설치 및 설정&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-code-%EC%A3%BC%EC%9A%94-%EB%AA%85%EB%A0%B9%EC%96%B4&#34;&gt;Claude Code 주요 명령어&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#claude-code-%ED%99%9C%EC%9A%A9-%ED%8C%81&#34;&gt;Claude Code 활용 팁&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cowork-vs-code-%EB%B9%84%EA%B5%90&#34;&gt;Cowork vs Code 비교&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%EA%B4%80%EB%A0%A8-%EB%A7%81%ED%81%AC&#34;&gt;관련 링크&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;claude-cowork란&#34;&gt;Claude Cowork란?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Claude Cowork&lt;/strong&gt;는 Anthropic의 Claude 데스크탑 앱에서 제공하는 기능으로, 개발자가 아닌 일반 사용자도 파일 및 작업 관리를 자동화할 수 있는 도구입니다.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;callout callout-info&#34;&gt;
+  &lt;div class=&#34;callout-header&#34;&gt;
+    &lt;span class=&#34;callout-icon&#34;&gt;ℹ️&lt;/span&gt;
+    
+    &lt;span class=&#34;callout-title&#34;&gt;특징&lt;/span&gt;
+    
+  &lt;/div&gt;
+  &lt;div class=&#34;callout-body&#34;&gt;
+    &lt;ul&gt;
+&lt;li&gt;로컬 파일 시스템에 안전하게 접근&lt;/li&gt;
+&lt;li&gt;자연어 명령으로 복잡한 작업 수행&lt;/li&gt;
+&lt;li&gt;문서, 스프레드시트, 프레젠테이션 생성 및 편집&lt;/li&gt;
+&lt;li&gt;웹 검색 및 정보 수집 자동화&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;hr&gt;
+&lt;h2 id=&#34;claude-cowork-주요-기능&#34;&gt;Claude Cowork 주요 기능&lt;/h2&gt;
+&lt;h3 id=&#34;-파일-작업&#34;&gt;📁 파일 작업&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Word 문서 (&lt;code&gt;.docx&lt;/code&gt;) 생성 및 편집&lt;/li&gt;
+&lt;li&gt;Excel 스프레드시트 (&lt;code&gt;.xlsx&lt;/code&gt;) 작성&lt;/li&gt;
+&lt;li&gt;PowerPoint 프레젠테이션 (&lt;code&gt;.pptx&lt;/code&gt;) 제작&lt;/li&gt;
+&lt;li&gt;PDF 생성 및 처리&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-웹-작업&#34;&gt;🌐 웹 작업&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;웹 페이지 내용 검색 및 요약&lt;/li&gt;
+&lt;li&gt;데이터 수집 및 분석&lt;/li&gt;
+&lt;li&gt;URL 내용 추출&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-스킬-skills&#34;&gt;🛠️ 스킬 (Skills)&lt;/h3&gt;
+&lt;p&gt;Skills는 특정 작업에 최적화된 플러그인입니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

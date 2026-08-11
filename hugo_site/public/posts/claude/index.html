@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>claude | Hugo Site!</title>
+<meta name="keywords" content="claude, AI, anthropic, cowork, claude-code, 자동화, 개발도구">
+<meta name="description" content="Claude 사용 가이드
+
+Claude Cowork와 Claude Code의 핵심 사용법을 정리한 노트입니다.
+
+
+목차
+
+Claude Cowork란?
+Claude Cowork 주요 기능
+Claude Cowork 사용법
+Claude Code란?
+Claude Code 설치 및 설정
+Claude Code 주요 명령어
+Claude Code 활용 팁
+Cowork vs Code 비교
+관련 링크
+
+
+Claude Cowork란?
+Claude Cowork는 Anthropic의 Claude 데스크탑 앱에서 제공하는 기능으로, 개발자가 아닌 일반 사용자도 파일 및 작업 관리를 자동화할 수 있는 도구입니다.
+
+
+
+
+
+
+
+
+
+
+  
+    ℹ️
+    
+    특징
+    
+  
+  
+    
+로컬 파일 시스템에 안전하게 접근
+자연어 명령으로 복잡한 작업 수행
+문서, 스프레드시트, 프레젠테이션 생성 및 편집
+웹 검색 및 정보 수집 자동화
+
+
+  
+
+
+
+
+
+
+
+
+Claude Cowork 주요 기능
+📁 파일 작업
+
+Word 문서 (.docx) 생성 및 편집
+Excel 스프레드시트 (.xlsx) 작성
+PowerPoint 프레젠테이션 (.pptx) 제작
+PDF 생성 및 처리
+
+🌐 웹 작업
+
+웹 페이지 내용 검색 및 요약
+데이터 수집 및 분석
+URL 내용 추출
+
+🛠️ 스킬 (Skills)
+Skills는 특정 작업에 최적화된 플러그인입니다.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/claude/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/claude/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script src="https://cdn.jsdelivr.net/npm/plantuml-encoder@1.1.4/dist/plantuml-encoder.min.js"></script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Hugo Site! (Alt + H)">Hugo Site!</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      claude
+    </h1>
+    <div class="post-meta"><span title='2026-02-23 09:20:25.371501 +0000 UTC'>February 23, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="claude-사용-가이드">Claude 사용 가이드<a hidden class="anchor" aria-hidden="true" href="#claude-사용-가이드">#</a></h1>
+<blockquote>
+<p>Claude Cowork와 Claude Code의 핵심 사용법을 정리한 노트입니다.</p>
+</blockquote>
+<hr>
+<h2 id="목차">목차<a hidden class="anchor" aria-hidden="true" href="#목차">#</a></h2>
+<ul>
+<li><a href="#claude-cowork%EB%9E%80">Claude Cowork란?</a></li>
+<li><a href="#claude-cowork-%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5">Claude Cowork 주요 기능</a></li>
+<li><a href="#claude-cowork-%EC%82%AC%EC%9A%A9%EB%B2%95">Claude Cowork 사용법</a></li>
+<li><a href="#claude-code%EB%9E%80">Claude Code란?</a></li>
+<li><a href="#claude-code-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%A4%EC%A0%95">Claude Code 설치 및 설정</a></li>
+<li><a href="#claude-code-%EC%A3%BC%EC%9A%94-%EB%AA%85%EB%A0%B9%EC%96%B4">Claude Code 주요 명령어</a></li>
+<li><a href="#claude-code-%ED%99%9C%EC%9A%A9-%ED%8C%81">Claude Code 활용 팁</a></li>
+<li><a href="#cowork-vs-code-%EB%B9%84%EA%B5%90">Cowork vs Code 비교</a></li>
+<li><a href="#%EA%B4%80%EB%A0%A8-%EB%A7%81%ED%81%AC">관련 링크</a></li>
+</ul>
+<hr>
+<h2 id="claude-cowork란">Claude Cowork란?<a hidden class="anchor" aria-hidden="true" href="#claude-cowork란">#</a></h2>
+<p><strong>Claude Cowork</strong>는 Anthropic의 Claude 데스크탑 앱에서 제공하는 기능으로, 개발자가 아닌 일반 사용자도 파일 및 작업 관리를 자동화할 수 있는 도구입니다.</p>
+
+
+
+
+
+
+
+
+
+<div class="callout callout-info">
+  <div class="callout-header">
+    <span class="callout-icon">ℹ️</span>
+    
+    <span class="callout-title">특징</span>
+    
+  </div>
+  <div class="callout-body">
+    <ul>
+<li>로컬 파일 시스템에 안전하게 접근</li>
+<li>자연어 명령으로 복잡한 작업 수행</li>
+<li>문서, 스프레드시트, 프레젠테이션 생성 및 편집</li>
+<li>웹 검색 및 정보 수집 자동화</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<style>
+.callout {
+  border-left: 4px solid #888;
+  border-radius: 4px;
+  margin: 1.25rem 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fafafa;
+}
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .55rem 1rem;
+  font-weight: 600;
+  font-size: .95em;
+}
+.callout-body {
+  padding: .6rem 1rem .8rem 1rem;
+  font-size: .95em;
+  line-height: 1.7;
+}
+.callout-body p:last-child { margin-bottom: 0; }
+
+ 
+.callout-info     { border-color: #3b82f6; }
+.callout-info     .callout-header { background: #eff6ff; color: #1d4ed8; }
+
+.callout-warning  { border-color: #f59e0b; }
+.callout-warning  .callout-header { background: #fffbeb; color: #92400e; }
+
+.callout-tip      { border-color: #10b981; }
+.callout-tip      .callout-header { background: #ecfdf5; color: #065f46; }
+
+.callout-note     { border-color: #6b7280; }
+.callout-note     .callout-header { background: #f3f4f6; color: #374151; }
+
+.callout-example  { border-color: #8b5cf6; }
+.callout-example  .callout-header { background: #f5f3ff; color: #5b21b6; }
+
+.callout-danger   { border-color: #ef4444; }
+.callout-danger   .callout-header { background: #fef2f2; color: #991b1b; }
+
+.callout-success  { border-color: #22c55e; }
+.callout-success  .callout-header { background: #f0fdf4; color: #15803d; }
+
+.callout-question { border-color: #06b6d4; }
+.callout-question .callout-header { background: #ecfeff; color: #155e75; }
+
+ 
+@media (prefers-color-scheme: dark) {
+  .callout               { background: #1e1e1e; }
+  .callout-info          .callout-header { background: #1e3a5f; color: #93c5fd; }
+  .callout-warning       .callout-header { background: #451a03; color: #fcd34d; }
+  .callout-tip           .callout-header { background: #022c22; color: #6ee7b7; }
+  .callout-note          .callout-header { background: #1f2937; color: #d1d5db; }
+  .callout-example       .callout-header { background: #2e1065; color: #c4b5fd; }
+  .callout-danger        .callout-header { background: #450a0a; color: #fca5a5; }
+  .callout-success       .callout-header { background: #052e16; color: #86efac; }
+  .callout-question      .callout-header { background: #164e63; color: #67e8f9; }
+}
+</style>
+
+<hr>
+<h2 id="claude-cowork-주요-기능">Claude Cowork 주요 기능<a hidden class="anchor" aria-hidden="true" href="#claude-cowork-주요-기능">#</a></h2>
+<h3 id="-파일-작업">📁 파일 작업<a hidden class="anchor" aria-hidden="true" href="#-파일-작업">#</a></h3>
+<ul>
+<li>Word 문서 (<code>.docx</code>) 생성 및 편집</li>
+<li>Excel 스프레드시트 (<code>.xlsx</code>) 작성</li>
+<li>PowerPoint 프레젠테이션 (<code>.pptx</code>) 제작</li>
+<li>PDF 생성 및 처리</li>
+</ul>
+<h3 id="-웹-작업">🌐 웹 작업<a hidden class="anchor" aria-hidden="true" href="#-웹-작업">#</a></h3>
+<ul>
+<li>웹 페이지 내용 검색 및 요약</li>
+<li>데이터 수집 및 분석</li>
+<li>URL 내용 추출</li>
+</ul>
+<h3 id="-스킬-skills">🛠️ 스킬 (Skills)<a hidden class="anchor" aria-hidden="true" href="#-스킬-skills">#</a></h3>
+<p>Skills는 특정 작업에 최적화된 플러그인입니다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>스킬 이름</th>
+          <th>설명</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>xlsx</code></td>
+          <td>Excel 파일 생성/편집</td>
+      </tr>
+      <tr>
+          <td><code>pptx</code></td>
+          <td>PowerPoint 슬라이드 제작</td>
+      </tr>
+      <tr>
+          <td><code>docx</code></td>
+          <td>Word 문서 작성</td>
+      </tr>
+      <tr>
+          <td><code>pdf</code></td>
+          <td>PDF 처리</td>
+      </tr>
+      <tr>
+          <td><code>schedule-task</code></td>
+          <td>자동화 스케줄 설정</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="claude-cowork-사용법">Claude Cowork 사용법<a hidden class="anchor" aria-hidden="true" href="#claude-cowork-사용법">#</a></h2>
+<h3 id="기본-워크플로우">기본 워크플로우<a hidden class="anchor" aria-hidden="true" href="#기본-워크플로우">#</a></h3>
+<pre tabindex="0"><code>1. Claude 데스크탑 앱 실행
+2. Cowork 모드 활성화
+3. 작업할 폴더 선택 (Select Folder)
+4. 자연어로 작업 지시
+5. 결과 확인 및 다운로드
+</code></pre><h3 id="파일-생성-예시">파일 생성 예시<a hidden class="anchor" aria-hidden="true" href="#파일-생성-예시">#</a></h3>
+<p><strong>Excel 파일 생성:</strong></p>
+<pre tabindex="0"><code>&#34;월별 매출 데이터를 정리한 Excel 파일을 만들어줘&#34;
+</code></pre><p><strong>프레젠테이션 생성:</strong></p>
+<pre tabindex="0"><code>&#34;2024년 연간 보고서를 10장 슬라이드로 만들어줘&#34;
+</code></pre><p><strong>문서 편집:</strong></p>
+<pre tabindex="0"><code>&#34;첨부한 Word 파일의 문법 오류를 수정해줘&#34;
+</code></pre><h3 id="폴더-접근-설정">폴더 접근 설정<a hidden class="anchor" aria-hidden="true" href="#폴더-접근-설정">#</a></h3>
+
+
+
+
+
+
+
+
+
+<div class="callout callout-warning">
+  <div class="callout-header">
+    <span class="callout-icon">⚠️</span>
+    
+    <span class="callout-title">중요</span>
+    
+  </div>
+  <div class="callout-body">
+    Cowork가 파일에 접근하려면 반드시 <strong>폴더 선택 권한</strong>을 부여해야 합니다.
+<code>폴더 선택 → 접근 허용</code> 순서로 진행하세요.
+  </div>
+</div>
+
+
+
+<hr>
+<h2 id="claude-code란">Claude Code란?<a hidden class="anchor" aria-hidden="true" href="#claude-code란">#</a></h2>
+<p><strong>Claude Code</strong>는 개발자를 위한 CLI(Command Line Interface) 도구로, 터미널에서 직접 코딩 작업을 Claude에게 위임할 수 있습니다.</p>
+
+
+
+
+
+
+
+
+
+<div class="callout callout-tip">
+  <div class="callout-header">
+    <span class="callout-icon">💡</span>
+    
+    <span class="callout-title">주요 특징</span>
+    
+  </div>
+  <div class="callout-body">
+    <ul>
+<li>터미널 기반 인터페이스</li>
+<li>코드베이스 분석 및 수정</li>
+<li>Git 작업 자동화</li>
+<li>테스트 실행 및 디버깅</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+<hr>
+<h2 id="claude-code-설치-및-설정">Claude Code 설치 및 설정<a hidden class="anchor" aria-hidden="true" href="#claude-code-설치-및-설정">#</a></h2>
+<h3 id="설치">설치<a hidden class="anchor" aria-hidden="true" href="#설치">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># npm을 통한 설치</span>
+</span></span><span style="display:flex;"><span>npm install -g @anthropic-ai/claude-code
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 설치 확인</span>
+</span></span><span style="display:flex;"><span>claude --version
+</span></span></code></pre></div><h3 id="초기-설정">초기 설정<a hidden class="anchor" aria-hidden="true" href="#초기-설정">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># API 키 환경변수 설정</span>
+</span></span><span style="display:flex;"><span>export ANTHROPIC_API_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;your-api-key-here&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 또는 .env 파일에 추가</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;ANTHROPIC_API_KEY=your-api-key-here&#39;</span> &gt;&gt; ~/.env
+</span></span></code></pre></div><h3 id="프로젝트-시작">프로젝트 시작<a hidden class="anchor" aria-hidden="true" href="#프로젝트-시작">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 프로젝트 디렉토리로 이동</span>
+</span></span><span style="display:flex;"><span>cd /path/to/your/project
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Claude Code 실행</span>
+</span></span><span style="display:flex;"><span>claude
+</span></span></code></pre></div><hr>
+<h2 id="claude-code-주요-명령어">Claude Code 주요 명령어<a hidden class="anchor" aria-hidden="true" href="#claude-code-주요-명령어">#</a></h2>
+<h3 id="슬래시-명령어">슬래시 명령어<a hidden class="anchor" aria-hidden="true" href="#슬래시-명령어">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>기능</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/help</code></td>
+          <td>도움말 표시</td>
+      </tr>
+      <tr>
+          <td><code>/clear</code></td>
+          <td>대화 내용 초기화</td>
+      </tr>
+      <tr>
+          <td><code>/compact</code></td>
+          <td>대화 요약 (컨텍스트 절약)</td>
+      </tr>
+      <tr>
+          <td><code>/cost</code></td>
+          <td>현재 세션 비용 확인</td>
+      </tr>
+      <tr>
+          <td><code>/doctor</code></td>
+          <td>환경 설정 진단</td>
+      </tr>
+      <tr>
+          <td><code>/init</code></td>
+          <td>프로젝트 초기화 (<code>CLAUDE.md</code> 생성)</td>
+      </tr>
+      <tr>
+          <td><code>/memory</code></td>
+          <td>메모리 설정 관리</td>
+      </tr>
+      <tr>
+          <td><code>/review</code></td>
+          <td>코드 리뷰 요청</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="실용적인-사용-예시">실용적인 사용 예시<a hidden class="anchor" aria-hidden="true" href="#실용적인-사용-예시">#</a></h3>
+<p><strong>코드 분석:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude <span style="color:#e6db74">&#34;이 프로젝트의 전체 구조를 분석하고 개선점을 알려줘&#34;</span>
+</span></span></code></pre></div><p><strong>버그 수정:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude <span style="color:#e6db74">&#34;src/app.py에서 발생하는 TypeError를 수정해줘&#34;</span>
+</span></span></code></pre></div><p><strong>테스트 작성:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude <span style="color:#e6db74">&#34;UserService 클래스에 대한 단위 테스트를 작성해줘&#34;</span>
+</span></span></code></pre></div><p><strong>Git 커밋:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude <span style="color:#e6db74">&#34;변경된 내용을 분석하고 적절한 커밋 메시지로 커밋해줘&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="claude-code-활용-팁">Claude Code 활용 팁<a hidden class="anchor" aria-hidden="true" href="#claude-code-활용-팁">#</a></h2>
+<h3 id="claudemd-파일-활용">CLAUDE.md 파일 활용<a hidden class="anchor" aria-hidden="true" href="#claudemd-파일-활용">#</a></h3>
+<p>프로젝트 루트에 <code>CLAUDE.md</code> 파일을 만들어 Claude가 프로젝트 컨텍스트를 이해하도록 돕습니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># 프로젝트 개요
+</span></span><span style="display:flex;"><span>이 프로젝트는 ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 주요 규칙
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 코드 스타일: PEP8 준수
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 테스트: pytest 사용
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 브랜치 전략: Git Flow
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 금지 사항
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 직접 main 브랜치에 push 금지
+</span></span></code></pre></div><h3 id="효율적인-프롬프팅">효율적인 프롬프팅<a hidden class="anchor" aria-hidden="true" href="#효율적인-프롬프팅">#</a></h3>
+
+
+
+
+
+
+
+
+
+<div class="callout callout-example">
+  <div class="callout-header">
+    <span class="callout-icon">📌</span>
+    
+    <span class="callout-title">좋은 프롬프트 예시</span>
+    
+  </div>
+  <div class="callout-body">
+    <pre tabindex="0"><code>&#34;src/utils/formatter.py 파일을 읽고,
+ format_date() 함수가 ISO 8601 형식도 처리하도록 수정해줘.
+ 수정 후 기존 테스트가 모두 통과하는지 확인해줘.&#34;
+</code></pre>
+  </div>
+</div>
+
+
+
+<h3 id="단축키">단축키<a hidden class="anchor" aria-hidden="true" href="#단축키">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>단축키</th>
+          <th>기능</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Ctrl+C</code></td>
+          <td>현재 작업 중단</td>
+      </tr>
+      <tr>
+          <td><code>Ctrl+L</code></td>
+          <td>화면 지우기</td>
+      </tr>
+      <tr>
+          <td><code>↑ / ↓</code></td>
+          <td>이전/다음 명령어</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="cowork-vs-code-비교">Cowork vs Code 비교<a hidden class="anchor" aria-hidden="true" href="#cowork-vs-code-비교">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>기준</th>
+          <th>Claude Cowork</th>
+          <th>Claude Code</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>대상</strong></td>
+          <td>일반 사용자</td>
+          <td>개발자</td>
+      </tr>
+      <tr>
+          <td><strong>인터페이스</strong></td>
+          <td>GUI (데스크탑 앱)</td>
+          <td>CLI (터미널)</td>
+      </tr>
+      <tr>
+          <td><strong>주요 작업</strong></td>
+          <td>문서, 파일 관리</td>
+          <td>코딩, 개발 자동화</td>
+      </tr>
+      <tr>
+          <td><strong>설치</strong></td>
+          <td>Claude 앱 설치</td>
+          <td>npm 패키지 설치</td>
+      </tr>
+      <tr>
+          <td><strong>파일 접근</strong></td>
+          <td>폴더 선택 방식</td>
+          <td>프로젝트 디렉토리</td>
+      </tr>
+      <tr>
+          <td><strong>스킬/플러그인</strong></td>
+          <td>지원</td>
+          <td>지원</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="관련-링크">관련 링크<a hidden class="anchor" aria-hidden="true" href="#관련-링크">#</a></h2>
+<ul>
+<li><a href="https://docs.claude.com">Anthropic 공식 문서</a></li>
+<li><a href="https://github.com/anthropics/claude-code">Claude Code GitHub</a></li>
+<li><a href="https://docs.anthropic.com">Claude API 문서</a></li>
+<li><a href="https://support.claude.com">지원 페이지</a></li>
+</ul>
+<hr>
+<h2 id="태그">태그<a hidden class="anchor" aria-hidden="true" href="#태그">#</a></h2>
+<hr>
+<p><em>마지막 업데이트: 2026-02-23</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/claude/">Claude</a></li>
+      <li><a href="http://localhost:1313/tags/ai/">AI</a></li>
+      <li><a href="http://localhost:1313/tags/anthropic/">Anthropic</a></li>
+      <li><a href="http://localhost:1313/tags/cowork/">Cowork</a></li>
+      <li><a href="http://localhost:1313/tags/claude-code/">Claude-Code</a></li>
+      <li><a href="http://localhost:1313/tags/%EC%9E%90%EB%8F%99%ED%99%94/">자동화</a></li>
+      <li><a href="http://localhost:1313/tags/%EA%B0%9C%EB%B0%9C%EB%8F%84%EA%B5%AC/">개발도구</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Hugo Site!</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
