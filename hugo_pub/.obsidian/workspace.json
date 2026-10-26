@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c97243a25d7f5bb1",
+        "id": "fdef199bed8c8a04",
         "type": "tabs",
         "children": [
           {
-            "id": "b37d675349a851c8",
+            "id": "ba78f616f48fc514",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 351.5253562927246
+    "width": 292.27077865600586
   },
   "right": {
     "id": "360cf5fba590adf9",
@@ -153,6 +153,48 @@
             }
           },
           {
+            "id": "7db98ed3e593f9b8",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://calendar.google.com/calendar/u/0/r/month",
+                "title": "Google Calendar - 2026년 10월",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Google Calendar - 2026년 10월"
+            }
+          },
+          {
+            "id": "69fb486c7799fb1d",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://claude.ai/chat/1f49bff9-5652-4c89-8148-24bdf619052c",
+                "title": "옵시디언 타임라인 보기 - Claude",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "옵시디언 타임라인 보기 - Claude"
+            }
+          },
+          {
+            "id": "8cbd15cc1556ab00",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://gemini.google.com/app/300ed0226619dc1a",
+                "title": "친근한 첫인사 - Google Gemini",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "친근한 첫인사 - Google Gemini"
+            }
+          },
+          {
             "id": "7a77da571fdcddc9",
             "type": "leaf",
             "state": {
@@ -173,15 +215,16 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "advanced-tables-toolbar"
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 263.5
+    "width": 374.2183837890625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,8 +239,14 @@
       "qt-note-creator:QT 노트 생성": false
     }
   },
-  "active": "d098c913e1c15c00",
+  "active": "ba78f616f48fc514",
   "lastOpenFiles": [
+    "HT/Action Item.md",
+    "HT/퇴사 프로세스.md",
+    "HT/RAW.md",
+    "샘물/26여름중등부수련회/개인 준비물.md",
+    "샘물/26여름중등부수련회",
+    "샘물",
     "surge_public/attachments/Pasted image 20260805164755.png",
     "surge_public/text conversion.md",
     "surge_public/text conversion 2.md",
@@ -211,7 +260,6 @@
     "2026-10-22.md",
     "claude/이경란_소년들은자라서어디로가나.md",
     "2026-10-05.md",
-    "HT/RAW.md",
     "샘물/26여름중등부수련회/Readme.md",
     "샘물/26여름중등부수련회/카카오페이-거래확인증-20260812.pdf",
     "샘물/26여름중등부수련회/보험청구관련.md",
@@ -228,12 +276,8 @@
     "books/독서노트/독서노트_20_이인칭_단수.md",
     "books/독서노트/독서노트_19_어쩌다_카페_사장.md",
     "books/독서노트/독서노트_18_아직도_가야할_길.md",
-    "books/독서노트/독서노트_17_아직_오지_않는_날들을_위하여.md",
-    "books/독서노트/독서노트_16_속죄.md",
     "books/독서노트",
     "샘물/26여름중등부수련회/~$26중등여름수련회_명단_보험신청_v1.xlsx",
-    "샘물/26여름중등부수련회/26중등여름수련회_명단_보험신청_v1.xlsx",
-    "샘물/26여름중등부수련회/~$26중등여름수련회_명단_보험신청.xlsx",
     "무제 1.canvas",
     "무제.canvas",
     "images/20191009_142623.jpg",
