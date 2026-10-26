@@ -1,0 +1,10 @@
+{
+  "id": "qt-note-creator",
+  "name": "QT Note Creator",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "QT(묵상) 노트를 날짜 기반으로 자동 생성합니다.",
+  "author": "안녕",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}
