@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HT/RAW.md",
+                "file": "HT/Action Item.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RAW"
+              "title": "Action Item"
             }
           }
         ]
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HT/RAW.md",
+                "file": "HT/Action Item.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -224,7 +224,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 374.2183837890625
+    "width": 693.1146240234375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -241,9 +241,10 @@
   },
   "active": "ba78f616f48fc514",
   "lastOpenFiles": [
+    "HT/실업급여.md",
     "HT/Action Item.md",
-    "HT/퇴사 프로세스.md",
     "HT/RAW.md",
+    "HT/퇴사 프로세스.md",
     "샘물/26여름중등부수련회/개인 준비물.md",
     "샘물/26여름중등부수련회",
     "샘물",
@@ -275,7 +276,6 @@
     "books/독서노트/독서노트_21_제_7일.md",
     "books/독서노트/독서노트_20_이인칭_단수.md",
     "books/독서노트/독서노트_19_어쩌다_카페_사장.md",
-    "books/독서노트/독서노트_18_아직도_가야할_길.md",
     "books/독서노트",
     "샘물/26여름중등부수련회/~$26중등여름수련회_명단_보험신청_v1.xlsx",
     "무제 1.canvas",
