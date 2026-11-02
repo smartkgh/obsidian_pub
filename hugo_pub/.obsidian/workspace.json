@@ -186,12 +186,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://gemini.google.com/app/300ed0226619dc1a",
-                "title": "친근한 첫인사 - Google Gemini",
+                "url": "https://gemini.google.com/app",
+                "title": "Google Gemini",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "친근한 첫인사 - Google Gemini"
+              "title": "Google Gemini"
             }
           },
           {
@@ -215,8 +215,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           }
         ],
