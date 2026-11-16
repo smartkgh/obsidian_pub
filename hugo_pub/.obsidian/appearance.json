@@ -3,5 +3,6 @@
   "theme": "obsidian",
   "accentColor": "",
   "baseFontSize": 14,
-  "translucency": false
+  "translucency": false,
+  "showRibbon": true
 }

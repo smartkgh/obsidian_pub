@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "fdef199bed8c8a04",
+        "id": "f0ffd1f8fb6a935a",
         "type": "tabs",
         "children": [
           {
-            "id": "ba78f616f48fc514",
+            "id": "5f81afbe4e3588f4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HT/Action Item.md",
+                "file": "0.Projects/Retirement Pension/미래에셋 퇴직연금 현황.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Action Item"
+              "title": "미래에셋 퇴직연금 현황"
             }
           }
         ]
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.27077865600586
+    "width": 330.359375
   },
   "right": {
     "id": "360cf5fba590adf9",
@@ -158,12 +158,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://calendar.google.com/calendar/u/0/r/month",
-                "title": "Google Calendar - 2026년 10월",
+                "url": "https://calendar.google.com/calendar/u/0/r",
+                "title": "Google Calendar - 2026년 11월",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "Google Calendar - 2026년 10월"
+              "title": "Google Calendar - 2026년 11월"
             }
           },
           {
@@ -172,12 +172,12 @@
             "state": {
               "type": "webviewer",
               "state": {
-                "url": "https://claude.ai/chat/1f49bff9-5652-4c89-8148-24bdf619052c",
-                "title": "옵시디언 타임라인 보기 - Claude",
+                "url": "https://claude.ai/login?from=logout&reauth=1&returnTo=%2Fchat%2F1f49bff9-5652-4c89-8148-24bdf619052c%3F",
+                "title": "로그인 또는 계정 만들기 | Claude.ai",
                 "mode": "webview"
               },
               "icon": "globe-2",
-              "title": "옵시디언 타임라인 보기 - Claude"
+              "title": "로그인 또는 계정 만들기 | Claude.ai"
             }
           },
           {
@@ -220,11 +220,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 693.1146240234375
+    "width": 313.1171875
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -239,12 +239,31 @@
       "qt-note-creator:QT 노트 생성": false
     }
   },
-  "active": "ba78f616f48fc514",
+  "active": "5f81afbe4e3588f4",
   "lastOpenFiles": [
-    "HT/실업급여.md",
+    "0.Projects/Retirement Pension/운영 확정.md",
+    "0.Projects/Retirement Pension/미래에셋 퇴직연금 현황.md",
+    "1.Areas/운동/맨몸운동.md",
+    "0.Projects/Retirement Pension/연금 운영 전략.md",
+    "1.Areas/운동",
+    "0.Projects/Retirement Pension/운영전략 설계.md",
+    "0.Projects/Retirement Pension/Study.md",
+    "0.Projects/생활비현황/spec.md",
+    "2.Resources/참고자료들.md",
+    "0.Projects/무제.md",
+    "2.Resources",
+    "1.Areas",
     "HT/Action Item.md",
-    "HT/RAW.md",
+    "0.Projects/생활비 현황.md",
     "HT/퇴사 프로세스.md",
+    "HT/실업급여.md",
+    "0.Projects/무제/무제",
+    "0.Projects/생활비현황",
+    "0.Projects/Retirement Pension",
+    "0.Projects",
+    "books/독서노트/독서노트_13_모순.md",
+    "books/독서노트/독서노트_01_100세_인생.md",
+    "HT/RAW.md",
     "샘물/26여름중등부수련회/개인 준비물.md",
     "샘물/26여름중등부수련회",
     "샘물",
@@ -253,31 +272,12 @@
     "surge_public/text conversion 2.md",
     "surge_public/index.md",
     "surge_public/attachments",
-    "surge_public",
     "study/Obsidian-Quartz-Surge 파이프라인 구축.md",
-    "study",
     "Temp/계산1.md",
-    "Temp",
     "2026-10-22.md",
     "claude/이경란_소년들은자라서어디로가나.md",
     "2026-10-05.md",
     "샘물/26여름중등부수련회/Readme.md",
-    "샘물/26여름중등부수련회/카카오페이-거래확인증-20260812.pdf",
-    "샘물/26여름중등부수련회/보험청구관련.md",
-    "샘물/26여름중등부수련회/26년 여름수련회_보험가입확인서.pdf",
-    "public/text conversion.md",
-    "books/독서노트/독서노트_06_나는_풍요로웠고_지구는_달라졌다.md",
-    "books/독서노트/독서노트_27_혼자_못_사는_것도_재주.md",
-    "books/독서노트/독서노트_26_평범한_인생.md",
-    "books/독서노트/독서노트_25_퇴직하기_전에_미리_알았더라면.md",
-    "books/독서노트/독서노트_24_커리어_스킬.md",
-    "books/독서노트/독서노트_23_지혜의_심리학.md",
-    "books/독서노트/독서노트_22_지극히_사적인_네팔.md",
-    "books/독서노트/독서노트_21_제_7일.md",
-    "books/독서노트/독서노트_20_이인칭_단수.md",
-    "books/독서노트/독서노트_19_어쩌다_카페_사장.md",
-    "books/독서노트",
-    "샘물/26여름중등부수련회/~$26중등여름수련회_명단_보험신청_v1.xlsx",
     "무제 1.canvas",
     "무제.canvas",
     "images/20191009_142623.jpg",
