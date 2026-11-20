@@ -1,0 +1,10 @@
+# recoding — 실행 환경
+.venv/
+__pycache__/
+*.pyc
+
+# Swift 빌드 산출물
+platforms/macos/.build/
+
+# 로컬 로그
+*.log

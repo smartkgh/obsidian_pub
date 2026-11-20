@@ -1,7 +1,7 @@
 ---
 title: recoding — 음성 녹음 자동 전사 파이프라인 설계안 v2
 created: 2026-11-20
-status: 설계 (미구현) — 결정 대기
+status: 구현 완료 (2026-11-20) — macOS 동작 확인, Windows는 2차
 supersedes: "[[design_v1]]"
 tags:
   - project/recoding
@@ -170,4 +170,10 @@ recoding/
 > 7. 윈도우 착수 시점 — 지금은 `install.md` 초안만 남기고 보류?
 
 ---
-*다음 단계: 위 7개 확정 후 "개발해줘" 지시 시 착수. 이전 설계: [[design_v1]] · 원 요구사항: [[spec]]*
+*구현 완료: 2026-11-20 · 사용법은 [[README]] · 이전 설계: [[design_v1]] · 원 요구사항: [[spec]]*
+
+> [!success] 구현 결과 요약
+> - `apple` 엔진 실제 전사 검증: 4초 파일 0.14초 처리, ko-KR 자산 설치 불필요(이미 installed)
+> - 자동화: launchd `WatchPaths` + `StartInterval 300` 등록 → 파일 투입 후 **24초 내 노트 생성** 확인
+> - **52분 1초 파일 실측: 전사 17초(180배 실시간), 13,607자, 구간 218개.** 띄어쓰기 교정 포함 총 85초
+> - 구현 중 발견해 수정한 것 3건: ① 아카이브를 Syncthing 폴더 안에 두면 폰으로 재동기화됨 → `~/syncthing/recoding_done` 로 분리 ② Apple 엔진의 한국어 띄어쓰기 붙음 → 공백만 교정 후 **문자 동일성 검증** ③ `once` 1회로는 안정화 대기 때문에 처리 지연 → 같은 실행 내 10초 대기 후 재스캔

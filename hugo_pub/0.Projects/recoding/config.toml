@@ -1,0 +1,59 @@
+# recoding — 파이프라인 설정
+# 경로는 ~ 확장 / 프로젝트 루트 기준 상대경로 모두 허용
+
+[paths]
+incoming = "~/syncthing/recoding"                       # Syncthing 수신 폴더
+output   = "~/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding/result"
+state    = "~/syncthing/recoding/.recoding"             # ledger · logs · tmp
+
+[asr]
+engine          = "apple"        # apple | whispercpp
+locale          = "ko-KR"
+timeout_seconds = 3600
+min_duration    = 3.0            # 초. 이보다 짧으면 skip
+settle_seconds  = 10             # size+mtime 2회 동일 확인 간격
+
+[asr.apple]
+# 빌드: platforms/macos/build.sh
+helper = "platforms/macos/.build/SpeechHelper"
+
+[asr.whispercpp]
+# Windows 예: binary = "C:\\tools\\whisper\\whisper-cli.exe"
+binary     = "whisper-cli"
+model      = "~/models/ggml-large-v3-turbo.bin"
+extra_args = ["-np", "--no-context"]
+
+[audio]
+ffmpeg  = "/opt/homebrew/bin/ffmpeg"      # Windows: C:\\tools\\ffmpeg\\bin\\ffmpeg.exe
+ffprobe = "/opt/homebrew/bin/ffprobe"
+
+[output]
+filename           = "{keyword}"   # "{date} {keyword}" 로 바꾸면 2026-11-20 산책.md
+include_timestamps = true
+include_summary    = true
+max_keyword_chars  = 40
+raw_json           = true          # result/_raw/{slug}.json
+
+[keyword]
+provider        = "deepseek"       # deepseek | openrouter | heuristic
+base_url        = "https://api.deepseek.com/v1"
+model           = "deepseek-chat"
+api_key_env     = "DEEPSEEK_API_KEY"
+env_file        = "~/.hermes/.env"
+timeout_seconds = 30
+
+[archive]
+move_originals = true
+# ⚠️ 반드시 Syncthing 폴더(recoding) 밖에 둘 것. 안에 두면 원본이 폰으로 재동기화된다.
+done_dir   = "~/syncthing/recoding_done"
+failed_dir = "~/syncthing/recoding_failed"
+
+[postprocess]
+# Apple 엔진은 한국어 어절을 붙여서 내보내는 경우가 많다 → 공백만 교정(LLM).
+# 청크별·전체 2중 검증(비공백 문자 동일)을 통과할 때만 채택하고, 아니면 원문을 그대로 쓴다.
+spacing_fix     = true
+chunk_chars     = 3000       # 한 번에 교정할 분량(비공백 기준). 52분 녹음 ≈ 5청크
+max_total_chars = 100000     # 이보다 긴 전사문은 교정 생략(비용·지연 방지)
+
+[watch]
+interval_seconds = 30

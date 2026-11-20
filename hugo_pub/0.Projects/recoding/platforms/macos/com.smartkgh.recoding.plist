@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  recoding — Syncthing 수신 폴더 감시 → 자동 전사
+
+  설치:
+    cp platforms/macos/com.smartkgh.recoding.plist ~/Library/LaunchAgents/
+    launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist 2>/dev/null
+    launchctl load   ~/Library/LaunchAgents/com.smartkgh.recoding.plist
+
+  확인: launchctl list | grep recoding
+  해제: launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.smartkgh.recoding</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/smartkgh/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding/.venv/bin/python</string>
+        <string>/Users/smartkgh/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding/main.py</string>
+        <string>--config</string>
+        <string>/Users/smartkgh/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding/config.toml</string>
+        <string>once</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/smartkgh/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>PYTHONUTF8</key>
+        <string>1</string>
+    </dict>
+
+    <!-- 파일이 도착하면 즉시 1회 실행 -->
+    <key>WatchPaths</key>
+    <array>
+        <string>/Users/smartkgh/syncthing/recoding</string>
+    </array>
+
+    <!-- 이벤트가 없어도 5분마다 안전 스캔 (안정화 대기 파일 회수) -->
+    <key>StartInterval</key>
+    <integer>300</integer>
+
+    <key>ThrottleInterval</key>
+    <integer>15</integer>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/smartkgh/syncthing/recoding/.recoding/logs/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/smartkgh/syncthing/recoding/.recoding/logs/launchd.err.log</string>
+</dict>
+</plist>

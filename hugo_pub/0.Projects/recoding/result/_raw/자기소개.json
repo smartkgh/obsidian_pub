@@ -1,0 +1,15 @@
+{
+  "keyword": "자기소개",
+  "summary": "강기훈이 인사하며 자신을 소개했다.",
+  "source": "음성 메모 001.m4a",
+  "engine": "apple-SpeechTranscriber",
+  "lang": "ko",
+  "duration": 7.127074829931972,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.127,
+      "text": "아 안녕하세요. 저는강기훈 입니다. 만나서반갑습니다."
+    }
+  ]
+}
