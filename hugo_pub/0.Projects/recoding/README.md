@@ -33,6 +33,10 @@ cd ~/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding
 
 `doctor` 출력에서 ffmpeg/ffprobe/엔진/ledger 가 모두 OK 이면 준비 완료.
 
+> [!tip] 실행은 그냥 `python3 main.py` 로
+> 시스템 파이썬(3.9)으로 실행해도 `main.py` 가 **자동으로 `.venv` 파이썬(3.12)으로 재실행**한다.
+> `.venv` 가 없을 때만 "Python 3.11+ 필요" 안내를 내고 종료한다(트레이스백 없음).
+
 ```bash
 # 4) 언어 자산 확인 (ko-KR 이 installed 여야 함)
 .venv/bin/python main.py helper --list-locales
@@ -54,8 +58,20 @@ cd ~/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding
 | `python main.py bootstrap` | **현재 있는 파일을 전부 `ignored` 등록** (기존분 일괄 처리 방지) |
 | `python main.py reset --all` | 이력 초기화 (재처리 허용) |
 | `python main.py reset "파일명"` | 특정 파일 이력만 삭제 |
+| `python3 run_tests.py` | **테스트 실행** (stdlib unittest, 21개) |
 | `-n / --dry-run` | 파일 쓰기·이동 없이 미리보기 |
 | `-v / --verbose` | DEBUG 로그 |
+
+### 테스트
+
+```bash
+python3 run_tests.py        # 요약 (구버전 파이썬이면 .venv 로 자동 재실행)
+python3 run_tests.py -v     # 테스트별 출력
+```
+
+표준 라이브러리 `unittest` 만 사용한다(추가 의존성 0). 커버: 파일명 규칙·시간포맷·문단화·
+세그먼트 정리·키워드 휴리스틱·띄어쓰기 병합(문자 보존)·ledger CRUD·config·파이프라인 통합
+(감지→처리→아카이브→중복)·손상/짧은 파일·스캔 중 파일 소실.
 
 ### 처리 흐름
 
@@ -191,5 +207,6 @@ launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist   # 해제
 | `locale not supported` | `main.py helper --list-locales` 로 ko-KR installed 확인 |
 | 파일이 계속 처리 안 됨 | `main.py list` 에서 status 확인. `ignored` 면 `reset` 후 `file` 로 수동 처리 |
 | `처리 대상 없음` | 신규 파일은 첫 스캔에서 등록만 되고 **다음 스캔(10초 후)** 에 처리된다 |
+| `ModuleNotFoundError: tomllib` | Python 3.9 로 실행된 경우. `.venv` 가 있으면 자동 재실행되므로, 이 오류가 뜨면 `.venv` 부재 → 1번 설치 단계 재실행 |
 | 키워드가 영어/이상함 | `main.py doctor` 로 API 키 확인. 키가 없으면 휴리스틱 폴백 |
 | 원본이 폰에 계속 남음 | `[archive].move_originals = true` 인지, `done_dir` 가 Syncthing 폴더 밖인지 확인 |

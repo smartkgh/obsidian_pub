@@ -13,25 +13,50 @@
 """
 from __future__ import annotations
 
-import argparse
 import os
-import shutil
-import subprocess
 import sys
-import time
-import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+MIN_PY = (3, 11)
+
+VENV_PYTHONS = (ROOT / ".venv/bin/python3", ROOT / ".venv/Scripts/python.exe")
+
+
+def _ensure_interpreter() -> None:
+    """시스템 파이썬(3.9 등)으로 실행되면 프로젝트 venv 파이썬으로 자기 자신을 재실행한다."""
+    if sys.version_info >= MIN_PY:
+        return
+    # 재실행 대상 = 원래 진입 스크립트(main.py / run_tests.py …)
+    entry = Path(sys.argv[0]).resolve() if sys.argv and sys.argv[0] else ROOT / "main.py"
+    if not entry.exists():
+        entry = ROOT / "main.py"
+    for candidate in VENV_PYTHONS:
+        if candidate.exists():
+            os.execv(str(candidate), [str(candidate), str(entry), *sys.argv[1:]])
+    sys.exit(
+        f"Python {MIN_PY[0]}.{MIN_PY[1]}+ 가 필요합니다 (현재 {sys.version.split()[0]}).\n"
+        f"  가상환경 생성: ~/.pyenv/versions/3.12.3/bin/python3 -m venv {ROOT}/.venv"
+    )
+
+
+_ensure_interpreter()
+
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+import argparse  # noqa: E402
+import shutil  # noqa: E402
+import subprocess  # noqa: E402
+import time  # noqa: E402
+import unicodedata  # noqa: E402
 
 from core import render  # noqa: E402
 from core.config import Config  # noqa: E402
 from core.log import setup  # noqa: E402
 from core.pipeline import Pipeline, file_sha1  # noqa: E402
 
-PY_OK = sys.version_info >= (3, 11)
+PY_OK = sys.version_info >= MIN_PY
 
 
 def nfc(text: str) -> str:
