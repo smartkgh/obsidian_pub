@@ -58,7 +58,8 @@ cd ~/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding
 | `python main.py bootstrap` | **현재 있는 파일을 전부 `ignored` 등록** (기존분 일괄 처리 방지) |
 | `python main.py reset --all` | 이력 초기화 (재처리 허용) |
 | `python main.py reset "파일명"` | 특정 파일 이력만 삭제 |
-| `python3 run_tests.py` | **테스트 실행** (stdlib unittest, 21개) |
+| `python3 tools/compare_engines.py` | **엔진 A/B 비교** (apple vs whisper, 결과는 `/tmp/engin-compare/`) |
+| `python3 run_tests.py` | **테스트 실행** (stdlib unittest, 22개) |
 | `-n / --dry-run` | 파일 쓰기·이동 없이 미리보기 |
 | `-v / --verbose` | DEBUG 로그 |
 

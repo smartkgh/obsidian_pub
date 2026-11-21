@@ -23,7 +23,7 @@ helper = "platforms/macos/.build/SpeechHelper"
 # Windows 예: binary = "C:\\tools\\whisper\\whisper-cli.exe"
 binary     = "whisper-cli"
 model      = "~/models/ggml-large-v3-turbo.bin"
-extra_args = ["-np", "--no-context"]
+extra_args = ["-np", "-mc", "0"]   # -np: 진행출력 억제, -mc 0: 문맥 이월 금지(환각 방지)
 
 [audio]
 ffmpeg  = "/opt/homebrew/bin/ffmpeg"      # Windows: C:\\tools\\ffmpeg\\bin\\ffmpeg.exe

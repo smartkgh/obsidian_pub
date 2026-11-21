@@ -147,7 +147,7 @@ cd ~/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding
 | ✅ 완료 | 기존 `ignored` 9개 처리 | 2026-11-21 배치 완료 — 노트 7개 추가, 2개는 3초 미만 skip. **원본 12개 전부 처리됨** |
 | 2차 | **Windows 이식** | [[install]] 체크리스트. 코어 diff 0줄, 설정 4곳 + 작업 스케줄러 |
 | 선택 | 파일명 규칙 전환 | `filename = "{date} {keyword}"` |
-| 선택 | 품질 비교 | `engine = "whispercpp"` 로 같은 코어에서 A/B (고유명사 정확도) |
+| ✅ 완료 | 품질 비교 | 4개 파일 측정 → [[compare_engines]]. whisper는 **10~15배 느리고** 고유명사·문장부호는 우세하나 **환각(반복·창작) 존재** → 기본은 Apple 유지 |
 | Phase 3 | 태그 자동분류·월간 인덱스·주간 다이제스트 | 설계 v2 로드맵 |
 
 > [!warning] 프라이버시

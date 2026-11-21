@@ -13,7 +13,7 @@ import unittest
 from pathlib import Path
 
 from adapters.base import Segment, Transcript
-from core import keyword, render, spacing
+from core import keyword, notes, render, spacing
 from core.config import Config
 from core.ledger import Ledger
 from core.pipeline import Pipeline, clean_segments, file_sha1
@@ -190,6 +190,59 @@ class MainGuardTest(unittest.TestCase):
                              capture_output=True, text=True, cwd=ROOT)
         self.assertEqual(out.returncode, 0, out.stderr[:300])
         self.assertIn("asr engine", out.stdout)
+
+
+class NotesTest(unittest.TestCase):
+    def test_transcript_section_stops_at_next_heading(self):
+        body = ('# x\n\n## 전사\n\n문단1.\n\n문단2.\n\n## 구간\n\n- 00:00 문단1.\n')
+        self.assertEqual(notes.transcript_section(body), "문단1.\n\n문단2.")
+
+    def test_transcript_section_to_eof(self):
+        self.assertEqual(notes.transcript_section("## 전사\n\n끝까지\n"), "끝까지")
+
+    def test_missing_transcript(self):
+        self.assertEqual(notes.transcript_section("# x\n\n## 구간\n"), "")
+
+
+class CompareToolTest(unittest.TestCase):
+    """tools/compare_engines.py 의 순수 로직 — 모델 없이 검증 가능한 부분만"""
+
+    @staticmethod
+    def _tool():
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("compare_engines",
+                                                     ROOT / "tools/compare_engines.py")
+        if spec is None or spec.loader is None:
+            raise unittest.SkipTest("compare_engines.py 로드 실패")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+    def test_whisper_config_overrides_without_mutating_base(self):
+        mod = self._tool()
+        base = Config.load(ROOT / "config.toml")
+        whisper = mod.whisper_config(base)
+        self.assertEqual(whisper.get("asr", "engine"), "whispercpp")
+        self.assertEqual(base.get("asr", "engine"), "apple")
+        self.assertEqual(str(whisper.path("asr.whispercpp", "model")),
+                         str(base.path("asr.whispercpp", "model")))
+        whisper.data["asr"]["engine"] = "mutated"          # 사본 독립성
+        self.assertEqual(base.get("asr", "engine"), "apple")
+
+    def test_find_source_searches_archives(self):
+        from types import SimpleNamespace
+
+        mod = self._tool()
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            pipe = SimpleNamespace(incoming=base / "in", done_dir=base / "done",
+                                   failed_dir=base / "failed")
+            for d in (pipe.incoming, pipe.done_dir, pipe.failed_dir):
+                d.mkdir()
+            (pipe.done_dir / "x.m4a").write_bytes(b"1")
+            self.assertEqual(mod.find_source(pipe, "x.m4a"), pipe.done_dir / "x.m4a")
+            with self.assertRaises(SystemExit):
+                mod.find_source(pipe, "nope.m4a")
 
 
 class LockTest(unittest.TestCase):
