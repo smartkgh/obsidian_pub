@@ -53,8 +53,8 @@
     <false/>
 
     <key>StandardOutPath</key>
-    <string>/Users/smartkgh/syncthing/recoding/.recoding/logs/launchd.out.log</string>
+    <string>/Users/smartkgh/syncthing/recoding_state/logs/launchd.out.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/smartkgh/syncthing/recoding/.recoding/logs/launchd.err.log</string>
+    <string>/Users/smartkgh/syncthing/recoding_state/logs/launchd.err.log</string>
 </dict>
 </plist>

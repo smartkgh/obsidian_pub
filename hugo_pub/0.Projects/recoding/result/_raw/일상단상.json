@@ -1,0 +1,15 @@
+{
+  "keyword": "일상단상",
+  "summary": "그럴 때가 없고 당연하다는 생각을 담은 짧은 독백이다.",
+  "source": "음성 001.m4a",
+  "engine": "apple-SpeechTranscriber",
+  "lang": "ko",
+  "duration": 4.317460317460317,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.317,
+      "text": "아 그럴때가없고당연히 뭐."
+    }
+  ]
+}

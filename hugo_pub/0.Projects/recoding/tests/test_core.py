@@ -192,6 +192,20 @@ class MainGuardTest(unittest.TestCase):
         self.assertIn("asr engine", out.stdout)
 
 
+class LockTest(unittest.TestCase):
+    def test_single_instance(self):
+        from core.lock import LockBusy, single_instance
+
+        with tempfile.TemporaryDirectory() as tmp:
+            lock = Path(tmp) / "lock"
+            with single_instance(lock):
+                with self.assertRaises(LockBusy):
+                    with single_instance(lock):
+                        pass
+            with single_instance(lock):        # 해제 후 재획득 가능
+                self.assertTrue(lock.exists())
+
+
 class FakeAdapter:
     needs_wav = False
 

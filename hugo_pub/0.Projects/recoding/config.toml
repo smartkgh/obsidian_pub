@@ -4,7 +4,9 @@
 [paths]
 incoming = "~/syncthing/recoding"                       # Syncthing 수신 폴더
 output   = "~/obsidian/obsidian_pub/hugo_pub/0.Projects/recoding/result"
-state    = "~/syncthing/recoding/.recoding"             # ledger · logs · tmp
+# ⚠️ Syncthing 폴더 안에 두면 ① ledger가 폰으로 동기화되고 ② 상태 변경이 WatchPaths를
+#    다시 트리거해 자기 자신을 부른다. 반드시 동기화 폴더 밖에 둔다.
+state    = "~/syncthing/recoding_state"                 # ledger · logs · tmp · lock
 
 [asr]
 engine          = "apple"        # apple | whispercpp

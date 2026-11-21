@@ -96,7 +96,8 @@ launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist   # 해제
 
 - `WatchPaths`: Syncthing 수신 폴더에 변화가 생기면 즉시 `once` 1회 실행
 - `StartInterval 300`: 이벤트가 없어도 5분마다 안전 스캔 (안정화 대기 파일 회수)
-- 로그: `~/syncthing/recoding/.recoding/logs/` (`recoding-YYYYMM.log`, `launchd.err.log`)
+- 로그: `~/syncthing/recoding_state/logs/` (`recoding-YYYYMM.log`, `launchd.err.log`)
+- 단일 실행 락: `~/syncthing/recoding_state/lock` — launchd 와 수동 실행이 겹치면 나중 것이 즉시 건너뛴다
 
 > [!note] 왜 상주 프로세스가 아닌가
 > launchd one-shot 방식은 크래시·재부팅에 자동 복구되고 메모리를 점유하지 않는다. 상태는 ledger에 있으므로 언제 죽어도 이어서 처리된다.
@@ -155,6 +156,7 @@ launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist   # 해제
 | `음성 261120_155500.m4a` | 10초 | 0.15초 | 노트 생성 1.3초 |
 | **`음성 004.m4a`** | **52분 1초** | **17초** (약 180배 실시간) | 13,607자 · 구간 218개 |
 | 52분 + 띄어쓰기 교정(5청크) | — | +68초 (총 85초) | LLM 5회 호출 |
+| 나머지 9개 일괄(총 34분) | 1.3초~14분51초 | 51초 | 노트 7개 + skip 2개 |
 
 > [!note] 띄어쓰기 교정은 선택
 > 전사 자체는 17초인데 교정이 68초를 더 쓴다. 긴 녹음은 `[postprocess].spacing_fix = false` 로 끄면 5배 빠르다(대신 어절이 붙어 나옴).
@@ -190,9 +192,14 @@ launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist   # 해제
 ├── result/                 # 산출물 (Obsidian 노트) + _raw/*.json
 └── .venv/                  # (git ignore)
 
-~/syncthing/recoding/          # 수신 (Syncthing)
+{프로젝트}/tests/            # unittest 22개 · run_tests.py
+
+~/syncthing/recoding/          # 수신 (Syncthing 전용, 상태 파일 없음)
 ├── 음성 261118_134537.m4a
-└── .recoding/ledger.sqlite, logs/, tmp/     # 상태
+└── .stfolder/
+~/syncthing/recoding_state/    # 상태 (동기화 폴더 밖)
+├── ledger.sqlite  lock
+└── logs/  tmp/
 ~/syncthing/recoding_done/     # 처리 완료 원본
 ~/syncthing/recoding_failed/   # 손상 파일
 ```
@@ -207,6 +214,7 @@ launchctl unload ~/Library/LaunchAgents/com.smartkgh.recoding.plist   # 해제
 | `locale not supported` | `main.py helper --list-locales` 로 ko-KR installed 확인 |
 | 파일이 계속 처리 안 됨 | `main.py list` 에서 status 확인. `ignored` 면 `reset` 후 `file` 로 수동 처리 |
 | `처리 대상 없음` | 신규 파일은 첫 스캔에서 등록만 되고 **다음 스캔(10초 후)** 에 처리된다 |
+| `건너뜀: 다른 recoding 프로세스가 실행 중` | 정상 동작. launchd 와 수동 실행이 겹친 경우로, 중복 처리를 막은 것 |
 | `ModuleNotFoundError: tomllib` | Python 3.9 로 실행된 경우. `.venv` 가 있으면 자동 재실행되므로, 이 오류가 뜨면 `.venv` 부재 → 1번 설치 단계 재실행 |
 | 키워드가 영어/이상함 | `main.py doctor` 로 API 키 확인. 키가 없으면 휴리스틱 폴백 |
 | 원본이 폰에 계속 남음 | `[archive].move_originals = true` 인지, `done_dir` 가 Syncthing 폴더 밖인지 확인 |

@@ -53,8 +53,11 @@ import unicodedata  # noqa: E402
 
 from core import render  # noqa: E402
 from core.config import Config  # noqa: E402
+from core.lock import LockBusy, single_instance  # noqa: E402
 from core.log import setup  # noqa: E402
 from core.pipeline import Pipeline, file_sha1  # noqa: E402
+
+MUTATING_COMMANDS = {"once", "watch", "file", "bootstrap", "reset"}
 
 PY_OK = sys.version_info >= MIN_PY
 
@@ -285,7 +288,17 @@ def main(argv: list[str] | None = None) -> int:
         "reset": cmd_reset,
         "helper": cmd_helper,
     }
-    return handlers[args.command](cfg, log, args)
+    handler = handlers[args.command]
+    if args.command not in MUTATING_COMMANDS:
+        return handler(cfg, log, args)
+
+    # launchd 트리거와 수동 실행이 겹쳐도 같은 파일을 두 번 처리하지 않도록 단일 실행 보장
+    try:
+        with single_instance(cfg.path("paths", "state") / "lock"):
+            return handler(cfg, log, args)
+    except LockBusy as exc:
+        print(f"건너뜀: {exc}", file=sys.stderr)
+        return 0
 
 
 if __name__ == "__main__":
