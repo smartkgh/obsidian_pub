@@ -60,3 +60,7 @@ title: Log
 ## [2026-11-25] verify | TEST-04 맥 재검증 통과
 - 변경: versions/v1/verification.md, raw/test-logs/2026-11-25-v1-TEST-04-recheck.log, index.md
 - 메모: 실제 영수증 일자 2/2, 금액 2/2 (장당 약 0.5초). 도우미 없을 때 기본 엔진 전환 확인. 단위 34/34, 브라우저 점검 8/8. 폰은 여전히 Tesseract.js
+
+## [2026-11-25] develop | Vite 설정 경고 제거
+- 코드: vite.config.ts(가져오기 경로에 .ts 확장자), server/ocr-middleware.ts(`__dirname` → `import.meta.dirname`), tsconfig.json(allowImportingTsExtensions)
+- 메모: 사용자 문의 — 서버 없이 localhost:8080이 열리는 것은 서비스 워커 오프라인 캐시 때문(정상). 이때는 맥 인식 엔진 사용 불가
