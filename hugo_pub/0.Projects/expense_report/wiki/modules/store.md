@@ -2,7 +2,9 @@
 type: module
 title: store — 결의서 데이터
 tags: [모듈]
-related: [[system]], [[form-layout]]
+related:
+  - "[[system]]"
+  - "[[form-layout]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

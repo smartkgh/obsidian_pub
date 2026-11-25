@@ -3,7 +3,8 @@ type: research
 title: 카드 영수증에서 일자·금액 뽑기
 tags: [영수증, 파싱, 정규식]
 sources: []
-related: [[ocr-options]]
+related:
+  - "[[ocr-options]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

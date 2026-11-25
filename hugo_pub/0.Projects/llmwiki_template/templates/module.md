@@ -1,11 +1,11 @@
 ---
 type: module
-title: {{title}}
+title: "{{title}}"
 tags: []
 sources: []
 related: []
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}

@@ -3,7 +3,11 @@ type: architecture
 title: 시스템 구조
 tags: [아키텍처, PWA]
 sources: []
-related: [[ADR-0001-앱-형태-PWA-USB-설치]], [[ADR-0002-OCR-엔진-Tesseract-js]], [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]], [[form-layout]]
+related:
+  - "[[ADR-0001-앱-형태-PWA-USB-설치]]"
+  - "[[ADR-0002-OCR-엔진-Tesseract-js]]"
+  - "[[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]]"
+  - "[[form-layout]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

@@ -6,7 +6,8 @@ version: v1
 base:
 tags: [지출결의서, 영수증, OCR, 로컬앱]
 sources: [raw/assets/지출결의서.jpeg]
-related: [[overview]]
+related:
+  - "[[overview]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

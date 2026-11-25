@@ -3,7 +3,9 @@ type: research
 title: 안드로이드·맥북 로컬 앱 형태
 tags: [PWA, Capacitor, 오프라인, 배포]
 sources: [raw/research/2026-11-25-web-search-ocr-docx.md]
-related: [[ocr-options]], [[document-generation]]
+related:
+  - "[[ocr-options]]"
+  - "[[document-generation]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

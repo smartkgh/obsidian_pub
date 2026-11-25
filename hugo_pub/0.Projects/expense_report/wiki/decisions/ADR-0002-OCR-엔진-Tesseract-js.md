@@ -5,7 +5,10 @@ status: accepted  # 맥에서는 ADR-0003으로 대체
 version: v1
 tags: [OCR, Tesseract.js]
 sources: [raw/research/2026-11-25-web-search-ocr-docx.md]
-related: [[ocr-options]], [[ADR-0001-앱-형태-PWA-USB-설치]], [[system]]
+related:
+  - "[[ocr-options]]"
+  - "[[ADR-0001-앱-형태-PWA-USB-설치]]"
+  - "[[system]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

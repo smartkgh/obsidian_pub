@@ -5,7 +5,11 @@ status: in-progress
 version: v1
 tags: []
 sources: [raw/test-logs/2026-11-25-v1-TEST-04.log, raw/test-logs/2026-11-25-v1-TEST-04-recheck.log]
-related: [[test-plan]], [[ADR-0002-OCR-엔진-Tesseract-js]], [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]], [[ocr]]
+related:
+  - "[[test-plan]]"
+  - "[[ADR-0002-OCR-엔진-Tesseract-js]]"
+  - "[[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]]"
+  - "[[ocr]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

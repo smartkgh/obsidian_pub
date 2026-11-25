@@ -2,7 +2,9 @@
 type: module
 title: storage — 기기 안 저장
 tags: [모듈]
-related: [[system]], [[ADR-0001-앱-형태-PWA-USB-설치]]
+related:
+  - "[[system]]"
+  - "[[ADR-0001-앱-형태-PWA-USB-설치]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

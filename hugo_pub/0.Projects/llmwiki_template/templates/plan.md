@@ -5,8 +5,8 @@ status: draft
 version: vN
 tags: []
 related: []        # [[requirements]], 관련 ADR
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # vN 계획

@@ -2,7 +2,10 @@
 type: module
 title: ui — 화면
 tags: [모듈]
-related: [[system]], [[storage]], [[ocr]]
+related:
+  - "[[system]]"
+  - "[[storage]]"
+  - "[[ocr]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

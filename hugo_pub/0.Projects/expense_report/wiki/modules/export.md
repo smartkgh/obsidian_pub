@@ -2,7 +2,9 @@
 type: module
 title: export — PDF·DOCX 출력
 tags: [모듈]
-related: [[layout]], [[document-generation]]
+related:
+  - "[[layout]]"
+  - "[[document-generation]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

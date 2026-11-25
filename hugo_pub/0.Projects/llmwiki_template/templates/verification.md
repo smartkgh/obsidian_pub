@@ -6,8 +6,8 @@ version: vN
 tags: []
 sources: []        # raw/test-logs/...
 related: []        # [[test-plan]]
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # vN 검증 결과

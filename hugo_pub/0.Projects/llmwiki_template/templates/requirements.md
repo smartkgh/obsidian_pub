@@ -6,8 +6,8 @@ version: vN
 base: (이전 버전, v1이면 없음)
 tags: []
 related: []
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # vN 요구사항

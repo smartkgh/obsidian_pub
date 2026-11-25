@@ -5,7 +5,11 @@ status: accepted
 version: v1
 tags: [OCR, Apple Vision, macOS]
 sources: [raw/test-logs/2026-11-25-v1-TEST-04.log]
-related: [[ADR-0002-OCR-엔진-Tesseract-js]], [[verification]], [[system]], [[ocr]]
+related:
+  - "[[ADR-0002-OCR-엔진-Tesseract-js]]"
+  - "[[verification]]"
+  - "[[system]]"
+  - "[[ocr]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

@@ -4,7 +4,10 @@ title: v1 작업 목록
 status: done
 version: v1
 tags: []
-related: [[plan]], [[system]], [[form-layout]]
+related:
+  - "[[plan]]"
+  - "[[system]]"
+  - "[[form-layout]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

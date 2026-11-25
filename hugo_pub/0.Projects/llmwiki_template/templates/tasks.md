@@ -5,8 +5,8 @@ status: draft
 version: vN
 tags: []
 related: []        # [[plan]]
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # vN 작업 목록

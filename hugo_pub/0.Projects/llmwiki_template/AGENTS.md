@@ -142,11 +142,17 @@ status: draft | in-progress | done      # 버전 문서와 결정 기록만
 version: v1                             # 버전 문서만
 tags: []
 sources: []                             # raw/ 경로 또는 URL
-related: []                             # [[연결 페이지]]
+related:                                # 위키 링크는 따옴표로 감싼 목록
+  - "[[연결 페이지]]"
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
 ```
+
+frontmatter는 Obsidian 속성(YAML)으로 읽힌다. 다음을 지킨다.
+- 위키 링크는 **따옴표로 감싼 목록**으로 쓴다: `related:` 다음 줄에 `  - "[[페이지]]"`. `related: [[a]], [[b]]`처럼 쓰면 링크가 깨진다.
+- `{{title}}`, `{{date}}` 같은 템플릿 자리표시는 따옴표로 감싼다: `title: "{{title}}"`.
+- `:`, `#`, `[`, `{`로 시작하거나 그런 글자를 포함한 값은 따옴표로 감싼다.
 
 ### 4.3 링크
 

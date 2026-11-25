@@ -6,8 +6,8 @@ version: vN
 git_tag:           # 예: v1.0
 tags: []
 related: []
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # vN 결과 보고

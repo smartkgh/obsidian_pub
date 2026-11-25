@@ -3,7 +3,9 @@ type: architecture
 title: 설치 안내 (맥북, 안드로이드 USB)
 tags: [설치, adb, PWA]
 sources: []
-related: [[ADR-0001-앱-형태-PWA-USB-설치]], [[system]]
+related:
+  - "[[ADR-0001-앱-형태-PWA-USB-설치]]"
+  - "[[system]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

@@ -2,7 +2,9 @@
 type: module
 title: layout — 결의서 레이아웃
 tags: [모듈]
-related: [[form-layout]], [[export]]
+related:
+  - "[[form-layout]]"
+  - "[[export]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

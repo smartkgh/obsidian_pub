@@ -1,11 +1,11 @@
 ---
 type: research
-title: {{title}}
+title: "{{title}}"
 tags: []
 sources: []        # raw/research/... 또는 URL
 related: []
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # {{title}}

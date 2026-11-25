@@ -1,13 +1,13 @@
 ---
 type: decision
-title: ADR-0000 {{title}}
+title: "ADR-0000 {{title}}"
 status: proposed   # proposed | accepted | superseded
 version: v1
 tags: []
 sources: []
 related: []        # 관련 REQ, 대체한/대체된 ADR
-created: {{date}}
-updated: {{date}}
+created: "{{date}}"
+updated: "{{date}}"
 ---
 
 # ADR-0000 {{title}}

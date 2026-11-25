@@ -4,7 +4,9 @@ title: v1 검증 계획
 status: draft
 version: v1
 tags: []
-related: [[requirements]], [[plan]]
+related:
+  - "[[requirements]]"
+  - "[[plan]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

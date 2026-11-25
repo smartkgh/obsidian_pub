@@ -2,7 +2,11 @@
 type: module
 title: ocr — 영수증 인식
 tags: [모듈, OCR]
-related: [[ADR-0002-OCR-엔진-Tesseract-js]], [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]], [[card-receipt-parsing]], [[system]]
+related:
+  - "[[ADR-0002-OCR-엔진-Tesseract-js]]"
+  - "[[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]]"
+  - "[[card-receipt-parsing]]"
+  - "[[system]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

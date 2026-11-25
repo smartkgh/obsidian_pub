@@ -64,3 +64,7 @@ title: Log
 ## [2026-11-25] develop | Vite 설정 경고 제거
 - 코드: vite.config.ts(가져오기 경로에 .ts 확장자), server/ocr-middleware.ts(`__dirname` → `import.meta.dirname`), tsconfig.json(allowImportingTsExtensions)
 - 메모: 사용자 문의 — 서버 없이 localhost:8080이 열리는 것은 서비스 워커 오프라인 캐시 때문(정상). 이때는 맥 인식 엔진 사용 불가
+
+## [2026-11-25] lint | frontmatter를 Obsidian 속성 형식으로 수정
+- 변경: wiki 페이지 21개, templates 11개 (llmwiki_template 템플릿 11개 포함), 두 폴더의 AGENTS.md 4.2
+- 메모: `related: [[a]], [[b]]` → 따옴표 목록, `{{title}}`/`{{date}}` → 따옴표. YAML 검사 49개 모두 통과

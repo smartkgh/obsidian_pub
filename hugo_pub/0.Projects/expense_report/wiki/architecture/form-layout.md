@@ -3,7 +3,9 @@ type: architecture
 title: 결의서 레이아웃
 tags: [레이아웃, PDF, DOCX]
 sources: [raw/assets/지출결의서.jpeg]
-related: [[system]], [[document-generation]]
+related:
+  - "[[system]]"
+  - "[[document-generation]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

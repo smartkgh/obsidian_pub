@@ -3,7 +3,8 @@ type: research
 title: 오프라인 DOCX·PDF 생성
 tags: [DOCX, PDF, 한글폰트]
 sources: [raw/research/2026-11-25-web-search-ocr-docx.md]
-related: [[local-app-packaging]]
+related:
+  - "[[local-app-packaging]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

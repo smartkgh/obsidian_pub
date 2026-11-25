@@ -5,7 +5,10 @@ status: accepted
 version: v1
 tags: [PWA, 설치, adb]
 sources: []
-related: [[local-app-packaging]], [[ADR-0002-OCR-엔진-Tesseract-js]], [[system]]
+related:
+  - "[[local-app-packaging]]"
+  - "[[ADR-0002-OCR-엔진-Tesseract-js]]"
+  - "[[system]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---

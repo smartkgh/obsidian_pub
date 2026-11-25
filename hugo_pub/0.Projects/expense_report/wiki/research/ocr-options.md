@@ -3,7 +3,9 @@ type: research
 title: 오프라인 영수증 OCR 선택지
 tags: [OCR, 오프라인, 안드로이드, macOS]
 sources: [raw/research/2026-11-25-web-search-ocr-docx.md]
-related: [[card-receipt-parsing]], [[local-app-packaging]]
+related:
+  - "[[card-receipt-parsing]]"
+  - "[[local-app-packaging]]"
 created: 2026-11-25
 updated: 2026-11-25
 ---
