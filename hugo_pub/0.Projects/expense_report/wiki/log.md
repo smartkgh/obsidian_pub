@@ -43,3 +43,20 @@ title: Log
 - 변경: versions/v1/tasks.md, modules/store.md, storage.md, ocr.md, layout.md, export.md, ui.md, index.md
 - 코드: ~/my_projects/expense-report (git 저장소 생성, 아직 커밋하지 않음)
 - 메모: Node.js 설치(Homebrew). 개발 중 발견·수정 4건(PDF 한글 누락, ①~⑤ 글자 없음, "합 A" 오인식, 저장 타이밍). 단위 테스트 32/32, 브라우저 점검 8/8
+
+## [2026-11-25] verify | ④ 검증 (맥북) — 실제 영수증 2장 인식 실패
+- 변경: versions/v1/verification.md, raw/test-logs/2026-11-25-v1-TEST-04.log, raw/test-logs/2026-11-25-vision-ocr.swift
+- 원본: raw/assets/KakaoTalk_Photo_2026-11-25-20-43-28 001.jpeg, …-29 002.jpeg (사용자 추가, 실제 카드 영수증)
+- 메모: Tesseract.js 일자 0/2·금액 0/2, 전처리 20여 조합도 불안정. Apple Vision은 정확. 엔진 교체는 설계 변경 → 사용자 결정 대기
+- 코드: src/ocr/image.ts에 전처리 옵션 추가(기본값은 기존과 동일), 실험 도구 lab/, scripts/ocr-eval.mjs 추가
+
+## [2026-11-25] design | 맥 OCR 엔진 교체 결정 (B안)
+- 변경: decisions/ADR-0003-맥-OCR-Apple-Vision-로컬-도우미.md, ADR-0002(맥은 대체됨 표시), versions/v1/plan.md(계획 변경), tasks.md(TASK-13~15 추가)
+
+## [2026-11-25] develop | TASK-13~15 — Apple Vision 도우미, 엔진 자동 선택, 파서 보완
+- 변경: versions/v1/tasks.md, modules/ocr.md, architecture/system.md, architecture/install-guide.md
+- 코드: native/mac/VisionOCR.swift, server/ocr-middleware.ts, scripts/build-mac-ocr.mjs, src/ocr/engine.ts·index.ts·parser.ts, src/ui/app.ts
+
+## [2026-11-25] verify | TEST-04 맥 재검증 통과
+- 변경: versions/v1/verification.md, raw/test-logs/2026-11-25-v1-TEST-04-recheck.log, index.md
+- 메모: 실제 영수증 일자 2/2, 금액 2/2 (장당 약 0.5초). 도우미 없을 때 기본 엔진 전환 확인. 단위 34/34, 브라우저 점검 8/8. 폰은 여전히 Tesseract.js

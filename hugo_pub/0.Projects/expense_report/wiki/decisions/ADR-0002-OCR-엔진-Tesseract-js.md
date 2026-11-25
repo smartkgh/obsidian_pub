@@ -1,7 +1,7 @@
 ---
 type: decision
 title: ADR-0002 OCR 엔진 — Tesseract.js (교체 가능 구조)
-status: accepted
+status: accepted  # 맥에서는 ADR-0003으로 대체
 version: v1
 tags: [OCR, Tesseract.js]
 sources: [raw/research/2026-11-25-web-search-ocr-docx.md]
@@ -11,6 +11,8 @@ updated: 2026-11-25
 ---
 
 # ADR-0002 OCR 엔진 — Tesseract.js (교체 가능 구조)
+
+> 2026-11-25: TEST-04 실패로 **맥에서는 [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]]로 대체**. 폰과 도우미가 없을 때의 대체 엔진으로는 계속 사용.
 
 ## 배경
 ADR-0001로 앱이 브라우저(PWA)에서 돈다. ML Kit, Apple Vision은 네이티브 앱에서만 쓸 수 있다.

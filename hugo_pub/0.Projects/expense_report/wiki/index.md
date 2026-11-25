@@ -14,7 +14,7 @@ updated: 2026-11-25
 ## Versions
 | 버전 | 상태 | 요약 |
 |---|---|---|
-| [[versions/v1/requirements\|v1]] · [[versions/v1/plan\|plan]] · [[versions/v1/test-plan\|test]] · [[versions/v1/tasks\|tasks]] | ③ 개발 완료 → ④ 검증 대기 | 영수증 인식 → 지출결의서 DOCX/PDF, 안드로이드·맥북 로컬 전용 |
+| [[versions/v1/requirements\|v1]] · [[versions/v1/plan\|plan]] · [[versions/v1/test-plan\|test]] · [[versions/v1/tasks\|tasks]] | ④ 검증 중 — 맥 TEST-04 통과(Apple Vision), 폰·수동 항목 남음 | 영수증 인식 → 지출결의서 DOCX/PDF, 안드로이드·맥북 로컬 전용 |
 
 ## Research
 - [[ocr-options]] — 오프라인 영수증 OCR 선택지 (ML Kit, Apple Vision, Tesseract.js)
@@ -32,7 +32,8 @@ updated: 2026-11-25
 
 ## Decisions
 - [[ADR-0001-앱-형태-PWA-USB-설치]] — 웹앱(PWA) + USB 설치
-- [[ADR-0002-OCR-엔진-Tesseract-js]] — Tesseract.js, 교체 가능 구조
+- [[ADR-0002-OCR-엔진-Tesseract-js]] — Tesseract.js, 교체 가능 구조 (맥은 ADR-0003으로 대체)
+- [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]] — 맥 OCR을 Apple Vision 로컬 도우미로
 
 ## Modules
 - [[store]] — 결의서 데이터, 합계, 14줄 제한

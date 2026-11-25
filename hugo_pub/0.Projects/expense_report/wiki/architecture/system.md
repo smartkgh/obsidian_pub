@@ -3,14 +3,14 @@ type: architecture
 title: 시스템 구조
 tags: [아키텍처, PWA]
 sources: []
-related: [[ADR-0001-앱-형태-PWA-USB-설치]], [[ADR-0002-OCR-엔진-Tesseract-js]], [[form-layout]]
+related: [[ADR-0001-앱-형태-PWA-USB-설치]], [[ADR-0002-OCR-엔진-Tesseract-js]], [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]], [[form-layout]]
 created: 2026-11-25
 updated: 2026-11-25
 ---
 
 # 시스템 구조
 
-> 항상 최신 상태를 반영한다. (현재: v1 설계)
+> 항상 최신 상태를 반영한다. (현재: v1, 2026-11-25 맥 OCR 변경 반영)
 
 ## 한눈에 보기
 
@@ -41,6 +41,14 @@ updated: 2026-11-25
 
 외부로 나가는 네트워크 요청은 없다. 서비스 워커가 설치된 뒤에는 서버가 꺼져 있어도 동작한다.
 
+### 맥 인식 엔진 (ADR-0003)
+```
+브라우저 ──POST /api/ocr (사진)──▶ 맥 로컬 서버(localhost:8080) ──▶ bin/vision-ocr (Apple Vision)
+         ◀──────── 줄 단위 텍스트 ─────────────┘          (임시 파일은 바로 삭제)
+```
+- 서버가 켜져 있고 도우미가 있으면 Apple Vision, 아니면 Tesseract.js로 자동 전환
+- 폰은 USB로 `npm run phone` 실행 중일 때만 맥 엔진을 쓸 수 있다
+
 ## 기술 선택
 
 | 영역 | 선택 | 이유 |
@@ -48,7 +56,7 @@ updated: 2026-11-25
 | 언어/빌드 | TypeScript + Vite | 가볍고 빠름, PWA 플러그인 있음 |
 | 화면 | 프레임워크 없이 TypeScript (화면 3개) | 의존성 최소화 |
 | 오프라인 | vite-plugin-pwa (Workbox 사전 캐시) | 인식 엔진·폰트까지 한 번에 캐시 |
-| 인식 | Tesseract.js, `kor+eng`, 로컬 경로 | [[ADR-0002-OCR-엔진-Tesseract-js]] |
+| 인식 | 맥: Apple Vision 로컬 도우미 / 그 외: Tesseract.js `kor+eng` | [[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]], [[ADR-0002-OCR-엔진-Tesseract-js]] |
 | PDF | pdf-lib + @pdf-lib/fontkit + 나눔고딕(OFL) | 폰트 내장, 좌표로 원본 양식 재현 |
 | DOCX | docx | 브라우저에서 생성, 표 병합·음영 지원 |
 | 저장 | IndexedDB | 이미지(Blob)까지 기기 안에 저장 |
@@ -92,5 +100,5 @@ type ExpenseLine = {
 
 ## 실행·설치
 - 코드 위치: `~/my_projects/expense-report`
-- 맥: `npm run serve` → 크롬에서 `http://localhost:8080`
+- 맥: `npm run serve` → 크롬에서 `http://localhost:8080` (Apple Vision 도우미 자동 컴파일, Xcode 명령줄 도구 필요)
 - 폰: [[install-guide]] 참고 (`npm run phone` = adb reverse + serve)
