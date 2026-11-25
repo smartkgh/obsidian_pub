@@ -27,3 +27,7 @@ title: Log
 ## [2026-11-25] research | ① 조사 — OCR, 문서 생성, 앱 형태
 - 변경: raw/research/2026-11-25-web-search-ocr-docx.md, research/ocr-options.md, research/card-receipt-parsing.md, research/document-generation.md, research/local-app-packaging.md, index.md
 - 메모: 앱 설치 방식(인터넷 주소에서 1회 설치 허용 여부)과 실제 영수증 샘플이 설계 전 확인 필요
+
+## [2026-11-25] design | 화면 시안 (초안)
+- 변경: architecture/ui-mockup.html
+- 메모: 폰 기준 3개 화면(작성, 영수증 확인·입력, 미리보기·내보내기). 설치 방식(USB/APK)은 미정
