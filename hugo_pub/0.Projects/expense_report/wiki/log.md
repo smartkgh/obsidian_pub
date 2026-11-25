@@ -31,3 +31,7 @@ title: Log
 ## [2026-11-25] design | 화면 시안 (초안)
 - 변경: architecture/ui-mockup.html
 - 메모: 폰 기준 3개 화면(작성, 영수증 확인·입력, 미리보기·내보내기). 설치 방식(USB/APK)은 미정
+
+## [2026-11-25] design | ② 설계 — 구조, 레이아웃, 계획, 검증 계획
+- 변경: decisions/ADR-0001, ADR-0002, architecture/system.md, form-layout.md, install-guide.md, ui-mockup.html(증빙 6장), versions/v1/plan.md, test-plan.md, requirements.md(결정 사항 추가), index.md
+- 메모: 사용자 결정 — 영수증 증빙 6장/쪽, USB(adb reverse) 설치. 최대 14줄. 사용자 승인 대기

@@ -14,7 +14,7 @@ updated: 2026-11-25
 ## Versions
 | 버전 | 상태 | 요약 |
 |---|---|---|
-| [[versions/v1/requirements\|v1]] | ① 조사 | 영수증 인식 → 지출결의서 DOCX/PDF, 안드로이드·맥북 로컬 전용 |
+| [[versions/v1/requirements\|v1]] · [[versions/v1/plan\|plan]] · [[versions/v1/test-plan\|test]] | ② 설계 (승인 대기) | 영수증 인식 → 지출결의서 DOCX/PDF, 안드로이드·맥북 로컬 전용 |
 
 ## Research
 - [[ocr-options]] — 오프라인 영수증 OCR 선택지 (ML Kit, Apple Vision, Tesseract.js)
@@ -25,8 +25,14 @@ updated: 2026-11-25
 ## Concepts
 
 ## Architecture
+- [[system]] — 시스템 구조, 모듈, 데이터 구조
+- [[form-layout]] — 결의서 레이아웃 (14줄, 증빙 6장/쪽)
+- [[install-guide]] — 맥북, 안드로이드 USB 설치 안내
+- `architecture/ui-mockup.html` — 화면 시안
 
 ## Decisions
+- [[ADR-0001-앱-형태-PWA-USB-설치]] — 웹앱(PWA) + USB 설치
+- [[ADR-0002-OCR-엔진-Tesseract-js]] — Tesseract.js, 교체 가능 구조
 
 ## Modules
 

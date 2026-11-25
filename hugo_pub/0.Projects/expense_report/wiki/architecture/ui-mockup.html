@@ -84,7 +84,8 @@
   .a4 .guide { margin-top: 5px; line-height: 1.5; }
   .a4 .foot { display: flex; justify-content: space-between; margin-top: auto; }
   .pages { display: flex; gap: 6px; margin-top: 8px; }
-  .pages .p { flex: 1; aspect-ratio: 210/297; border: 1px solid var(--line); background: #fff; font-size: 9px; color: var(--sub); padding: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .pages .p { flex: 0 0 31%; aspect-ratio: 210/297; border: 1px solid var(--line); background: #fff; font-size: 9px; color: var(--sub); padding: 4px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 3px; }
+  .pages .p div.empty { background: none; border: 1px dashed #e5e7eb; }
   .pages .p div { background: repeating-linear-gradient(0deg, #f3f4f6 0 3px, #e5e7eb 3px 4px); border: 1px solid #e5e7eb; }
   .pages .p.active { outline: 2px solid var(--accent); }
 
@@ -220,10 +221,10 @@
   <!-- Screen 3 -->
   <div class="screen-wrap">
     <div class="screen-label">③ 미리보기·내보내기</div>
-    <div class="screen-desc">원본 양식과 같은 모양으로 미리 봅니다. 송금처, 예산, 회색 칸은 비워 두고 출력 후 손으로 적습니다. 2페이지부터 영수증 증빙이 붙습니다.</div>
+    <div class="screen-desc">원본 양식과 같은 모양으로 미리 봅니다. 송금처, 예산, 회색 칸은 비워 두고 출력 후 손으로 적습니다. 2페이지부터 영수증 증빙이 한 쪽에 6장씩 붙습니다.</div>
     <div class="phone">
       <div class="statusbar"><span>9:45</span><span>오프라인 ✓</span></div>
-      <div class="appbar"><span class="back">‹</span><span class="title">미리보기</span><span class="badge">1 / 3쪽</span></div>
+      <div class="appbar"><span class="back">‹</span><span class="title">미리보기</span><span class="badge">1 / 2쪽</span></div>
       <div class="body" style="background:#f3f4f6">
         <div class="a4">
           <h2>지 출 결 의 서</h2>
@@ -260,10 +261,9 @@
         </div>
         <div class="pages">
           <div class="p active" style="display:flex;align-items:center;justify-content:center">결의서</div>
-          <div class="p"><div></div><div></div><div></div><div></div></div>
-          <div class="p"><div></div><div></div></div>
+          <div class="p"><div></div><div></div><div></div><div class="empty"></div><div class="empty"></div><div class="empty"></div></div>
         </div>
-        <div class="hint" style="margin-top:6px">2~3쪽: 영수증 증빙 (한 쪽에 4장, 줄 번호·일자·금액 표시)</div>
+        <div class="hint" style="margin-top:6px">2쪽부터: 영수증 증빙 (한 쪽에 6장 = 2열×3행, 줄 번호·일자·금액 표시)</div>
       </div>
       <div class="bottom">
         <button class="btn ghost">DOCX 저장</button>
