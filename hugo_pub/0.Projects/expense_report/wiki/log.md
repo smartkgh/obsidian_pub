@@ -16,3 +16,14 @@ title: Log
 ## [2026-11-25] requirements | v1 요구사항 초안
 - 변경: versions/v1/requirements.md (REQ-001~016, 열린 질문 6개)
 - 메모: 원본 양식 raw/assets/지출결의서.jpeg 기준. 서명은 출력 후 수기, 영수증은 뒤 페이지 증빙 첨부, 안드로이드·맥북 각각 로컬 전용
+
+## [2026-11-25] requirements | v1 요구사항 열린 질문 반영
+- 변경: versions/v1/requirements.md (REQ-001~017)
+- 메모: 항목 2개(야유회비, 교사 월례회의), 결의서 1페이지 고정, 금액 자동 인식 실패 시 빈칸, 송금처·예산 칸은 비워 두고 별도 기입, 카드 영수증만, 출력 모양은 원본 이미지 기준
+
+## [2026-11-25] requirements | v1 요구사항 승인
+- 변경: versions/v1/requirements.md (status: approved)
+
+## [2026-11-25] research | ① 조사 — OCR, 문서 생성, 앱 형태
+- 변경: raw/research/2026-11-25-web-search-ocr-docx.md, research/ocr-options.md, research/card-receipt-parsing.md, research/document-generation.md, research/local-app-packaging.md, index.md
+- 메모: 앱 설치 방식(인터넷 주소에서 1회 설치 허용 여부)과 실제 영수증 샘플이 설계 전 확인 필요
