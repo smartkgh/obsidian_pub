@@ -35,3 +35,11 @@ title: Log
 ## [2026-11-25] design | ② 설계 — 구조, 레이아웃, 계획, 검증 계획
 - 변경: decisions/ADR-0001, ADR-0002, architecture/system.md, form-layout.md, install-guide.md, ui-mockup.html(증빙 6장), versions/v1/plan.md, test-plan.md, requirements.md(결정 사항 추가), index.md
 - 메모: 사용자 결정 — 영수증 증빙 6장/쪽, USB(adb reverse) 설치. 최대 14줄. 사용자 승인 대기
+
+## [2026-11-25] design | v1 설계 승인
+- 변경: versions/v1/plan.md (status: approved)
+
+## [2026-11-25] develop | ③ 개발 — TASK-01~12 완료
+- 변경: versions/v1/tasks.md, modules/store.md, storage.md, ocr.md, layout.md, export.md, ui.md, index.md
+- 코드: ~/my_projects/expense-report (git 저장소 생성, 아직 커밋하지 않음)
+- 메모: Node.js 설치(Homebrew). 개발 중 발견·수정 4건(PDF 한글 누락, ①~⑤ 글자 없음, "합 A" 오인식, 저장 타이밍). 단위 테스트 32/32, 브라우저 점검 8/8
