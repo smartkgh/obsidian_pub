@@ -106,7 +106,7 @@ class Ledger:
         if not fields:
             return
         fields["updated_at"] = now_iso()
-        keys = ", ".join(f"{k} = ?" for k in fields)
+        keys = ", ".join(f"{k} = ?" for k in fields) 
         self.conn.execute(f"UPDATE files SET {keys} WHERE sha1 = ?", (*fields.values(), sha1))
         self.conn.commit()
 
