@@ -1,7 +1,7 @@
 ---
 type: verification
 title: v1 검증 결과
-status: in-progress
+status: done
 version: v1
 tags: []
 sources: [raw/test-logs/2026-11-25-v1-TEST-04.log, raw/test-logs/2026-11-25-v1-TEST-04-recheck.log]
@@ -11,7 +11,7 @@ related:
   - "[[ADR-0003-맥-OCR-Apple-Vision-로컬-도우미]]"
   - "[[ocr]]"
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 ---
 
 # v1 검증 결과
@@ -69,6 +69,9 @@ updated: 2026-11-25
 | ID | 원인 | 조치 | 재검증 결과 |
 |---|---|---|---|
 | TEST-04 | Tesseract.js의 감열지 영수증 사진 인식 품질 부족 | 맥: Apple Vision 도우미로 교체 + 파서 보완(구매, 카드결제액, 날짜·시간 붙음) (TASK-13~15) | 맥 일자 2/2, 금액 2/2 통과. 도우미 없을 때 기본 엔진 자동 전환 확인 |
+
+## v1 마무리 (2026-11-26)
+사용자 요청으로 아래 미실행 항목은 **실행하지 않은 상태로** v1을 마무리한다. 통과로 간주하지 않으며, 다음 버전 후보로 넘긴다. ([[result]])
 
 ## 남은 확인 / 메모
 - 표본이 2장(같은 매장 형식)뿐이다. 다른 카드사·매장 영수증으로 더 확인하면 좋다.

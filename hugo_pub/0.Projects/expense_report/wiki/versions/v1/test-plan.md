@@ -1,14 +1,14 @@
 ---
 type: test-plan
 title: v1 검증 계획
-status: draft
+status: done
 version: v1
 tags: []
 related:
   - "[[requirements]]"
   - "[[plan]]"
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 ---
 
 # v1 검증 계획

@@ -1,7 +1,7 @@
 ---
 type: requirements
 title: v1 요구사항
-status: approved
+status: done
 version: v1
 base:
 tags: [지출결의서, 영수증, OCR, 로컬앱]
@@ -9,7 +9,7 @@ sources: [raw/assets/지출결의서.jpeg]
 related:
   - "[[overview]]"
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 ---
 
 # v1 요구사항

@@ -68,3 +68,8 @@ title: Log
 ## [2026-11-25] lint | frontmatter를 Obsidian 속성 형식으로 수정
 - 변경: wiki 페이지 21개, templates 11개 (llmwiki_template 템플릿 11개 포함), 두 폴더의 AGENTS.md 4.2
 - 메모: `related: [[a]], [[b]]` → 따옴표 목록, `{{title}}`/`{{date}}` → 따옴표. YAML 검사 49개 모두 통과
+
+## [2026-11-26] report | ⑤ v1 결과 보고 및 버전 완료
+- 변경: versions/v1/result.md(새로 작성), requirements·plan·test-plan·verification·tasks status → done, overview.md, index.md
+- 코드: ~/my_projects/expense-report 첫 커밋 6b525ff, 태그 v1.0 (저장소 작성자: puppy, 이 저장소에만 설정)
+- 메모: 사용자 요청으로 현 상태로 마무리. 미실행 검증 8개(TEST-01, 05~07, 09, 11, 12, 15)는 통과로 보지 않고 다음 버전 후보로 넘김. 마무리 직전 단위 테스트 34/34, 빌드 정상

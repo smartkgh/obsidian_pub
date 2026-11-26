@@ -1,7 +1,7 @@
 ---
 type: overview
 title: Overview
-updated: 2026-11-25
+updated: 2026-11-26
 ---
 
 # Overview
@@ -16,7 +16,10 @@ updated: 2026-11-25
 - 제외: 화면 서명, 기기 간 동기화, HWP 출력
 
 ## 현재 상태
-- 현재 버전: v1 (draft)
+- 현재 버전: **v1 완료** (2026-11-26, 코드 태그 `v1.0`) — [[result]]
+- 맥북: 실제 영수증 자동 인식 동작 (Apple Vision, `npm run serve` 실행 중일 때)
+- 안드로이드: 미검증, 케이블 없이 쓰면 자동 인식 품질 낮음
+- 다음 버전 후보: 안드로이드 검증, 폰 인식 엔진 개선(APK + ML Kit), 수동 검증 마저 하기
 - 외부 코드 경로: `~/my_projects/expense-report`
 
 ## 주요 페이지

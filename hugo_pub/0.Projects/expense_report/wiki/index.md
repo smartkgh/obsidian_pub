@@ -14,7 +14,7 @@ updated: 2026-11-25
 ## Versions
 | 버전 | 상태 | 요약 |
 |---|---|---|
-| [[versions/v1/requirements\|v1]] · [[versions/v1/plan\|plan]] · [[versions/v1/test-plan\|test]] · [[versions/v1/tasks\|tasks]] | ④ 검증 중 — 맥 TEST-04 통과(Apple Vision), 폰·수동 항목 남음 | 영수증 인식 → 지출결의서 DOCX/PDF, 안드로이드·맥북 로컬 전용 |
+| [[versions/v1/requirements\|v1]] · [[versions/v1/plan\|plan]] · [[versions/v1/test-plan\|test]] · [[versions/v1/tasks\|tasks]] · [[versions/v1/verification\|verify]] · [[versions/v1/result\|result]] | **완료** (2026-11-26, `v1.0`) — 맥 통과, 폰·수동 검증 8개 미실행 → v2 후보 | 영수증 인식 → 지출결의서 DOCX/PDF, 안드로이드·맥북 로컬 전용 |
 
 ## Research
 - [[ocr-options]] — 오프라인 영수증 OCR 선택지 (ML Kit, Apple Vision, Tesseract.js)

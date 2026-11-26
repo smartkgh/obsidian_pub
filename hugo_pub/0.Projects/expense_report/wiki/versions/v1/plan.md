@@ -1,7 +1,7 @@
 ---
 type: plan
 title: v1 계획
-status: approved
+status: done
 version: v1
 tags: []
 related:
@@ -12,7 +12,7 @@ related:
   - "[[ADR-0001-앱-형태-PWA-USB-설치]]"
   - "[[ADR-0002-OCR-엔진-Tesseract-js]]"
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 ---
 
 # v1 계획
