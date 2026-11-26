@@ -1,5 +1,7 @@
 # LLM Wiki Template
 
+> 코드 개발 프로젝트용. 자료 분석·문서 작성 프로젝트(이력서, 조사 보고서 등)는 `llmwiki_research_template`을 쓴다.
+
 AI 에이전트가 함께 쓰고 관리하는 프로젝트 위키 템플릿이다.
 원본 자료(`raw/`)를 넣으면 에이전트가 정리된 지식 페이지(`wiki/`)를 만들고 갱신한다.
 조사 → 설계 → 개발 → 검증 → 보고 과정을 버전별로 기록할 수 있다.
@@ -11,13 +13,14 @@ AI 에이전트가 함께 쓰고 관리하는 프로젝트 위키 템플릿이�
 3. `wiki/overview.md`에 프로젝트 목적을 적는다.
 4. 외부 코드가 있으면 에이전트 실행 시 코드 폴더 접근을 허용한다.
    - Claude Code: `claude --add-dir ~/my_projects/my_app`
+   - Gemini CLI: `.gemini/settings.json`의 `includeDirectories`에 경로 추가
 5. 자료를 `raw/research/`에 넣고 에이전트에게 "새 자료 정리해줘"라고 요청한다.
 
 ## 에이전트 호환
 
 - 모든 규칙은 `AGENTS.md`에 있다. (Codex, Cursor 등은 자동으로 읽음)
 - `CLAUDE.md`는 `@AGENTS.md` 한 줄로 Claude Code에 같은 규칙을 불러온다.
-- Gemini CLI는 설정에서 `contextFileName`을 `AGENTS.md`로 지정한다.
+- Gemini CLI: `.gemini/settings.json`이 `AGENTS.md`를 읽도록 설정되어 있다. 외부 코드 경로는 `includeDirectories`에 넣는다(예: `["~/my_projects/my_app"]`). 실행 후 `/memory show`로 확인.
 
 ## 자주 쓰는 요청 예시
 
