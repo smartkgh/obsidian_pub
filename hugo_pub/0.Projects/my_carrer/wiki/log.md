@@ -45,3 +45,11 @@ title: Log
 ## [2026-11-28] draft | 이력서 및 경력기술서 2종 Claude 독립 초안(draft-v1.md) 작성
 - 변경: `outputs/2026-11-이력서-경력기술서-claude/brief.md`, `outputs/2026-11-이력서-경력기술서-claude/draft-v1.md`, `wiki/index.md`
 - 메모: 승인된 기존 brief·outline을 이어받아 비교용으로 따로 작성. 경력 요약·STAR 구조 추가, SK 플래닛 PROJECT 최신순 재정렬, 근거 없는 기간·역할 7건은 [확인 필요]로 표시. 주민번호는 초안에 쓰지 않음.
+
+## [2026-11-28] ingest | 사용자 확인 답변 2 수집
+- 변경: `raw/sources/2026-11-28-사용자-확인-답변-2.md`(신규), `wiki/entities/sk-플래닛.md`, `wiki/concepts/ai-development-workflow.md`
+- 메모: 구조 전환 연도(HTTP(S) 2014·WebView 2017·Kotlin 2020)와 역할(제안+팀 합의), BEP 기여, 전금법 존 서버 이전, 개인 AI 자동화, 입사 직후 전면 개편·Jenkins. 기존 위키의 "주도" 표현과 다름을 sk-플래닛에 표시.
+
+## [2026-11-28] draft | Claude 작성본 초안 v2
+- 변경: `outputs/2026-11-이력서-경력기술서-claude/draft-v2.md`, `brief.md`, `wiki/index.md`
+- 메모: 답변 2 반영. 혼합형 SK PROJECT 07(사내 첫 PoC 앱 전면 개편) 신설. 남은 확인 3건(BEP 표현, PoC 해석·종료 시점, 삼성증권 시기).
