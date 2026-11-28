@@ -53,3 +53,15 @@ title: Log
 ## [2026-11-28] draft | Claude 작성본 초안 v2
 - 변경: `outputs/2026-11-이력서-경력기술서-claude/draft-v2.md`, `brief.md`, `wiki/index.md`
 - 메모: 답변 2 반영. 혼합형 SK PROJECT 07(사내 첫 PoC 앱 전면 개편) 신설. 남은 확인 3건(BEP 표현, PoC 해석·종료 시점, 삼성증권 시기).
+
+## [2026-11-28] ingest | 사용자 확인 답변 3 수집
+- 변경: `raw/sources/2026-11-28-사용자-확인-답변-3.md`(신규), `wiki/entities/sk-플래닛.md`
+- 메모: 광고 성과 = 서비스 흑자 전환 기여, "first poc app" = 회사 핵심 서비스, 삼성증권 시기 미기재 유지.
+
+## [2026-11-28] draft | Claude 작성본 초안 v3
+- 변경: `outputs/2026-11-이력서-경력기술서-claude/draft-v3.md`, `brief.md`, `wiki/index.md`
+- 메모: 답변 3 반영. 남은 사항은 PROJECT 07 종료 시점(2014.07) 추정 1건.
+
+## [2026-11-28] draft | Claude 작성본 초안 v4
+- 변경: `raw/sources/2026-11-28-사용자-확인-답변-4.md`(신규), `outputs/2026-11-이력서-경력기술서-claude/draft-v4.md`, `brief.md`, `wiki/entities/sk-플래닛.md`, `wiki/index.md`
+- 메모: Syrup 앱 전면 개편 기간 2013.11–2014.06 확정. 남은 확인 사항 없음.
