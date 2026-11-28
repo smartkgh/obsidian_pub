@@ -73,3 +73,7 @@ title: Log
 ## [2026-11-28] review | Claude 작성본 검토 v5
 - 변경: `outputs/2026-11-이력서-경력기술서-claude/review-v5.md`, `draft-v6.md`, `brief.md`, `wiki/index.md`
 - 메모: 원본(.doc·.pptx·PDF 2건) 텍스트를 직접 추출해 53개 사실 대조. 일치 43, 근거 페이지 번호 오류 7, 표현 3 → v6에서 정정. 근거 없는 사실 0건.
+
+## [2026-11-28] final | Claude 작성본 최종 DOCX 3종
+- 변경: `outputs/2026-11-이력서-경력기술서-claude/이력서-강기훈-final-v1.docx`, `경력기술서-역순연대기식-강기훈-final-v1.docx`, `경력기술서-혼합형-강기훈-final-v1.docx`, 같은 파일을 `~/my_projects/my_carrer/claude/`에 복사, `brief.md`, `wiki/index.md`
+- 메모: draft-v6 내용을 양식 3종(raw/assets)의 표·문단을 복제해 채움. 근거 표시 제거, 이력서 사진·수상·어학·교육 칸 제외, 보유 기술 칸 추가, 주민번호는 원본(R) 값 사용. Word로 PDF 렌더링해 쪽별 확인(이력서 5쪽, 역순 연대기식 7쪽, 혼합형 12쪽). 안티그래비티 결과물(`~/my_projects/my_carrer/` 바로 아래)은 건드리지 않음.
