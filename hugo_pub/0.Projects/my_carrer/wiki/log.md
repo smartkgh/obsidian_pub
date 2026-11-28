@@ -65,3 +65,11 @@ title: Log
 ## [2026-11-28] draft | Claude 작성본 초안 v4
 - 변경: `raw/sources/2026-11-28-사용자-확인-답변-4.md`(신규), `outputs/2026-11-이력서-경력기술서-claude/draft-v4.md`, `brief.md`, `wiki/entities/sk-플래닛.md`, `wiki/index.md`
 - 메모: Syrup 앱 전면 개편 기간 2013.11–2014.06 확정. 남은 확인 사항 없음.
+
+## [2026-11-28] draft | Claude 작성본 초안 v5
+- 변경: `raw/sources/2026-11-28-사용자-요청-자기소개서-비즈니스배경.md`(신규), `outputs/2026-11-이력서-경력기술서-claude/draft-v5.md`, `brief.md`, `wiki/index.md`
+- 메모: 자기소개서 "풀스택 경험" 문단 기술 스택 보강 + "다양한 비즈니스 경험" 문단 신설. 새 사실 없이 기존 원본(R, P, H1, H2, U)에서만 가져옴.
+
+## [2026-11-28] review | Claude 작성본 검토 v5
+- 변경: `outputs/2026-11-이력서-경력기술서-claude/review-v5.md`, `draft-v6.md`, `brief.md`, `wiki/index.md`
+- 메모: 원본(.doc·.pptx·PDF 2건) 텍스트를 직접 추출해 53개 사실 대조. 일치 43, 근거 페이지 번호 오류 7, 표현 3 → v6에서 정정. 근거 없는 사실 0건.
