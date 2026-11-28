@@ -1,7 +1,7 @@
 ---
 type: draft
 title: "이력서 및 경력기술서 2종 — 초안 v1"
-status: in-progress
+status: done
 tags:
   - draft
   - resume

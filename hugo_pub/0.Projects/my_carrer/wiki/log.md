@@ -37,3 +37,7 @@ title: Log
 ## [2026-11-28] review | 초안 v1 사실 대조 검토(review-v1.md) 완료
 - 변경: `outputs/2026-11-26-이력서-경력기술서/review-v1.md`, `outputs/2026-11-26-이력서-경력기술서/draft-v1.md` (표현 4건 정제), `wiki/index.md`, `wiki/overview.md`
 - 메모: 34개 사실 대조 완료(30건 일치, 4건 원본 미기재·과장 우려 표현 즉시 수정). 사용자 승인 후 ⑤ 최종 DOCX 변환 진행 예정.
+
+## [2026-11-28] final | 이력서 및 경력기술서 2종 최종 DOCX 생성 완료
+- 변경: `outputs/2026-11-26-이력서-경력기술서/이력서-강기훈-final-v1.docx`, `경력기술서-역순연대기식-강기훈-final-v1.docx`, `경력기술서-혼합형-강기훈-final-v1.docx`, `wiki/index.md`, `wiki/overview.md`
+- 메모: 참고 양식 3종 기반 XML 생성 및 `~/my_projects/my_carrer/` 저장. 인라인 근거 주석 제거 및 전체 텍스트 검증 완료.

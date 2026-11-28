@@ -1,7 +1,7 @@
 ---
 type: review
 title: "이력서 및 경력기술서 2종 — 검토 v1"
-status: in-progress
+status: done
 tags:
   - review
   - fact-check
