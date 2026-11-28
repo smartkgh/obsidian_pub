@@ -31,7 +31,7 @@ updated: "2026-11-26"
 ## 주요 사실·활동
 - **114전국전화 Open API 서비스 개발 (2013.08 ~ 2013.10)**: Open API 연동 POI/광고 CMS 개발(Spring, MyBatis, Tiles, Bootstrap, Redis, MySQL). ([[my-이력서-상세경력기술서-자기소개서]])
 - **114전국전화 모바일 서비스 (2013.03 ~ 2013.07)**: POI(500만 건 전화 데이터, 4,000만 건 지번 데이터) 및 광고 CMS 내재화, Redis 지오코딩 연동, Android 앱(GCM Push 포함) 개발. ([[my-이력서-상세경력기술서-자기소개서]], [[my-job-history-skplanet-입사설명용]])
-- **푸딩카메라 Android 개발 (날짜 오타 확인 필요: 원문 `2012.11.01 ~ 2012.02.28`)**: Android 앱 개발 PL, 9개국어 글로벌 앱, InApp 모듈, 구글·국내 3사·해외 삼성 마켓 출시. ([[my-이력서-상세경력기술서-자기소개서]], [[my-job-history-skplanet-입사설명용]])
+- **푸딩카메라 Android 개발 (2012.11 ~ 2013.02)**: Android 앱 개발 PL, 9개국어 글로벌 앱, InApp 모듈, 구글·국내 3사·해외 삼성 마켓 출시. ([[my-이력서-상세경력기술서-자기소개서]], [[my-job-history-skplanet-입사설명용]], 사용자 확인 2026-11-28)
 - **푸딩.투 Android 개발 (2011.09 ~ 2012.12)**: Android 앱 개발 PL, 전체 시스템 설계, ThreadPooling 기반 ImageDownloader/Caching, Timeline Custom UI, Custom WebView, 5개국어 글로벌 포토 SNS, AWS 연동. ([[my-이력서-상세경력기술서-자기소개서]], [[my-job-history-skplanet-입사설명용]])
 
 ## 성과·수치

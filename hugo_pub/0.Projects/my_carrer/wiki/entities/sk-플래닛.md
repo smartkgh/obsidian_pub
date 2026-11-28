@@ -14,31 +14,48 @@ related:
   - "[[syrup-wallet]]"
   - "[[my-skplanet-업무히스토리-1]]"
   - "[[my-skplanet-업무히스토리-2]]"
+  - "[[ai-development-workflow]]"
 created: "2026-11-26"
-updated: "2026-11-26"
+updated: "2026-11-28"
 ---
 
 # SK 플래닛
 
 ## 개요
-강기훈이 [[kt알파]] 이후 합류해 [[syrup-wallet]] 모바일 앱 개발·배포를 장기간 수행한 회사다.
+강기훈이 **2013년 11월부터 2026년 10월 31일까지(13년 0개월)** 재직하며 스마트월렛팀 및 Syrup개발팀 매니저로서 천만 이상 사용자 규모의 [[syrup-wallet]] 모바일 단말 리딩, 서버·CMS·금융 연동 관리, CI/보안 자동화 및 AI 기반 개발 프로세스 도입을 수행한 회사다.
 
 ## 기본 정보
 | 항목 | 값 | 근거 |
 |---|---|---|
-| 기간 | 업무 히스토리 확인 범위: 2014.07 ~ 2026.09 (실제 입사·퇴사 연월 확인 필요) | [[my-skplanet-업무히스토리-1]], [[my-skplanet-업무히스토리-2]] |
-| 역할/관계 | Syrup 앱 개발·배포 담당 (구체적 부서명·직급·담당 범위 확인 필요) | [[my-skplanet-업무히스토리-1]], [[my-skplanet-업무히스토리-2]] |
+| 기간 | **2013.11 ~ 2026.10.31** (13년 0개월) | 사용자 확인 (2026-11-28) |
+| 부서 / 직책 | 스마트월렛 → **Syrup개발팀 / 매니저** | 사용자 확인 (2026-11-28) |
+| 역할 범위 | Android 개발 및 리딩 → iOS 포함 단말 리딩 중심, 서버/CMS/마이데이터/제휴 연동 관리, Jenkins CI·OSS 검증 연동, AI 활용 개발 | 사용자 확인 (2026-11-28), [[my-skplanet-업무히스토리-1]], [[my-skplanet-업무히스토리-2]] |
 
 ## 주요 사실·활동
-- 2014.07 ~ 2022.12: Syrup Wallet Android 앱(v5.1 ~ v5.7.11) 개발 및 Google Play / One Store / 제조사 배포 대응 ([[my-skplanet-업무히스토리-1]])
-- 2023.01 ~ 2026.09: Syrup 앱 Android·iOS 통합 배포 내역(v5.7.12 ~ v5.8.17) 관리 및 리워드·광고 미디에이션·보안·스토어 정책 대응 ([[my-skplanet-업무히스토리-2]])
+- **단말(Android/iOS) 개발 리딩 및 아키텍처 현대화**:
+  - Android 개발 및 리딩을 시작으로 2023년 이후 iOS 포함 양대 플랫폼 단말 리딩 수행 ([[my-skplanet-업무히스토리-2]], 사용자 확인 2026-11-28).
+  - 레거시 프레임워크·통신 개편: `TCP/IP → HTTP(S)` 통신 전환으로 연동 커뮤니케이션 비용 30% 감소, `Java → Kotlin` 전환으로 앱 크래시율 20% 감소 (사용자 확인 2026-11-28).
+  - WebView 하이브리드 중심 개편으로 앱 확장성과 유연한 배포 대응 확보 (사용자 확인 2026-11-28).
+- **광고 미디에이션·리워드 수익화**:
+  - Unity(ironSource), AdMob, 네이버, 카카오, Planet AD 등 다수 광고 SDK 미디에이션·비딩 적용을 통한 광고 효율화 및 광고 매출 증대 기여 (사용자 확인 2026-11-28, [[my-skplanet-업무히스토리-2]]).
+- **보안 강화·스토어 정책·OS/제조사 대응**:
+  - 중요 정보 E2E(단말 DB 등) 암호화, 위변조·백신·보안키패드(FIDO) 솔루션 적용, KISA/PIMS/금보원/SK스퀘어 모의해킹 대응 ([[my-skplanet-업무히스토리-1]], [[my-skplanet-업무히스토리-2]], 사용자 확인).
+  - Google Play 정책 거절 6회 연속 대응 통과(v5.7.19), 신규 OS(Android 5~16, iOS Xcode 14~26) 및 제조사 신규 단말 선탑재 적기 대응.
+- **서버 연동·DevOps 관리**:
+  - 서비스 콘텐츠 및 사내 CMS 연동 개발 관리, 마이데이터 서비스 개발 관리(전금법 이전 및 보안·정부 정책 대응), 삼성증권 연동 서비스 개발 관리 (사용자 확인 2026-11-28).
+  - CI 서버(Jenkins) 연동 및 오픈소스(OSS) 검증 연동 (사용자 확인 2026-11-28, [[my-skplanet-업무히스토리-2]] p.2).
+- **AI 활용 개발 및 테스트 자동화**:
+  - Google Cloud Vertex AI를 활용한 식단기록 서비스 프로토타입 개발 (사용자 확인 2026-11-28, [[my-skplanet-업무히스토리-2]] p.2 `SYRUPPROD-1635`).
+  - LLM 위키(LM 위키) 기반 개발 프로세스 구성, JS 브릿지 페이지 검증 도구 등 개발 테스트 도구 구축, Gemini CLI·Claude CLI·OpenSpec·OpenAI·로컬 LLM·Hermes Agent 등 AI 도구 실무 활용 (사용자 확인 2026-11-28).
 
 ## 성과·수치
 | 내용 | 수치 | 근거 |
 |---|---|---|
-| 히스토리 수록 기간 | 2014/07/14 ~ 2026/09/17 (12년 이상 배포 이력) | [[my-skplanet-업무히스토리-1]], [[my-skplanet-업무히스토리-2]] |
-| 구글 플레이 정책 심사 극복 | v5.7.19 6회 연속 수정·재요청 후 통과 (2024.01~03) | [[my-skplanet-업무히스토리-2]] (p.7) |
+| 서비스 운영 규모 및 안정성 | 천만 이상 사용자 App 크리티컬 장애 없이 운영, 크래시율 0.01% 유지 | 사용자 확인 (2026-11-28) |
+| 통신 프로토콜 전환 효과 | TCP/IP → HTTP(S) 변경으로 연동 커뮤니케이션 비용 30% 감소 | 사용자 확인 (2026-11-28) |
+| Kotlin 전환 효과 | Java → Kotlin 변경 후 앱 크래시율 20% 감소 | 사용자 확인 (2026-11-28) |
+| 구글 플레이 정책 심사 극복 | v5.7.19 6회 연속 수정·재요청 후 승인 (2024.01~03) | [[my-skplanet-업무히스토리-2]] (p.7) |
 
 ## 관련
-- 개념: [[android-app-development]], [[ios-app-development]], [[ad-tech-mediation]], [[app-security-compliance]], [[fintech-mydata-syrup]], [[reward-apptech-syrup]]
+- 개념: [[android-app-development]], [[ios-app-development]], [[ad-tech-mediation]], [[app-security-compliance]], [[fintech-mydata-syrup]], [[reward-apptech-syrup]], [[ai-development-workflow]]
 - 다른 대상: [[강기훈]], [[syrup-wallet]]
