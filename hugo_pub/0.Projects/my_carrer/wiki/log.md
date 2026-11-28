@@ -41,3 +41,7 @@ title: Log
 ## [2026-11-28] final | 이력서 및 경력기술서 2종 최종 DOCX 생성 완료
 - 변경: `outputs/2026-11-26-이력서-경력기술서/이력서-강기훈-final-v1.docx`, `경력기술서-역순연대기식-강기훈-final-v1.docx`, `경력기술서-혼합형-강기훈-final-v1.docx`, `wiki/index.md`, `wiki/overview.md`
 - 메모: 참고 양식 3종 기반 XML 생성 및 `~/my_projects/my_carrer/` 저장. 인라인 근거 주석 제거 및 전체 텍스트 검증 완료.
+
+## [2026-11-28] draft | 이력서 및 경력기술서 2종 Claude 독립 초안(draft-v1.md) 작성
+- 변경: `outputs/2026-11-이력서-경력기술서-claude/brief.md`, `outputs/2026-11-이력서-경력기술서-claude/draft-v1.md`, `wiki/index.md`
+- 메모: 승인된 기존 brief·outline을 이어받아 비교용으로 따로 작성. 경력 요약·STAR 구조 추가, SK 플래닛 PROJECT 최신순 재정렬, 근거 없는 기간·역할 7건은 [확인 필요]로 표시. 주민번호는 초안에 쓰지 않음.
